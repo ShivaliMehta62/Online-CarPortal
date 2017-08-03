@@ -1,0 +1,8 @@
+myproject\model\Productmodel.class
+myproject\dao\ProductDao.class
+myproject\model\Category.class
+myproject\daoImpl\ProductdaoImpl.class
+myproject\dao\CategoryDao.class
+myproject\carbackend\App.class
+myproject\daoImpl\CategoryDaoImpl.class
+myproject\configuration\Hibernateconfiguartion.class
