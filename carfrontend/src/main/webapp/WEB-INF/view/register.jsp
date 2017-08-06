@@ -12,44 +12,13 @@
  <table align="center">
   <tr>
    <td>
-    <form:label path="username">UserName</form:label>
+   <p>User Details</p>
+    <form:label path="username">Name</form:label>
      </td> 
      <td> 
      <form:input path="username" name="username" id="username" /> 
     </td>
     </tr>
-  <tr>
-    <td>
-    <form:label path="password">Password</form:label>
-    </td> 
-    <td>
-   <form:password path="password" name="password" id="password" />
-   </td>
-   </tr>
-    <tr>
-    <td>
-   <form:label path="firstname">FirstName</form:label>
-     </td> 
-      <td> 
-    <form:input path="firstname" name="firstname" id="firstname" />
-      </td>
-      </tr>
-       <tr>
-      <td> 
-      <form:label path="lastname">LastName</form:label>
-     </td>
-      <td> 
-      <form:input path="lastname" name="lastname" id="lastname" />
-        </td>
-       </tr>
-       <tr> 
-         <td>
-     <form:label path="email">Email</form:label>
-         </td>
-          <td>
-      <form:input path="email" name="email" id="email" />
-        </td>
-       </tr>
      <tr> 
        <td>
     <form:label path="address">Address</form:label>
@@ -58,7 +27,7 @@
    <form:input path="address" name="address" id="address" />
        </td>
        </tr>
-      <tr> 
+       <tr> 
      <td>
   <form:label path="phone">Phone</form:label>
      </td>
@@ -66,6 +35,25 @@
  <form:input path="phone" name="phone" id="phone" />
    </td>
    </tr>
+  <tr>
+    <td>
+    <form:label path="password">Password</form:label>
+    </td> 
+    <td>
+   <form:password path="password" name="password" id="password" />
+   </td>
+   </tr>
+    
+       <tr> 
+         <td>
+     <form:label path="email">Email</form:label>
+         </td>
+          <td>
+      <form:input path="email" name="email" id="email" />
+        </td>
+       </tr>
+    
+      
    <tr>
    <td>
    </td>
