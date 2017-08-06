@@ -2,13 +2,16 @@ package myproject.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -26,13 +29,45 @@ public class Product implements Serializable {
 	private String proRn;
 	@Column(name="Product_name")
 	private String proNm;
+	private String proCost;
+	private String proType;
+	private String brandid;
+	@ManyToOne
+	@JoinColumn(name="brandid" , insertable=false, nullable=false, updatable=false)
+	
+			private Brand brand;
+	
+	public String getBrandid() {
+		return brandid;
+	}
+	public void setBrandid(String brandid) {
+		this.brandid = brandid;
+	}
+	public Brand getBrand() {
+		return brand;
+	}
+	public void setBrand(Brand brand) {
+		this.brand = brand;
+	}
+	public String getProCost() {
+		return proCost;
+	}
+	public void setProCost(String proCost) {
+		this.proCost = proCost;
+	}
+	public String getProType() {
+		return proType;
+	}
+	public void setProType(String proType) {
+		this.proType = proType;
+	}
 	public MultipartFile getImage() {
 		return image;
 	}
 	public void setImage(MultipartFile image) {
 		this.image = image;
 	}
-	private String proDesc;
+	
 	@Transient
 	MultipartFile image;
 	public String getProRn() {
@@ -47,12 +82,7 @@ public class Product implements Serializable {
 	public void setProNm(String proNm) {
 		this.proNm = proNm;
 	}
-	public String getProDesc() {
-		return proDesc;
-	}
-	public void setProDesc(String proDesc) {
-		this.proDesc = proDesc;
-	}
+	
 	
 	
 	

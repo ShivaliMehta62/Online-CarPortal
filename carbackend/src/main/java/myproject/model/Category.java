@@ -1,12 +1,14 @@
 package myproject.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -19,31 +21,19 @@ public class Category {
 @Id
 private String catId;
 private String catName;
-private String catAddress;
-private int catPhone;
+
 private String catType;
-private String catEmail;
+
  
-public String getCatEmail() {
-	return catEmail;
+@OneToMany(mappedBy="category" ,fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
+private Set<Brand> p=new HashSet<Brand>();
+public Set<Brand> getP() {
+	return p;
 }
-public void setCatEmail(String catEmail) {
-	this.catEmail = catEmail;
+public void setP(Set<Brand> p) {
+	this.p = p;
 }
 
-
-public String getCatAddress() {
-	return catAddress;
-}
-public void setCatAddress(String catAddress) {
-	this.catAddress = catAddress;
-}
-public int getCatPhone() {
-	return catPhone;
-}
-public void setCatPhone(int catPhone) {
-	this.catPhone = catPhone;
-}
 
 
 public String getCatId() {

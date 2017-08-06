@@ -5,8 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import myproject.dao.Branddao;
 import myproject.dao.CategoryDao;
 import myproject.dao.ProductDao;
+import myproject.model.Brand;
 import myproject.model.Category;
 import myproject.model.Product;
 
@@ -16,6 +18,8 @@ import myproject.model.Product;
           CategoryDao categoryDao;
           @Autowired
           ProductDao productDao;
+          @Autowired
+          Branddao brandDao;
 		@RequestMapping("/")
 		public String home()
 		{
@@ -33,12 +37,22 @@ import myproject.model.Product;
 			
 		}
 		
+		
+		
 		@RequestMapping("/product")
 		public String product(Model model)
 		{
 			model.addAttribute("productList",productDao.getAllProduct());
 			model.addAttribute("product",new Product());
 			return "product";
+			
+		}
+		@RequestMapping("/Brand")
+		public String brand(Model model)
+		{
+			model.addAttribute("brandList",brandDao.getAllBrands());
+			model.addAttribute("brand",new Brand());
+			return "Brand";
 			
 		}
 		

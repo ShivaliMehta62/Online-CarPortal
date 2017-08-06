@@ -31,77 +31,29 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
       <sh:input class="form-control"  path="catName" placeholder="Enter your name" />
     </div>
     <div class="form-group">
-      <sh:label  path="catAddress">Address:</sh:label>
-      <sh:input class="form-control"  path="catAddress" placeholder="Enter your address" />
+      <sh:label  path="catType">Description</sh:label>
+      <sh:input class="form-control"  path="catType" placeholder="Enter your name" />
     </div>
-    <div class="form-group">
-      <sh:label  path="catPhone">Contact  details:</sh:label>
-      <sh:input class="form-control"  path="catPhone" placeholder="Enter phone number" />
-    </div>
-    <div class="form-group">
-      <sh:label  path="catEmail">Email Id:</sh:label>
-      <sh:input class="form-control"  path="catEmail" placeholder="Enter your email id" />
-    </div>
-     <tr> 
-         <td>
-    <li class="dropdown">
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#">Car details <span class="caret"></span></a><p>choose your car type</p>
-                    <ul class="dropdown-menu">
-         </td>
-      <ul>
-			<li><a href="#" title="Hatchback">Hatchback</a>
-				<ul>
-					<li><a href="#" title="maruti">Maruti</a></li>
-					<li><a href="#" title="datsun">Datsun</a></li>
-					<li><a href="#" title="renault">Renault</a></li>
-					<li><a href="#" title="tata">Tata</a></li>
-					<li><a href="#" title="hyundai">Hyundai</a></li>
-					<li><a href="#" title="other">Other</a></li>
-				</ul>
-                </ul>
-			</li>
-			
-			 <ul>
-			<li><a href="#" title="SUV">SUV</a>
-				<ul>
-					<li><a href="#" title="maruti">maruti</a></li>
-					<li><a href="#" title="datsun">Datsun</a></li>
-					<li><a href="#" title="renault">Renault</a></li>
-					<li><a href="#" title="tata">Tata</a></li>
-					<li><a href="#" title="hyundai">Hyundai</a></li>
-					<li><a href="#" title="other">Other</a></li>
-				</ul>
-                </ul>
-			</li>
-			
-			<ul>
-			<li><a href="#" title="Sedan">SEDAN</a>
-				<ul>
-					<li><a href="#" title="maruti">maruti</a></li>
-					<li><a href="#" title="datsun">Datsun</a></li>
-					<li><a href="#" title="renault">Renault</a></li>
-					<li><a href="#" title="tata">Tata</a></li>
-					<li><a href="#" title="hyundai">Hyundai</a></li>
-					<li><a href="#" title="other">Other</a></li>
-				</ul>  
-                </ul>
-			</li>
+    
+    
+   
+     
+    
 		 <sh:button type="submit" class="btn btn-default">Submit</sh:button>
    </sh:form>
 </div>
  
 
 <div class="container">
-   <p>table of category</p> 
+   
   <c:if test="${not empty categoryList}">
 <table border=1 class="table table-striped" >
 <thead>
       <tr>
       <th>Name</th>
-      <th>Contact Details</th>
-      <th>Address</th>
-      <th>Email Id</th>
-      <th>Car Details</th>
+     
+      
+      <th>Car Description</th>
       <th>edit</th>
       <th>delete</th>
       </tr>
@@ -110,9 +62,7 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <c:forEach items="${categoryList}" var="cat">
 <tr>
 <td>${cat.catName}</td>
-<td>${cat.catAddress}</td>
-<td>${cat.catPhone}</td>
-<td>${cat.catEmail}</td>
+
 <td>${cat.catType }</td>
 
 <td><a href="<c:url value='updateCategory/${cat.catId}'/>">Edit</a></td>

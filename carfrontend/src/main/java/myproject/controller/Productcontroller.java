@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
+import myproject.dao.Branddao;
 import myproject.dao.ProductDao;
 
 import myproject.model.Product;
@@ -22,6 +23,8 @@ public class Productcontroller {
 
 	@Autowired
 	ProductDao productDao;
+	@Autowired
+	Branddao brandDao;
 	
 	@RequestMapping(value="/addProduct",method=RequestMethod.POST )
 	
@@ -32,12 +35,14 @@ public class Productcontroller {
 		productDao.addProduct(p);
 		
 		MultipartFile mp=p.getImage();
+		System.out.println(mp.getOriginalFilename());
 		ServletContext context=session.getServletContext();
 		String filelocation=context.getRealPath("/Resources/carrental");
 		System.out.println(filelocation);
-		String filename=filelocation+"\\"+p.getProDesc()+".jpg";
+		String filename=filelocation+"\\"+p.getProRn()+".jpg";
 		System.out.println(filename);
-		try{byte b[]=mp.getBytes();
+		try{
+			byte b[]=mp.getBytes();
 		FileOutputStream fos=new FileOutputStream(filename);
 		fos.write(b);
 		fos.close();
@@ -55,6 +60,7 @@ public class Productcontroller {
 	public String updateproduct(@PathVariable("prorn")String prorn,Model model)
 	{
 		model.addAttribute("product",productDao.getProductById(prorn));
+		model.addAttribute("brandlist",brandDao.getAllBrands());
 		model.addAttribute("productList",productDao.getAllProduct());
 		return "product";
 		}

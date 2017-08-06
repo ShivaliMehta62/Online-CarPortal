@@ -61,16 +61,21 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle"  data-toggle="dropdown" href="#">Rental <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="category"><span class="glyphicon glyphicon-log-in"></span>put up for rent</a></li>
-                        <li><a href="#">contact us</a></li>
+                                             <li><a href="#">contact us</a></li>
                        </ul> 
                 </li>
             <ul class="nav navbar-nav navbar-right">
                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin <span class="caret"></span></a>
                    <ul class="dropdown-menu">
+                    <li><a href="category"><span class="glyphicon glyphicon-log-in"></span>Category</a></li>
                          <li><a href="product"><span class="glyphicon glyphicon-log-in"></span> Product</a></li>
+                         <li><a href="Brand"><span class="glyphicon glyphicon-log-in"></span> Brand</a></li>
                 
                     </ul>
+                     
+                        
+                
+                   </ul>
                    
                    </li>
                 
