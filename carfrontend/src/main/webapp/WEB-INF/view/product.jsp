@@ -60,12 +60,13 @@ Choose Image <sp:input type="file" path="image" />
 </tr>
 <tr>
 <c:forEach items="${productList}" var="c">
-<tr><td>${c.proRn}</td>
+<tr>
+<td>${c.proRn}</td>
 <td>${c.proNm}</td>
 <td>${c.proType}</td>
 <td>${c.proCost}</td>
-<td>${c.brandId}</td>
-<td><img src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg" style="height:120px;width:150px;"/></td>
+<td>${c.brandid}</td>
+<td><img src="${pageContext.request.contextPath }/Resources/carrental/${c.proRn}.jpg" style="height:120px;width:150px;"/></td>
 <td><a href="<c:url value='updateProduct/${c.proRn}'/>">Edit/<a href="<c:url value='deleteProduct/${c.proRn}'/>">Delete</a></a>
 </tr>
 </c:forEach>

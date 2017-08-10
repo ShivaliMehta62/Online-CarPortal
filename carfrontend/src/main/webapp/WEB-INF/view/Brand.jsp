@@ -23,8 +23,8 @@
 <br>
  <sp:form action="${pageContext.request.contextPath}/Brandadd" method="POST" modelAttribute="brand">
 <c:if test="${not empty brand.brandName}">
-Brand ID    <sp:input path="brandID" readOnly="true" disabled="true"/>
-<sp:hidden path="brandID"/>
+Brand ID    <sp:input path="brandId" readOnly="true" disabled="true"/>
+<sp:hidden path="brandId"/>
 </c:if>
 Brand Name  <sp:input path="brandName"/>
 Brand Description  <sp:input path="brandType"/>
@@ -58,12 +58,13 @@ Brand Description  <sp:input path="brandType"/>
 </tr>
 <tr>
 <c:forEach items="${brandList}" var="c">
-<tr><td>${c.brandID}</td>
+<tr>
+<td>${c.brandId}</td>
 <td>${c.brandName}</td>
 <td>${c.brandType}</td>
 
 <td>${c.catrn}</td>
-<td><a href="<c:url value='updateBrand/${c.brandID}'/>">Edit/<a href="<c:url value='deleteBrand/${c.brandID}'/>">Delete</a></a>
+<td><a href="<c:url value='updateBrand/${c.brandId}'/>">Edit/<a href="<c:url value='deleteBrand/${c.brandId}'/>">Delete</a></a>
 </tr>
 
 </c:forEach>

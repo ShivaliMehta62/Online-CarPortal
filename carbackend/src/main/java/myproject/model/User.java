@@ -2,10 +2,17 @@ package myproject.model;
 
 
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
 
@@ -21,6 +28,9 @@ public class User {
 	private String userName;
 	private String userEmail;
 	private String userPass;
+	
+	@OneToOne(mappedBy="bill" ,fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
+	
 	public String getUserID() {
 		return userID;
 	}

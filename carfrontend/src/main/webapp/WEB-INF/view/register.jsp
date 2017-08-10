@@ -42,26 +42,27 @@
     <p>Pickup Address</p>
     <tr>
     <td>
-    <form:label path="email">Pickup e-mail</form:label>
+    <form:label path="apartNo">Apartment No.</form:label>
     </td>
     <td>
-    <form:input path="email" name="email" id="email" />
+    <form:input path="apartNo" name="bill.apartno" id="apartNo"  />
+    </td>
+    </tr>
+    
+    <tr>
+    <td>
+    <form:label path="address">Street Name</form:label>
+    </td>
+    <td>
+    <form:input path="streetName" name="bill.streetName" id="streetName" placeholder="W 123 Street" />
     </td>
     </tr>
     <tr>
     <td>
-    <form:label path="address">Street Address</form:label>
+    <form:label path="zipcode">Zipcode</form:label>
     </td>
     <td>
-    <form:input path="address" name="address" id="address" placeholder="W 123 Street" />
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <form:label path="zip">Zipcode</form:label>
-    </td>
-    <td>
-    <form:input path="zip" name="zip" id="zip" />
+    <form:input path="zipcode" name="bill.zipcode" id="zipcode" />
     </td>
     </tr>
      <tr>
@@ -69,7 +70,7 @@
     <form:label path="city">City</form:label>
     </td>
     <td>
-    <form:input path="city" name="city" id="city" />
+    <form:input path="city" name="bill.city" id="city" />
     </td>
     </tr>
     <tr>
@@ -77,33 +78,34 @@
     <form:label path="country">Country</form:label>
     </td>
     <td>
-    <form:input path="country" name="country" id="country" />
+    <form:input path="country" name="bill.country" id="country" />
     </td>
     </tr>
     
     <p>Drop-down Address</p>
-   <tr>
+     <tr>
     <td>
-    <form:label path="email">Drop-Down e-mail</form:label>
+    <form:label path="apartNo">Apartment No.</form:label>
     </td>
     <td>
-    <form:input path="email" name="email" id="email" />
+    <form:input path="apartNo" name="bill.apartno" id="apartNo"  />
+    </td>
+    </tr>
+    
+    <tr>
+    <td>
+    <form:label path="address">Street Name</form:label>
+    </td>
+    <td>
+    <form:input path="streetName" name="bill.streetName" id="streetName" placeholder="W 123 Street" />
     </td>
     </tr>
     <tr>
     <td>
-    <form:label path="address">Street Address</form:label>
+    <form:label path="zipcode">Zipcode</form:label>
     </td>
     <td>
-    <form:input path="address" name="address" id="address" placeholder="W 123 Street" />
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <form:label path="zip">Zipcode</form:label>
-    </td>
-    <td>
-    <form:input path="zip" name="zip" id="zip" />
+    <form:input path="zipcode" name="bill.zipcode" id="zipcode" />
     </td>
     </tr>
      <tr>
@@ -111,7 +113,7 @@
     <form:label path="city">City</form:label>
     </td>
     <td>
-    <form:input path="city" name="city" id="city" />
+    <form:input path="city" name="bill.city" id="city" />
     </td>
     </tr>
     <tr>
@@ -119,15 +121,11 @@
     <form:label path="country">Country</form:label>
     </td>
     <td>
-    <form:input path="country" name="country" id="country" />
+    <form:input path="country" name="bill.country" id="country" />
     </td>
     </tr>
+    
     <tr>
-    <td>
-    <form:checkbox path="addresssame" value="Pickupaddress"/>Is pickup address same as the drop-down address
-    </td>
-    </tr>
-   <tr>
    <td>
    </td>
   <td> 

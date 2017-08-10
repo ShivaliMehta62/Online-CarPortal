@@ -18,7 +18,7 @@ public class BillingDaoimpl implements BillingDao {
 	
 	public boolean saveAddress(Billing bl) {
 		Session s1= sessionFactory.getCurrentSession();
-		Billing b1 =(Billing)s1.load(Billing.class, billingAddressId);
+		//Billing b1 =(Billing)s1.load(Billing.class, billingAddressId);
 		s1.save(bl);
 		return true;
 	}

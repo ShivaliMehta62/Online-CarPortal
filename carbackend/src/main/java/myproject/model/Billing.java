@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -24,10 +27,18 @@ public class Billing {
 	private String state;
 	private String country;
 	private long zipcode;
-
+	
+	@OneToOne
+	private User users;
 	
 	public int getBillingAddressId() {
 		return billingAddressId;
+	}
+	public User getUsers() {
+		return users;
+	}
+	public void setUsers(User users) {
+		this.users = users;
 	}
 	public void setBillingAddressId(int billingAddressId) {
 		this.billingAddressId = billingAddressId;

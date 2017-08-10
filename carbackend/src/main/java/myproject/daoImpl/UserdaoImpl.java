@@ -23,54 +23,47 @@ import myproject.model.User;
 	public class UserdaoImpl implements UserDao {
 	@Autowired
 	SessionFactory sessionFactory;
+
+	public boolean addUser(User u) {
+		Session sf=sessionFactory.getCurrentSession();
+		u.setUserId(u.getName());
+		Authorities auth=new Authorities();
+		auth.setName(u.getUserId());
+		auth.setRole("ROLE_USER");
+		u.setActive(true);
+
+
+		return false;
+	}
+
+	public boolean deleteUser(String userid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean saveUser(User u) {
+		Session session = sessionFactory.getCurrentSession();
+         u.getBillingAddress().setUser(u);
+		u.getShippingAddress().setUser(u);
+		session.persist(u);
+			session.persist(u.getBillingAddress());
+		session.persist(u.getShippingAddress());
+		Author auth = new Author();
+			auth.setRole("ROLE_USER");
+			auth.setUsername((u.getUsername()));
+return false;
+	}
+
+	public List<User> getAllUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public User getUserById(String userid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-		public boolean addUser(User u) {
-			Session s1=sessionFactory.getCurrentSession();
-			u.setUserID(u.getUserName());
-			s1.persist(u);
-			return true;
-		}
-
-		public boolean deleteUser(String userid) {
-			Session s1 =sessionFactory.getCurrentSession();
-			//Query<User> query=s1.createQuery("delete from User where userID= "+u.getUserById());    
-			//query.executeUpdate();  
-			return true;
-		}
-
-
-		//public boolean updateUser(User u) {
-		//Session s1 =sessionFactory.getCurrentSession();
-		//String hql = "update User set userName ='"+u.getUserName()+"',userPass='"+u.getUserPass()+"'+userEmail='"+u.getUserEmail()+"' where userID='"+u.getUserById();
-		//Query<User> q = s1.createQuery(hql);
-		//int a=q.executeUpdate();
-		//System.out.println("Deleted: " +a+ " user(s)");
-			//return true;
-		//}
-
-		public List<User> getAllUser() {
-			
-			Session s=sessionFactory.getCurrentSession();
-			Query query=s.createQuery("from User");
-			List<User> list=query.getResultList(); 
-			return list;
-		}
-
-
-		public User getUserById(String userid) {
-			Session s1 =sessionFactory.getCurrentSession();
-			Query<User> q = s1.createQuery("from User where userID=?");
-		User	user = (User)q.getSingleResult();
-		return user;
-		}
-
-		public boolean updateUser(User u) {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-	
-
 		
 		
 

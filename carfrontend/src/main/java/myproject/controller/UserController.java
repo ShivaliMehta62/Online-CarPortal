@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import myproject.dao.UserDao;
+import myproject.model.Billing;
 import myproject.model.User;
 
 @Controller
@@ -22,6 +23,8 @@ public class UserController {
 	
 	public String addUser(@ModelAttribute("user")User c)
 	{
+		Billing bill;
+		Shipping ship;
 	
 		if(c.getUserID()==null||c.getUserID().isEmpty())
 		{
