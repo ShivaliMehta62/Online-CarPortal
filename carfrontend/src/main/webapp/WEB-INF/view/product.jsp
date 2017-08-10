@@ -68,12 +68,9 @@ Choose Image <sp:input type="file" path="image" />
 <td><img src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg" style="height:120px;width:150px;"/></td>
 <td><a href="<c:url value='updateProduct/${c.proRn}'/>">Edit/<a href="<c:url value='deleteProduct/${c.proRn}'/>">Delete</a></a>
 </tr>
-
 </c:forEach>
 </tr>
 </table>
 </c:if>
-
-
 </body>
 </html>

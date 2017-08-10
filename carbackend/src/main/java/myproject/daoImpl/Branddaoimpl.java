@@ -14,7 +14,7 @@ import myproject.dao.Branddao;
 import myproject.model.Brand;
 import myproject.model.Category;
 
-@Repository("Branddao")
+@Repository("brandDao")
 @Transactional
 
 
@@ -24,7 +24,7 @@ public class Branddaoimpl implements Branddao {
 	SessionFactory sessionFactory;
 	
 	
-	public boolean addBrand(Brand b) {
+	public boolean Brandadd(Brand b) {
 		Session s=sessionFactory.getCurrentSession();
  		b.setBrandId(b.getBrandName());
  		s.persist(b);
@@ -56,17 +56,18 @@ public class Branddaoimpl implements Branddao {
 		
 	}
 
-	public Brand getBrandByID(int brandID) {
+	
+
+	public Brand getBrandByID(String brandID) {
 		Session s=sessionFactory.getCurrentSession();
 		Query<Brand> g=s.createQuery("from Brand where brandId=?");
 		g.setParameter(0,brandID);
 		Brand mq=(Brand)g.getSingleResult();
-		return  mq;		
+		return  mq;	
 	}
 
-	public Brand getBrandByID(String brandID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+
+	
 
 }

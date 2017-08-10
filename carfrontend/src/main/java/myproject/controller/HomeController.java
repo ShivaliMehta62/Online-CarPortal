@@ -43,6 +43,7 @@ import myproject.model.Product;
 		public String product(Model model)
 		{
 			model.addAttribute("productList",productDao.getAllProduct());
+			model.addAttribute("brandList",brandDao.getAllBrands());
 			model.addAttribute("product",new Product());
 			return "product";
 			
@@ -51,6 +52,7 @@ import myproject.model.Product;
 		public String brand(Model model)
 		{
 			model.addAttribute("brandList",brandDao.getAllBrands());
+			model.addAttribute("categoryList",categoryDao.getAllCategory());
 			model.addAttribute("brand",new Brand());
 			return "Brand";
 			

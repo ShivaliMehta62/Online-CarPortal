@@ -21,7 +21,7 @@
 <body>
 <br>
 <br>
- <sp:form action="${pageContext.request.contextPath }/addBrand" method="POST" modelAttribute="brand">
+ <sp:form action="${pageContext.request.contextPath}/Brandadd" method="POST" modelAttribute="brand">
 <c:if test="${not empty brand.brandName}">
 Brand ID    <sp:input path="brandID" readOnly="true" disabled="true"/>
 <sp:hidden path="brandID"/>
@@ -62,7 +62,7 @@ Brand Description  <sp:input path="brandType"/>
 <td>${c.brandName}</td>
 <td>${c.brandType}</td>
 
-<td>${c.catID}</td>
+<td>${c.catrn}</td>
 <td><a href="<c:url value='updateBrand/${c.brandID}'/>">Edit/<a href="<c:url value='deleteBrand/${c.brandID}'/>">Delete</a></a>
 </tr>
 

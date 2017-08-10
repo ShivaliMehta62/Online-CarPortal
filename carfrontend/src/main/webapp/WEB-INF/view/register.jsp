@@ -10,6 +10,7 @@
 <body>
 <form:form id="regForm" modelAttribute="user" action="registerProcess" method="post">
  <table align="center">
+ <p>User Details</p>
   <tr>
    <td>
    <p>User Details</p>
@@ -19,14 +20,7 @@
      <form:input path="username" name="username" id="username" /> 
     </td>
     </tr>
-     <tr> 
-       <td>
-    <form:label path="address">Address</form:label>
-       </td>
-        <td> 
-   <form:input path="address" name="address" id="address" />
-       </td>
-       </tr>
+     
        <tr> 
      <td>
   <form:label path="phone">Phone</form:label>
@@ -35,14 +29,7 @@
  <form:input path="phone" name="phone" id="phone" />
    </td>
    </tr>
-  <tr>
-    <td>
-    <form:label path="password">Password</form:label>
-    </td> 
-    <td>
-   <form:password path="password" name="password" id="password" />
-   </td>
-   </tr>
+  
     
        <tr> 
          <td>
@@ -52,8 +39,94 @@
       <form:input path="email" name="email" id="email" />
         </td>
        </tr>
+    <p>Pickup Address</p>
+    <tr>
+    <td>
+    <form:label path="email">Pickup e-mail</form:label>
+    </td>
+    <td>
+    <form:input path="email" name="email" id="email" />
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <form:label path="address">Street Address</form:label>
+    </td>
+    <td>
+    <form:input path="address" name="address" id="address" placeholder="W 123 Street" />
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <form:label path="zip">Zipcode</form:label>
+    </td>
+    <td>
+    <form:input path="zip" name="zip" id="zip" />
+    </td>
+    </tr>
+     <tr>
+    <td>
+    <form:label path="city">City</form:label>
+    </td>
+    <td>
+    <form:input path="city" name="city" id="city" />
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <form:label path="country">Country</form:label>
+    </td>
+    <td>
+    <form:input path="country" name="country" id="country" />
+    </td>
+    </tr>
     
-      
+    <p>Drop-down Address</p>
+   <tr>
+    <td>
+    <form:label path="email">Drop-Down e-mail</form:label>
+    </td>
+    <td>
+    <form:input path="email" name="email" id="email" />
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <form:label path="address">Street Address</form:label>
+    </td>
+    <td>
+    <form:input path="address" name="address" id="address" placeholder="W 123 Street" />
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <form:label path="zip">Zipcode</form:label>
+    </td>
+    <td>
+    <form:input path="zip" name="zip" id="zip" />
+    </td>
+    </tr>
+     <tr>
+    <td>
+    <form:label path="city">City</form:label>
+    </td>
+    <td>
+    <form:input path="city" name="city" id="city" />
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <form:label path="country">Country</form:label>
+    </td>
+    <td>
+    <form:input path="country" name="country" id="country" />
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <form:checkbox path="addresssame" value="Pickupaddress"/>Is pickup address same as the drop-down address
+    </td>
+    </tr>
    <tr>
    <td>
    </td>

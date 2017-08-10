@@ -7,9 +7,7 @@ import myproject.model.Brand;
 
 public interface BillingDao {
 
-	public boolean addAddress(Billing bl );
-	public boolean updateAddress(Billing bl );	
-	public boolean deleteAddress(Billing bl );
-	List<Billing> getAllBillAdd();
+	public boolean saveAddress(Billing bl );
+		List<Billing> getAllBillAdd();
 	Billing getBillAddByID(String BillAdd);
 }

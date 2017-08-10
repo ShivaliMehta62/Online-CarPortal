@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 public class Brand {
     
 	@Id
-	 @GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private String brandId;
 	private String brandType;
 	private String brandName;

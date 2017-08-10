@@ -10,7 +10,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      http://www.springframework.org/schema/mvc 
      http://www.springframework.org/schema/mvc/spring-mvc.xsd">
      
-  <context:component-scan base-package="myproject" />
+  <context:component-scan base-package="myproject.*" />
   <mvc:resources location="resources/" mapping="/resources/**" /> 
   <mvc:default-servlet-handler /> 
   <mvc:annotation-driven /> 

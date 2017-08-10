@@ -1,6 +1,7 @@
 package myproject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,8 @@ import myproject.dao.Branddao;
 import myproject.dao.CategoryDao;
 import myproject.model.Brand;
 
+
+@Controller
 public class BrandController {
 
 	
@@ -18,13 +21,15 @@ public class BrandController {
 	Branddao brandDao;
 	@Autowired
 	CategoryDao categoryDao;
-	@RequestMapping(value="/addBrand",method=RequestMethod.POST)
+	@RequestMapping(value="/Brandadd",method=RequestMethod.POST)
 	
 	public String addBrand(@ModelAttribute("brand")Brand b)
+	
 	{
+		System.out.println("brand");
 		if(b.getBrandId()==null||b.getBrandId().isEmpty())
 		{
-			brandDao.addBrand(b);
+			brandDao.Brandadd(b);
 		}
 		else
 		{

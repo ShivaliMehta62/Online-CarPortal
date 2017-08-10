@@ -22,7 +22,7 @@ public class AuthoritiesDaoImpl implements AuthorityDao {
 	public boolean addAuthority(Authorities a) {
 
  		Session s=sessionFactory.getCurrentSession();
- 		a.setAuthoritiesId(a.getUserName());
+ 		//a.setAuthoritiesId(a.getUserName());
  		s.persist(a);
  		return true;
 		

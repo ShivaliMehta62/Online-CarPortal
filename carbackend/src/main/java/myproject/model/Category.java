@@ -34,8 +34,6 @@ public void setP(Set<Brand> p) {
 	this.p = p;
 }
 
-
-
 public String getCatId() {
 	return catId;
 }

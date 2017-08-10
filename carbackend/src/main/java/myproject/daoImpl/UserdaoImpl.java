@@ -33,20 +33,20 @@ import myproject.model.User;
 
 		public boolean deleteUser(String userid) {
 			Session s1 =sessionFactory.getCurrentSession();
-			Query<User> query=s1.createQuery("delete from User where userID= "+u.getUserById());    
-			query.executeUpdate();  
+			//Query<User> query=s1.createQuery("delete from User where userID= "+u.getUserById());    
+			//query.executeUpdate();  
 			return true;
 		}
 
 
-		public boolean updateUser(User u) {
-		Session s1 =sessionFactory.getCurrentSession();
-		String hql = "update User set userName ='"+u.getUserName()+"',userPass='"+u.getUserPass()+"'+userEmail='"+u.getUserEmail()+"' where userID='"+u.getUserById();
-		Query<User> q = s1.createQuery(hql);
-		int a=q.executeUpdate();
-		System.out.println("Deleted: " +a+ " user(s)");
-			return true;
-		}
+		//public boolean updateUser(User u) {
+		//Session s1 =sessionFactory.getCurrentSession();
+		//String hql = "update User set userName ='"+u.getUserName()+"',userPass='"+u.getUserPass()+"'+userEmail='"+u.getUserEmail()+"' where userID='"+u.getUserById();
+		//Query<User> q = s1.createQuery(hql);
+		//int a=q.executeUpdate();
+		//System.out.println("Deleted: " +a+ " user(s)");
+			//return true;
+		//}
 
 		public List<User> getAllUser() {
 			
@@ -62,6 +62,11 @@ import myproject.model.User;
 			Query<User> q = s1.createQuery("from User where userID=?");
 		User	user = (User)q.getSingleResult();
 		return user;
+		}
+
+		public boolean updateUser(User u) {
+			// TODO Auto-generated method stub
+			return false;
 		}
 
 	
