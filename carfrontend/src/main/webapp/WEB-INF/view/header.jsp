@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="cat" %>
+     <%@page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,42 +25,19 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#"></a></li>
-                 <li><a href="#"></a></li>
-                 
-                <li class="dropdown">
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#">Hatchback<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Renault</a></li>
-                        <li><a href="#">Maruti</a></li>
-                        <li><a href="#">Datsun</a></li>
-                        <li><a href="#">Tata</a></li>
-                        <li><a href="#">Hyundai</a></li>
-                        <li><a href="#">Other</a></li>
+                
+                <ul class="dropdown-menu"></ul>
+                 <c:forEach items="${categoryList}" var="c">
+                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/CategoryByID/${c.catType }">${c.catType }</a></li>
+                          </c:forEach>
+                        
+          <c:forEach items="${brandList}" var="cat">
+                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/BrandByID/${cat.brandId}">${cat.brandId}</a></li>
+                        <ul class="dropdown-menu"></ul>
+                        </c:forEach>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#">Sedan<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Maruti </a></li>
-                        <li><a href="#">Renault</a></li>
-                        <li><a href="#">Tata</a></li>
-                        <li><a href="#">Datsun</a></li>
-                        <li><a href="#">Hyundai</a></li>
-                        <li><a href="#">other</a></li>
-                       
-                    </ul>
-                </li>
-                 <li class="dropdown">
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#">SUV<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Maruti</a></li>
-                        <li><a href="#">Ford</a></li>
-                        <li><a href="#">Mahindra</a></li>
-                        <li><a href="#">Tata</a></li>
-                        <li><a href="#">Renault</a></li>
-                        <li><a href="#">other</a></li>
-                    </ul>
-                </li>
+                
                 <li class="dropdown">
                     <a class="dropdown-toggle"  data-toggle="dropdown" href="#">Rental <span class="caret"></span></a>
                     <ul class="dropdown-menu">

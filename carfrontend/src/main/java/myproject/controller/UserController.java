@@ -23,18 +23,16 @@ public class UserController {
 	
 	public String addUser(@ModelAttribute("user")User c)
 	{
-		Billing bill;
-		Shipping ship;
+		
 	
 		if(c.getUserID()==null||c.getUserID().isEmpty())
 		{
 		userDao.addUser(c);
 		}
-		else 
+		else
 		{
 			userDao.updateUser(c);
 		}
-	
 		return "index";
 	}
 	 @RequestMapping(value="/updateUser/{userid}")
@@ -51,8 +49,7 @@ public class UserController {
 	   @RequestMapping(value="/deleteUser/{userid}")
 	  	public String deleteuser(@PathVariable("userid")String userid,Model model)
 	  	{
-
-	  		model.addAttribute("user",userDao.getUserById(userid));
+		   model.addAttribute("user",userDao.getUserById(userid));
 	  		userDao.deleteUser(userid);
 	   		model.addAttribute("userList",userDao.getAllUser());
 	   		return "redirect:/user";

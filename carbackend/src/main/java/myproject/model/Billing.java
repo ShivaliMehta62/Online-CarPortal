@@ -10,14 +10,15 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
-
+import java.io.Serializable;
 @Entity
 @Component
 
 @Table(name="Billing")
 
-public class Billing {
+public class Billing implements Serializable{
 	@Id
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
 	private int billingAddressId;

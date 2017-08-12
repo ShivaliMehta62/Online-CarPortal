@@ -27,14 +27,15 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 </c:if>
  </div>
     <div class="form-group">
-      <sh:label  path="catName"> Name:</sh:label>
+      <sh:label  path="catName">Car Name:</sh:label>
       <sh:input class="form-control"  path="catName" placeholder="Enter your name" />
     </div>
-    <div class="form-group">
-      <sh:label  path="catType">Description</sh:label>
-      <sh:input class="form-control"  path="catType" placeholder="Enter your name" />
+      <div class="form-group">
+      <sh:label  path="catType">Car category</sh:label>
+      <sh:input class="form-control"  path="catType" placeholder="Enter car type" />
     </div>
     
+
     
    
      

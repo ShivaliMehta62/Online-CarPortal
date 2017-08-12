@@ -45,7 +45,7 @@
     <form:label path="apartNo">Apartment No.</form:label>
     </td>
     <td>
-    <form:input path="apartNo" name="bill.apartno" id="apartNo"  />
+    <form:input path="bill.apartNo" name="apartno" id="apartNo"  />
     </td>
     </tr>
     
@@ -54,7 +54,7 @@
     <form:label path="address">Street Name</form:label>
     </td>
     <td>
-    <form:input path="streetName" name="bill.streetName" id="streetName" placeholder="W 123 Street" />
+    <form:input path="bill.streetName" name="streetName" id="streetName" placeholder="W 123 Street" />
     </td>
     </tr>
     <tr>
@@ -62,7 +62,7 @@
     <form:label path="zipcode">Zipcode</form:label>
     </td>
     <td>
-    <form:input path="zipcode" name="bill.zipcode" id="zipcode" />
+    <form:input path="bill.zipcode" name="bill.zipcode" id="zipcode" />
     </td>
     </tr>
      <tr>
@@ -70,7 +70,7 @@
     <form:label path="city">City</form:label>
     </td>
     <td>
-    <form:input path="city" name="bill.city" id="city" />
+    <form:input path="bill.city" name="city" id="city" />
     </td>
     </tr>
     <tr>
@@ -78,7 +78,7 @@
     <form:label path="country">Country</form:label>
     </td>
     <td>
-    <form:input path="country" name="bill.country" id="country" />
+    <form:input path="bill.country" name="country" id="country" />
     </td>
     </tr>
     
@@ -88,7 +88,7 @@
     <form:label path="apartNo">Apartment No.</form:label>
     </td>
     <td>
-    <form:input path="apartNo" name="bill.apartno" id="apartNo"  />
+    <form:input path="ship.apartNo" name="apartno" id="apartNo"  />
     </td>
     </tr>
     
@@ -97,7 +97,7 @@
     <form:label path="address">Street Name</form:label>
     </td>
     <td>
-    <form:input path="streetName" name="bill.streetName" id="streetName" placeholder="W 123 Street" />
+    <form:input path="ship.streetName" name="streetName" id="streetName" placeholder="W 123 Street" />
     </td>
     </tr>
     <tr>
@@ -105,7 +105,7 @@
     <form:label path="zipcode">Zipcode</form:label>
     </td>
     <td>
-    <form:input path="zipcode" name="bill.zipcode" id="zipcode" />
+    <form:input path="ship.zipcode" name="zipcode" id="zipcode" />
     </td>
     </tr>
      <tr>
@@ -113,7 +113,7 @@
     <form:label path="city">City</form:label>
     </td>
     <td>
-    <form:input path="city" name="bill.city" id="city" />
+    <form:input path="ship.city" name="city" id="city" />
     </td>
     </tr>
     <tr>
@@ -121,7 +121,7 @@
     <form:label path="country">Country</form:label>
     </td>
     <td>
-    <form:input path="country" name="bill.country" id="country" />
+    <form:input path="bill.country" name="country" id="country" />
     </td>
     </tr>
     

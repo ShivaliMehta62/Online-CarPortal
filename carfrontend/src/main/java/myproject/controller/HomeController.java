@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import myproject.dao.Branddao;
 import myproject.dao.CategoryDao;
 import myproject.dao.ProductDao;
+import myproject.dao.UserDao;
 import myproject.model.Brand;
 import myproject.model.Category;
 import myproject.model.Product;
+import myproject.model.User;
 
 	@Controller
 	public class HomeController {
@@ -20,10 +22,12 @@ import myproject.model.Product;
           ProductDao productDao;
           @Autowired
           Branddao brandDao;
+          @Autowired
+          UserDao userDao;
 		@RequestMapping("/")
-		public String home()
+		public String home(Model model)
 		{
-			
+			model.addAttribute("categoryList",categoryDao.getAllCategory());
 			return "index";
 		}
 		
@@ -61,8 +65,7 @@ import myproject.model.Product;
 		@RequestMapping("/register")
 		public String Register(Model model)
 		{
-			model.addAttribute("userList",categoryDao.getAllCategory());
-			model.addAttribute("user",new Category());
+						model.addAttribute("user",new User());
 			return "register";
 			
 		}

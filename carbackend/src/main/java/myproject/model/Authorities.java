@@ -12,6 +12,7 @@ public class Authorities {
     private int authoritiesId;
     private String username;
     private String authority;
+    
 	public int getAuthoritiesId() {
 		return authoritiesId;
 	}

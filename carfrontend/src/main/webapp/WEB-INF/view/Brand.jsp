@@ -54,7 +54,7 @@ Brand Description  <sp:input path="brandType"/>
 <c:if test="${not empty brandList}">
 <table width="50%" border="1">
 <tr>
-<th>ID</th><th>Brand Name</th><th>Brand Description</th><th>Brand Rating</th><th>CategoryID</th><th>Action</th>
+<th>Brand ID</th><th>Brand Name</th><th>Brand Description</th><th>CategoryID</th><th>Action</th>
 </tr>
 <tr>
 <c:forEach items="${brandList}" var="c">
