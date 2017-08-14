@@ -8,140 +8,184 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form id="regForm" modelAttribute="user" action="registerProcess" method="post">
- <table align="center">
- <p>User Details</p>
-  <tr>
-   <td>
-   <p>User Details</p>
-    <form:label path="username">Name</form:label>
-     </td> 
-     <td> 
-     <form:input path="username" name="username" id="username" /> 
-    </td>
-    </tr>
-     
-       <tr> 
-     <td>
-  <form:label path="phone">Phone</form:label>
-     </td>
-   <td>
- <form:input path="phone" name="phone" id="phone" />
-   </td>
-   </tr>
-  
+<form class="form-horizontal" action='' method="POST">
+  <fieldset>
+    <div id="legend">
+      <legend class="">Register</legend>
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="username">Username</label>
+      <div class="controls">
+        <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+        <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="email">E-mail</label>
+      <div class="controls">
+        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+        <p class="help-block">Please provide your E-mail</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="password">Password</label>
+      <div class="controls">
+        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+        <p class="help-block">Password should be at least 4 characters</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+      <div class="controls">
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+        <p class="help-block">Please confirm password</p>
+      </div>
+    </div>
     
-       <tr> 
-         <td>
-     <form:label path="email">Email</form:label>
-         </td>
-          <td>
-      <form:input path="email" name="email" id="email" />
-        </td>
-       </tr>
-    <p>Pickup Address</p>
-    <tr>
-    <td>
-    <form:label path="apartNo">Apartment No.</form:label>
-    </td>
-    <td>
-    <form:input path="bill.apartNo" name="apartno" id="apartNo"  />
-    </td>
-    </tr>
+    <legend class="">Pick-up Address</legend>
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="bill.streetName">Street Name</label>
+      <div class="controls">
+        <input type="text" id="bill.streetName" name="bill.streetName" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="bill.apartNo">Apartment No.</label>
+      <div class="controls">
+        <input type="text" id="bill.apartNo" name="bill.apartNo" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="bill.city">City</label>
+      <div class="controls">
+        <input type="text" id="bill.city" name="bill.city" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="bill.state">State</label>
+      <div class="controls">
+        <input type="text" id="bill.state" name="bill.state" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="bill.country">Country</label>
+      <div class="controls">
+        <input type="text" id="bill.country" name="bill.country" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
     
-    <tr>
-    <td>
-    <form:label path="address">Street Name</form:label>
-    </td>
-    <td>
-    <form:input path="bill.streetName" name="streetName" id="streetName" placeholder="W 123 Street" />
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <form:label path="zipcode">Zipcode</form:label>
-    </td>
-    <td>
-    <form:input path="bill.zipcode" name="bill.zipcode" id="zipcode" />
-    </td>
-    </tr>
-     <tr>
-    <td>
-    <form:label path="city">City</form:label>
-    </td>
-    <td>
-    <form:input path="bill.city" name="city" id="city" />
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <form:label path="country">Country</form:label>
-    </td>
-    <td>
-    <form:input path="bill.country" name="country" id="country" />
-    </td>
-    </tr>
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="bill.zipcode">Zipcode</label>
+      <div class="controls">
+        <input type="text" id="bill.zipcode" name="bill.zipcode" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
     
-    <p>Drop-down Address</p>
-     <tr>
-    <td>
-    <form:label path="apartNo">Apartment No.</form:label>
-    </td>
-    <td>
-    <form:input path="ship.apartNo" name="apartno" id="apartNo"  />
-    </td>
-    </tr>
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="bill.zipcode">Zipcode</label>
+      <div class="controls">
+        <input type="text" id="bill.zipcode" name="bill.zipcode" placeholder="" class="input-xlarge">
+             </div>
+    </div>
+ 
+ 
+ 
+ <legend class="">Pick-up Address</legend>
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="bill.streetName">Street Name</label>
+      <div class="controls">
+        <input type="text" id="bill.streetName" name="bill.streetName" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="bill.apartNo">Apartment No.</label>
+      <div class="controls">
+        <input type="text" id="bill.apartNo" name="bill.apartNo" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="bill.city">City</label>
+      <div class="controls">
+        <input type="text" id="bill.city" name="bill.city" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="bill.state">State</label>
+      <div class="controls">
+        <input type="text" id="bill.state" name="bill.state" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="bill.country">Country</label>
+      <div class="controls">
+        <input type="text" id="bill.country" name="bill.country" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
     
-    <tr>
-    <td>
-    <form:label path="address">Street Name</form:label>
-    </td>
-    <td>
-    <form:input path="ship.streetName" name="streetName" id="streetName" placeholder="W 123 Street" />
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <form:label path="zipcode">Zipcode</form:label>
-    </td>
-    <td>
-    <form:input path="ship.zipcode" name="zipcode" id="zipcode" />
-    </td>
-    </tr>
-     <tr>
-    <td>
-    <form:label path="city">City</form:label>
-    </td>
-    <td>
-    <form:input path="ship.city" name="city" id="city" />
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <form:label path="country">Country</form:label>
-    </td>
-    <td>
-    <form:input path="bill.country" name="country" id="country" />
-    </td>
-    </tr>
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="bill.zipcode">Zipcode</label>
+      <div class="controls">
+        <input type="text" id="bill.zipcode" name="bill.zipcode" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
     
-    <tr>
-   <td>
-   </td>
-  <td> 
-    <form:button id="register" name="register">Register</form:button>
-    </td>
-   </tr>
-   <tr>
-    </tr> 
-      <tr>
-     <td>
-     </td> 
-      <td>
-    
-       </td>
-       </tr>
-        </table>
-      </form:form>
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label"  for="bill.zipcode">Zipcode</label>
+      <div class="controls">
+        <input type="text" id="bill.zipcode" name="bill.zipcode" placeholder="" class="input-xlarge">
+       
+      </div>
+    </div>
+ 
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success">Register</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
 </body>
 </html>

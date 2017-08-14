@@ -1,9 +1,15 @@
 package myproject.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+@Entity
+@Component
+@Table(name="Shipping")
 
 public class Shipping {
 
@@ -20,16 +26,10 @@ public class Shipping {
 
 	
 
-	@OneToOne
-	private User users;
 	
 	
-	public User getUsers() {
-		return users;
-	}
-	public void setUsers(User users) {
-		this.users = users;
-	}
+	
+	
 	public int getShippingAddressId() {
 		return ShippingAddressId;
 	}

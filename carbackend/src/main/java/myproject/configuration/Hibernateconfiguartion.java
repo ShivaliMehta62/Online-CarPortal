@@ -24,7 +24,7 @@ public class Hibernateconfiguartion {
 	{
 		BasicDataSource dataSource=new BasicDataSource();
 		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:tcp://localhost/~/my7");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/bin");
 		dataSource.setUsername("project");
 		dataSource.setPassword("h2");
 		return dataSource;

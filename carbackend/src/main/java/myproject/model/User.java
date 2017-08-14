@@ -2,52 +2,55 @@ package myproject.model;
 
 
 
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
+
+
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
+
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+
 import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class User {
+public class User implements Serializable{
 	
-	
+	 private static final long  serialVersionUID=1L;
 
 	@Id
    
 	private String userID;
 	@Column(unique=true)
 	private String userName;
-	public Billing getBill() {
-		return bill;
-	}
-	public void setBill(Billing bill) {
-		this.bill = bill;
-	}
 	private String userEmail;
 	private String userPassword;
 	private boolean Active;
 	
 	@OneToOne
 	@JoinColumn(name="billingAddressId")
-	Billing bill;
-	@OneToOne
-	@JoinColumn(name="shippingAddressId")
-	Shipping ship;
+	 private Billing bill;
+	
+	public Billing getBill() {
+		return bill;
+	}
+	public void setBill(Billing bill) {
+		this.bill = bill;
+	}
+	
 	public String getUserID() {
 		return userID;
 	}
+	@OneToOne
+	@JoinColumn(name="ShippingAddressId")
+	private Shipping ship;
 	public Shipping getShip() {
 		return ship;
 	}

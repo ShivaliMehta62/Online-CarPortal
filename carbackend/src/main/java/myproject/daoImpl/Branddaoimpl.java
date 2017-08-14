@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import myproject.dao.Branddao;
 import myproject.model.Brand;
-import myproject.model.Category;
+
 
 @Repository("brandDao")
 @Transactional
