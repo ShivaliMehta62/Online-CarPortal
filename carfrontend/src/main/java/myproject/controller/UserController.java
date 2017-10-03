@@ -1,15 +1,12 @@
-package myproject.controller;
+package myproject.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import myproject.dao.UserDao;
-import myproject.model.Billing;
+import myproject.Dao.UserDao;
 import myproject.model.User;
 
 @Controller
@@ -19,23 +16,17 @@ public class UserController {
 	UserDao userDao;
 	User u=new User();
 	
-	@RequestMapping(value="/addUser",method=RequestMethod.POST)
+	@RequestMapping(value="/save",method=RequestMethod.POST)
 	
 	public String addUser(@ModelAttribute("user")User c)
 	{
 		
-	
-		if(c.getUserID()==null||c.getUserID().isEmpty())
-		{
-		userDao.addUser(c);
-		}
-		else
-		{
-			userDao.updateUser(c);
-		}
-		return "index";
+	userDao.save(c);
+		
+	return 	"Register";
 	}
-	 @RequestMapping(value="/updateUser/{userid}")
+	
+/*	 @RequestMapping(value="/updateUser/{userid}")
 	   public String updateuser(@PathVariable("userid")String userid,Model model)
 		{
 
@@ -46,7 +37,7 @@ public class UserController {
 			
 			}
 	   
-	   @RequestMapping(value="/deleteUser/{userid}")
+	 @RequestMapping(value="/deleteUser/{userid}")
 	  	public String deleteuser(@PathVariable("userid")String userid,Model model)
 	  	{
 		   model.addAttribute("user",userDao.getUserById(userid));
@@ -57,8 +48,9 @@ public class UserController {
 	  		
 	  		}
 }
-
-
+*/
+}
 	
 	
+
 

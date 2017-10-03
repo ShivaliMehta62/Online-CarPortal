@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import myproject.Dao.BrandDao;
 import myproject.Dao.CartDao;
+import myproject.Dao.CategoryDao;
 import myproject.Dao.ProductDao;
 import myproject.Dao.UserDao;
 import myproject.model.Cart;
@@ -35,7 +37,14 @@ public class CartController {
 	
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private CategoryDao categoryDao;
 
+	@Autowired
+	private BrandDao brandDao;
+	
+	
 	@Autowired
 	private ProductDao productDao;
 	
@@ -43,7 +52,7 @@ public class CartController {
 	private HttpSession session;
 
 	@RequestMapping("/all")
-	public String getCart() {
+	public String getCart(Model model) {
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
@@ -51,6 +60,9 @@ public class CartController {
 		session.setAttribute("numberProducts", cartDao.getNumberOfProducts(loggedInUsername));
 		session.setAttribute("cartList", cartDao.getCartList(loggedInUsername));
 		session.setAttribute("totalAmount", cartDao.getTotalAmount(loggedInUsername));
+		model.addAttribute("categoryList",categoryDao.getAllCategory());
+		model.addAttribute("brandList", brandDao.getAllBrands());
+		model.addAttribute("productList",productDao.getAllProduct());
 		return "Cart";
 	}
 
@@ -92,6 +104,7 @@ public class CartController {
 			} else {
 				System.out.println("first time product is going to add");
 				cart.setQuantity(1);
+				System.out.println(cart.getQuantity());
 				boolean flag = cartDao.save(cart);
 
 				if (flag) {

@@ -1,35 +1,30 @@
-package myproject.daoImpl;
-
+package myproject.DaoImpl;
 
 import java.util.List;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import myproject.dao.CategoryDao;
+import myproject.Dao.CategoryDao;
 import myproject.model.Category;
 
 @Repository("categoryDao")
 @Transactional
-public  class CategoryDaoImpl implements CategoryDao {
-
+public class CategoryDaOImpl implements CategoryDao {
 	@Autowired
  	SessionFactory sessionFactory;
 
 	public boolean addCategory(Category c) {
 
  		Session s=sessionFactory.getCurrentSession();
- 		c.setCatId(c.getCatName());
  		s.persist(c);
  		return true;
 		
 	}
 
-	public boolean deleteCategory(String catid) {
+	public boolean deleteCategory(int catid) {
 		
 	Session s=sessionFactory.getCurrentSession();
 	Category c =(Category)s.load(Category.class, catid);
@@ -49,18 +44,27 @@ public  class CategoryDaoImpl implements CategoryDao {
 		 Session s=sessionFactory.getCurrentSession();
 		Query q= s.createQuery("from Category");
 		List<Category> l= q.list();
-		
 		return l;
 	}
 
 
-	public Category getCategoryById(String catid) {
+	
+
+	public Category getCategoryById(int catid) {
 		Session s=sessionFactory.getCurrentSession();
 		Query<Category> g=s.createQuery("from Category where catId=?");
 		g.setParameter(0,catid);
 		Category mq=(Category)g.getSingleResult();
 		return  mq;
+		
 	}
+
+	
+	
+	
+
+	
+	
 
 	
 

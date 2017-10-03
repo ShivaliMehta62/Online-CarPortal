@@ -3,14 +3,20 @@ package myproject.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
 
 @Entity
+@Component
+@Table(name="Authority")
 public class Authorities {
 
 	@Id
     @GeneratedValue
     private int authoritiesId;
     private String username;
+   
     private String authority;
     
 	public int getAuthoritiesId() {

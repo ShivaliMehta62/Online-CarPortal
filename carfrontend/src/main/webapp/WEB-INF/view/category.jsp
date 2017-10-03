@@ -20,7 +20,6 @@
 <body>
 <div class="container">
 <sh:form action="${pageContext.request.contextPath}/addCategory" method="POST" modelAttribute="category">
-
 <c:if test="${not empty category.catName}">
 ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <sh:hidden path="catId"/>
@@ -34,14 +33,8 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
       <sh:label  path="catType">Car category</sh:label>
       <sh:input class="form-control"  path="catType" placeholder="Enter car type" />
     </div>
-    
-
-    
-   
-     
-    
 		 <sh:button type="submit" class="btn btn-default">Submit</sh:button>
-   </sh:form>
+  </sh:form>
 </div>
  
 
@@ -51,10 +44,8 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <table border=1 class="table table-striped" >
 <thead>
       <tr>
-      <th>Name</th>
-     
-      
-      <th>Car Description</th>
+      <th>Car Name</th>
+  		<th>Car Description</th>
       <th>edit</th>
       <th>delete</th>
       </tr>
@@ -63,9 +54,7 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <c:forEach items="${categoryList}" var="cat">
 <tr>
 <td>${cat.catName}</td>
-
 <td>${cat.catType }</td>
-
 <td><a href="<c:url value='updateCategory/${cat.catId}'/>">Edit</a></td>
 <td><a href="<c:url value='deleteCategory/${cat.catId}'/>">Delete</a></td>
 </tr>

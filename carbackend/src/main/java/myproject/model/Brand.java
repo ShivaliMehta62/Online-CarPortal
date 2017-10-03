@@ -6,7 +6,8 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,8 +22,8 @@ import org.springframework.stereotype.Component;
 public class Brand {
     
 	@Id
-	
-	private String brandId;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int brandId;
 	private String brandType;
 	private String brandName;
 	private String catrn;
@@ -51,11 +52,9 @@ public class Brand {
 	public void setW(Set<Product> w) {
 		this.w = w;
 	}
-	public String getBrandId() {
+	
+	public int getBrandId() {
 		return brandId;
-	}
-	public void setBrandId(String brandId) {
-		this.brandId = brandId;
 	}
 	public String getBrandType() {
 		return brandType;
@@ -68,6 +67,9 @@ public class Brand {
 	}
 	public void setBrandName(String brandName) {
 		this.brandName = brandName;
+	}
+	public void setBrandId(int brandId) {
+		this.brandId = brandId;
 	}
 
 	

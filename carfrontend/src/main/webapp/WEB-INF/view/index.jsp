@@ -20,7 +20,7 @@
     
     </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="Header.jsp"></jsp:include>
 <br>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   
@@ -41,7 +41,7 @@
     </div>
     
     <div class="item">
-      <img src="Resources/carrental/car1.jpg" class="img-responsive" width="460" height="345">
+      <img src="resources/carrental/car1.jpg"  width="460" height="345">
       <div class="container">
         <div class="carousel-caption">
           
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="Resources/carrental/car2.jpg"  width="460" height="345">
+      <img src="resources/carrental/car2.jpg"  width="460" height="345">
       <div class="container">
         <div class="carousel-caption">
           
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="Resources/carrental/car3.jpg"  width="460" height="345">
+      <img src="resources/carrental/car3.jpg"  width="460" height="345">
       <div class="container">
         <div class="carousel-caption">
           
@@ -65,7 +65,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="Resources/carrental/car4.jpg" width="460" height="345">
+      <img src="resources/carrental/car4.jpg" width="460" height="345">
       <div class="container">
         <div class="carousel-caption">
           
@@ -73,7 +73,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="Resources/carrental/car5.jpg"  width="460" height="345">
+      <img src="resources/carrental/car5.jpg"  width="460" height="345">
       <div class="container">
         <div class="carousel-caption">
           

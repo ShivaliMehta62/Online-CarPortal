@@ -16,15 +16,15 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-image">
-                    <img class="img-responsive" src="http://www.euro-mat.com/wp-content/uploads/2017/01/products.jpg">
+                    <img class="img-responsive" src="">
                 </div>
                 
                 <div class="card-content">
-                    <p>Add Product Corresponding To Brand By Clicking Me</p>
+                    <p>Add Car Corresponding To Brand By Clicking Me</p>
                 </div>
                 
                 <div class="card-action">
-                     <a href="${pageContext.request.contextPath }/admin/Product">Product</a>
+                     <a href="${pageContext.request.contextPath }/admin/Product">Car</a>
                 </div>
             </div>
         
@@ -32,7 +32,7 @@
        
             <div class="card">
                 <div class="card-image">
-                    <img class="img-responsive" src="https://www.emotivebrand.com/wp-content/uploads/2016/09/tumblr_o05v3eZmyT1ugn1wu_og_1280.png">
+                    <img class="img-responsive" src="">
                 </div>
                 
                 <div class="card-content">
@@ -48,7 +48,7 @@
  
             <div class="card">
                 <div class="card-image">
-                    <img class="img-responsive" src="http://material-design.storage.googleapis.com/publish/v_2/material_ext_publish/0Bx4BSt6jniD7TDlCYzRROE84YWM/materialdesign_introduction.png"/>
+                    <img class="img-responsive" src=""/>
                 </div>
                 
                 <div class="card-content">

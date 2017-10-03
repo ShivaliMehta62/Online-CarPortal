@@ -1,4 +1,5 @@
-package myproject.controller;
+package myproject.Controller;
+
 
 import java.io.FileOutputStream;
 
@@ -14,28 +15,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import myproject.dao.Branddao;
-import myproject.dao.ProductDao;
+import myproject.Dao.BrandDao;
+import myproject.Dao.ProductDao;
 
 import myproject.model.Product;
 
 @Controller
-public class Productcontroller {
+public class ProductController {
 
 
 	@Autowired
 	ProductDao productDao;
 	@Autowired
-	Branddao brandDao;
+	BrandDao brandDao;
 	
 	@RequestMapping(value="/addProduct",method=RequestMethod.POST )
 	
 	public String addproduct(@ModelAttribute("product")Product p, HttpSession session)
 	{
-		if(p.getProRn()==null||p.getProRn().isEmpty())
+		if(p.getProRn()==0)
 		{
+			
+			
 		productDao.addProduct(p);
-		
 		MultipartFile mp=p.getImage();
 		System.out.println(mp.getOriginalFilename());
 		ServletContext context=session.getServletContext();
@@ -52,23 +54,24 @@ public class Productcontroller {
 		catch(Exception e){}
 		
 		}
+		
 		else
 		{
 			productDao.updateProduct(p);
 		}
 		return "redirect:/product";
 	}	
-   @RequestMapping(value="/updateProduct/{prorn}",method=RequestMethod.GET)
-	public String updateproduct(@PathVariable("prorn")String prorn,Model model)
+   @RequestMapping(value="/updateProduct/{productId}",method=RequestMethod.GET)
+	public String updateproduct(@PathVariable("productId")int prorn,Model model)
 	{
 		model.addAttribute("product",productDao.getProductById(prorn));
-		model.addAttribute("brandlist",brandDao.getAllBrands());
+		model.addAttribute("brandList",brandDao.getAllBrands());
 		model.addAttribute("productList",productDao.getAllProduct());
 		return "product";
 		}
    
-   @RequestMapping(value="/deleteProduct/{prorn}",method=RequestMethod.GET)
-  	public String deleteproduct(@PathVariable("prorn")String prorn,Model model)
+   @RequestMapping(value="/deleteProduct/{productId}",method=RequestMethod.GET)
+  	public String deleteproduct(@PathVariable("productId")int prorn,Model model)
   	{
   		model.addAttribute("product",productDao.getProductById(prorn));
   		productDao.deleteProduct(prorn);

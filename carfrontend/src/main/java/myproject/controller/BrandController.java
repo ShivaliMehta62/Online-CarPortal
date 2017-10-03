@@ -1,4 +1,6 @@
-package myproject.controller;
+package myproject.Controller;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,8 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import myproject.dao.Branddao;
-import myproject.dao.CategoryDao;
+import myproject.Dao.BrandDao;
+import myproject.Dao.CategoryDao;
 import myproject.model.Brand;
 
 
@@ -18,7 +20,7 @@ public class BrandController {
 
 	
 	@Autowired
-	Branddao brandDao;
+	BrandDao brandDao;
 	@Autowired
 	CategoryDao categoryDao;
 	@RequestMapping(value="/Brandadd",method=RequestMethod.POST)
@@ -27,7 +29,7 @@ public class BrandController {
 	
 	{
 		System.out.println("brand");
-		if(b.getBrandId()==null||b.getBrandId().isEmpty())
+		if(b.getBrandId()==0)
 		{
 			brandDao.Brandadd(b);
 		}
@@ -35,29 +37,29 @@ public class BrandController {
 		{
 			brandDao.updateBrand(b);
 		}
-		return "redirect:/Brand";
+		return "redirect:/Product";
 		
 		
 	}
 @RequestMapping(value="/updateBrand/{brandID}")
 	
-	public String updateBrand(@PathVariable("brandId")String brID,Model model)
+	public String updateBrand(@PathVariable("brandId")int brID,Model model)
 	{
 	    model.addAttribute("brand",brandDao.getBrandByID(brID));
 	    model.addAttribute("categoryList",categoryDao.getAllCategory());
 		model.addAttribute("brandList", brandDao.getAllBrands());
-		return "Brand";
+		return "redirect:/Product";
 	}
 @RequestMapping(value="/deleteBrand/{brandID}")
 
-public String deleteProduct(@PathVariable("brandID")String brID,Model model)
+public String deleteProduct(@PathVariable("brandID")int brID,Model model)
 {
     
 	model.addAttribute("brand",brandDao.getBrandByID(brID));
 	brandDao.deleteBrand(brID);
 	
 	model.addAttribute("brandList",brandDao.getAllBrands());
-	return "Brand";
+	return "redirect:/Product";
 }
 	
 }

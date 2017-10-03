@@ -156,7 +156,7 @@ progress::-moz-progress-bar {
            
        			     <div class=" col-md-3" style="margin:20px;">
                     		<div class="card w3-animate-opacity" >
-                    			<a href="${pageContext.request.contextPath }/ProductCard/${c.brandID }" value="${ c.categoryID}" style="display:block;"><img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/images/${c.brandID}.jpg"></a>
+                    			<a href="${pageContext.request.contextPath }/ProductCard/${c.brandID }" value="${ c.catType}" style="display:block;"><img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/images/${c.brandID}.jpg"></a>
                     				<div class="card-block">
                         				<h5 class="text-bold w3-animate-opacity">${c.brandName}</h5>
                 					</div>
@@ -270,5 +270,6 @@ $(document).ready(function(){
       }      
   });
   
-});</script>
+});
+</script>
 </html>

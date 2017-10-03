@@ -1,11 +1,9 @@
 package myproject.model;
 
-
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -24,7 +22,12 @@ public class Product {
 
 	//private static final String DegenarationType = null;
 	@Id
-	private String proRn;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int proRn;
+	public void setProRn(int proRn) {
+		this.proRn = proRn;
+	}
+
 	@Column(name="Product_name")
 	private String proNm;
 	private String proCost;
@@ -68,11 +71,9 @@ public class Product {
 	
 	@Transient
 	MultipartFile image;
-	public String getProRn() {
+	
+	public int getProRn() {
 		return proRn;
-	}
-	public void setProRn(String proRn) {
-		this.proRn = proRn;
 	}
 	public String getProNm() {
 		return proNm;

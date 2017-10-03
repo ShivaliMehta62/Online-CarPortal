@@ -1,17 +1,13 @@
 package myproject.model;
 
-
-
-
-
-
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
-
-
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
@@ -26,18 +22,21 @@ public class User implements Serializable{
 	 private static final long  serialVersionUID=1L;
 
 	@Id
-   
-	private String userID;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int userID;
 	@Column(unique=true)
 	private String userName;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	private String userEmail;
 	private String userPassword;
 	private boolean Active;
 	
-	@OneToOne
-	@JoinColumn(name="billingAddressId")
-	 private Billing bill;
-	
+	@OneToOne(mappedBy="user" ,fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private Shipping ship;
+	@OneToOne(mappedBy="user" ,fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private Billing bill;
 	public Billing getBill() {
 		return bill;
 	}
@@ -45,19 +44,20 @@ public class User implements Serializable{
 		this.bill = bill;
 	}
 	
-	public String getUserID() {
-		return userID;
-	}
-	@OneToOne
-	@JoinColumn(name="ShippingAddressId")
-	private Shipping ship;
+	
+	
 	public Shipping getShip() {
 		return ship;
 	}
 	public void setShip(Shipping ship) {
 		this.ship = ship;
 	}
-	public void setUserID(String userID) {
+	
+	
+	public int getUserID() {
+		return userID;
+	}
+	public void setUserID(int userID) {
 		this.userID = userID;
 	}
 	public String getUserName() {
