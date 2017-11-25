@@ -17,10 +17,12 @@ import myproject.model.Product;
 
 public class ProductDaoImpl implements ProductDao {
 
-	public List<Product> getProductByBrandId(int brandId) {
+	public List<Product> getProductByCategoryId(int catId) {
 		Session s1 =sessionFactory.getCurrentSession();
-		Query q = s1.createQuery("from Product where brandID=?");
-		q.setInteger(0,brandId);
+		@SuppressWarnings("rawtypes")
+		Query q = s1.createQuery("from Product where catId=?");
+		q.setInteger(0,catId);
+		@SuppressWarnings("unchecked")
 	    List<Product> pro = (List<Product>)q.getResultList();
 	    return pro;
 	}
@@ -69,6 +71,11 @@ public boolean deleteProduct(Product p) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+public List<Product> getProductByBrandId(int brandId) {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 	
 

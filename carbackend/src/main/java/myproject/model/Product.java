@@ -22,7 +22,7 @@ public class Product {
 
 	//private static final String DegenarationType = null;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	//@GeneratedValue(strategy=GenerationType.AUTO)
 	private int proRn;
 	public void setProRn(int proRn) {
 		this.proRn = proRn;
@@ -36,20 +36,27 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name="brandid" , insertable=false, nullable=false, updatable=false)
 	
-			private Brand brand;
+			private Category category;
 	
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	public String getBrandid() {
 		return brandid;
 	}
 	public void setBrandid(String brandid) {
 		this.brandid = brandid;
 	}
-	public Brand getBrand() {
+	/*public Brand getBrand() {
 		return brand;
 	}
 	public void setBrand(Brand brand) {
 		this.brand = brand;
 	}
+	*/
 	public String getProCost() {
 		return proCost;
 	}

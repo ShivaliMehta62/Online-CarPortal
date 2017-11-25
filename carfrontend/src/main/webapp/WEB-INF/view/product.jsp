@@ -30,13 +30,6 @@ Product Name  <sp:input path="proNm"/>
 Product Description  <sp:input path="proType"/>
 Product Cost <sp:input path="proCost"/>
 Choose Image <sp:input type="file" path="image" />
-<sp:select path="brandid">
-<c:forEach items ="${brandList}" var="c">
-
-<sp:option value="${ c.brandId}">${c.brandName}</sp:option>
-
-</c:forEach>
-</sp:select>
 
 
 
@@ -56,7 +49,7 @@ Choose Image <sp:input type="file" path="image" />
 <c:if test="${not empty productList}">
 <table width="50%" border="1">
 <tr>
-<th>ID</th><th>Product Name</th><th>Product Description</th><th>Product Cost</th><th>Brand ID</th><th>Image</th><th>Action</th>
+<th>ID</th><th>Product Name</th><th>Product Description</th><th>Product Cost</th><th>Category ID</th><th>Image</th><th>Action</th>
 </tr>
 <tr>
 <c:forEach items="${productList}" var="c">

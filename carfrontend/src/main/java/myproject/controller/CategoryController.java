@@ -1,5 +1,9 @@
 package myproject.Controller;
 
+
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import myproject.Dao.BrandDao;
 import myproject.Dao.CategoryDao;
 import myproject.model.Category;
 
@@ -18,8 +23,10 @@ public class CategoryController
 	
 	@Autowired
 	CategoryDao categoryDao;
+	@Autowired
+	BrandDao brandDao;
 	
-	@RequestMapping(value="/addCategory",method=RequestMethod.POST )
+	@RequestMapping(value="/addCategory",method=RequestMethod.POST  )
 	
 	public String addcategory(@ModelAttribute("category")Category c)
 	{
@@ -31,17 +38,18 @@ public class CategoryController
 		{
 			categoryDao.updateCategory(c);
 		}
-		return "redirect:/Brand";
+		return "redirect:/Product";
 		
 	}
 	
    @RequestMapping(value="/updateCategory/{catid}")
    public String updatecategory(@PathVariable("catid")int catid,Model model)
 	{
-
+	   
 		model.addAttribute("category",categoryDao.getCategoryById(catid));
 		model.addAttribute("categoryList",categoryDao.getAllCategory());
-		return "redirect:/Brand";
+		 model.addAttribute("brandList",brandDao.getAllBrands());
+		return "redirect:/Product";
 
 		
 		}
@@ -51,11 +59,12 @@ public class CategoryController
   	{
 
   		model.addAttribute("category",categoryDao.getCategoryById(catid));
-  		categoryDao.deleteCategory(catid);
+  		//categoryDao.deleteCategory(catid);
    		model.addAttribute("categoryList",categoryDao.getAllCategory());
-   		return "redirect:/Brand";
+   		return "redirect:/Product";
 
   		
   		}
 
+   
 }

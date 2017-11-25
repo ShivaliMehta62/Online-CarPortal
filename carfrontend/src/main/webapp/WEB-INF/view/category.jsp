@@ -26,17 +26,25 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 </c:if>
  </div>
     <div class="form-group">
-      <sh:label  path="catName">Car Name:</sh:label>
+      <sh:label  path="catName">Car Name:</sh:label>\
       <sh:input class="form-control"  path="catName" placeholder="Enter your name" />
     </div>
       <div class="form-group">
       <sh:label  path="catType">Car category</sh:label>
       <sh:input class="form-control"  path="catType" placeholder="Enter car type" />
     </div>
-		 <sh:button type="submit" class="btn btn-default">Submit</sh:button>
+		
+<sh:select path="brnds">
+<sh:option value="select">----SELECT---</sh:option>
+<c:forEach items ="${brandList}" var="c">
+
+<sh:option value="${c.brandName}"></sh:option>
+
+</c:forEach>
+</sh:select> 
+ <sh:button type="submit" class="btn btn-default">Submit</sh:button>
   </sh:form>
 </div>
- 
 
 <div class="container">
    
@@ -46,6 +54,8 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
       <tr>
       <th>Car Name</th>
   		<th>Car Description</th>
+  		
+  	
       <th>edit</th>
       <th>delete</th>
       </tr>
@@ -55,6 +65,7 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <tr>
 <td>${cat.catName}</td>
 <td>${cat.catType }</td>
+<td>${cat.brnds}</td>
 <td><a href="<c:url value='updateCategory/${cat.catId}'/>">Edit</a></td>
 <td><a href="<c:url value='deleteCategory/${cat.catId}'/>">Delete</a></td>
 </tr>

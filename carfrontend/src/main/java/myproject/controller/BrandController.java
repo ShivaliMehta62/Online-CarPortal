@@ -29,7 +29,7 @@ public class BrandController {
 	
 	{
 		System.out.println("brand");
-		if(b.getBrandId()==0)
+		if(b.getBrandId()==null)
 		{
 			brandDao.Brandadd(b);
 		}
@@ -37,7 +37,7 @@ public class BrandController {
 		{
 			brandDao.updateBrand(b);
 		}
-		return "redirect:/Product";
+		return "redirect:/Category";
 		
 		
 	}
@@ -46,9 +46,8 @@ public class BrandController {
 	public String updateBrand(@PathVariable("brandId")int brID,Model model)
 	{
 	    model.addAttribute("brand",brandDao.getBrandByID(brID));
-	    model.addAttribute("categoryList",categoryDao.getAllCategory());
-		model.addAttribute("brandList", brandDao.getAllBrands());
-		return "redirect:/Product";
+	   	model.addAttribute("brandList", brandDao.getAllBrands());
+		return "redirect:/Category";
 	}
 @RequestMapping(value="/deleteBrand/{brandID}")
 
@@ -57,9 +56,8 @@ public String deleteProduct(@PathVariable("brandID")int brID,Model model)
     
 	model.addAttribute("brand",brandDao.getBrandByID(brID));
 	brandDao.deleteBrand(brID);
-	
 	model.addAttribute("brandList",brandDao.getAllBrands());
-	return "redirect:/Product";
+	return "redirect:/Category";
 }
 	
 }

@@ -13,6 +13,11 @@ import myproject.model.Category;
 @Repository("categoryDao")
 @Transactional
 public class CategoryDaOImpl implements CategoryDao {
+	public boolean deleteCategory(Category c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	@Autowired
  	SessionFactory sessionFactory;
 
@@ -40,9 +45,9 @@ public class CategoryDaOImpl implements CategoryDao {
 	return true;
 	}
 
-	public List<Category> getAllCategory() {
+	public List<Category> getAllCategory(String catType) {
 		 Session s=sessionFactory.getCurrentSession();
-		Query q= s.createQuery("from Category");
+		Query q= s.createQuery(" from Category");
 		List<Category> l= q.list();
 		return l;
 	}
@@ -59,14 +64,12 @@ public class CategoryDaOImpl implements CategoryDao {
 		
 	}
 
-	
-	
-	
+	public List<Category> getAllCategory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	
-	
-
-	
+		
 
 	
  	}

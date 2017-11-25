@@ -28,14 +28,10 @@
                 
                 <li class="dropdown">
               <a href="${pageContext.request.contextPath }/BrandCard/" class="dropdown-toggle" data-toggle="dropdown">CARS<b class="caret"></b></a>
-              <ul class="dropdown-menu  w3-hoverable">
-             <c:forEach items="${categoryList}" var="c">
-                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/CategoryByID/${c.catType }">${c.catType }</a></li>
-                          </c:forEach>      
-             
+                   
               <ul class="dropdown-menu w3-hoverable">
                <c:forEach items="${brandList}" var="cat">
-                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/CategoryByID/BrandByID/${cat.brandId}">${cat.brandId}</a></li>
+                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/BrandByCategoryID/${cat.brandId}">${cat.brandId}</a></li>
                         <ul class="dropdown-menu"></ul>
                         </c:forEach>
               </ul>
@@ -47,10 +43,10 @@
                           </c:forEach>
                            -->
                         
-          <c:forEach items="${brandList}" var="cat">
+         <!--  <c:forEach items="${brandList}" var="cat">
                     <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/BrandByID/${cat.brandId}">${cat.brandId}</a></li>
                         <ul class="dropdown-menu"></ul>
-                        </c:forEach>
+                        </c:forEach> -->
                     </ul>
                 </li>
                  </ul>
@@ -62,8 +58,9 @@
                    <sec:authorize access="hasRole('ROLE_ADMIN')" >
                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin <span class="caret"></span></a>
                    <ul class="dropdown-menu">
-                    <li><a href="Category"><span class="glyphicon glyphicon-log-in"></span> Category</a></li>
+                    
                     <li><a href="Brand"><span class="glyphicon glyphicon-log-in"></span> Brand</a></li>
+                    <li><a href="Category"><span class="glyphicon glyphicon-log-in"></span>Category</a></li>
                          <li><a href="Product"><span class="glyphicon glyphicon-log-in"></span> Product</a></li>
                     </ul>
                     
@@ -89,17 +86,9 @@
                          <li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li> 
                    		<li><a href="${pageContext.request.contextPath}/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
          </sec:authorize>   
-                  
-              
-                
-               
-           
+        
     
-    
-    
-    
-    
-</nav>
+    </nav>
 
 </body>
 </html>

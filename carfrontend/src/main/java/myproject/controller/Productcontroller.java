@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import myproject.Dao.BrandDao;
+import myproject.Dao.CategoryDao;
 import myproject.Dao.ProductDao;
 
 import myproject.model.Product;
@@ -28,6 +29,8 @@ public class ProductController {
 	ProductDao productDao;
 	@Autowired
 	BrandDao brandDao;
+	@Autowired
+	CategoryDao categoryDao;
 	
 	@RequestMapping(value="/addProduct",method=RequestMethod.POST )
 	
@@ -59,24 +62,24 @@ public class ProductController {
 		{
 			productDao.updateProduct(p);
 		}
-		return "redirect:/product";
+		return "redirect:/index";
 	}	
-   @RequestMapping(value="/updateProduct/{productId}",method=RequestMethod.GET)
+   @RequestMapping(value="/updateProduct/{productId}")
 	public String updateproduct(@PathVariable("productId")int prorn,Model model)
 	{
 		model.addAttribute("product",productDao.getProductById(prorn));
-		model.addAttribute("brandList",brandDao.getAllBrands());
+		model.addAttribute("categoryList",categoryDao.getAllCategory());
 		model.addAttribute("productList",productDao.getAllProduct());
-		return "product";
+		return "redirect:/index";
 		}
    
-   @RequestMapping(value="/deleteProduct/{productId}",method=RequestMethod.GET)
+   @RequestMapping(value="/deleteProduct/{productId}")
   	public String deleteproduct(@PathVariable("productId")int prorn,Model model)
   	{
   		model.addAttribute("product",productDao.getProductById(prorn));
   		productDao.deleteProduct(prorn);
   		model.addAttribute("productList",productDao.getAllProduct());
-  		return "product";
+  		return "redirect:/index";
   		}
 
 }

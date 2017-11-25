@@ -21,22 +21,15 @@
 <body>
 <br>
 <br>
- <sp:form action="${pageContext.request.contextPath}/Brandadd" method="POST" modelAttribute="brand">
+<sp:form action="${pageContext.request.contextPath}/Brandadd" method="POST" modelAttribute="brand">
 <c:if test="${not empty brand.brandName}">
 Brand ID    <sp:input path="brandId" readOnly="true" disabled="true"/>
 <sp:hidden path="brandId"/>
 </c:if>
 Brand Name  <sp:input path="brandName"/>
-Brand Description  <sp:input path="brandType"/>
+Brand Desciption  <sp:input path="brandType"/>
 
-<sp:select path="catrn">
-<sp:option value="select">----SELECT---</sp:option>
-<c:forEach items ="${categoryList}" var="c">
 
-<sp:option value="${ c.catId}">${c.catName}</sp:option>
-
-</c:forEach>
-</sp:select>
 
 
  <c:if test="${empty brand.brandName}">
@@ -54,7 +47,7 @@ Brand Description  <sp:input path="brandType"/>
 <c:if test="${not empty brandList}">
 <table width="50%" border="1">
 <tr>
-<th>Brand ID</th><th>Brand Name</th><th>Brand Description</th><th>CategoryID</th><th>Action</th>
+<th>Brand ID</th><th>Brand Name</th><th>Brand Description</th><th>Action</th>
 </tr>
 <tr>
 <c:forEach items="${brandList}" var="c">
@@ -63,7 +56,7 @@ Brand Description  <sp:input path="brandType"/>
 <td>${c.brandName}</td>
 <td>${c.brandType}</td>
 
-<td>${c.catrn}</td>
+
 <td><a href="<c:url value='updateBrand/${c.brandId}'/>">Edit/<a href="<c:url value='deleteBrand/${c.brandId}'/>">Delete</a></a>
 </tr>
 
