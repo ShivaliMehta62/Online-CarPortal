@@ -41,17 +41,17 @@ public class BrandController {
 		
 		
 	}
-@RequestMapping(value="/updateBrand/{brandID}")
+@RequestMapping(value="/updateBrand/{BrandById}")
 	
-	public String updateBrand(@PathVariable("brandId")int brID,Model model)
+	public String updateBrand(@PathVariable("brandId")String brID,Model model)
 	{
 	    model.addAttribute("brand",brandDao.getBrandByID(brID));
 	   	model.addAttribute("brandList", brandDao.getAllBrands());
 		return "redirect:/Category";
 	}
-@RequestMapping(value="/deleteBrand/{brandID}")
+@RequestMapping(value="/deleteBrand/{BrandById}")
 
-public String deleteProduct(@PathVariable("brandID")int brID,Model model)
+public String deleteProduct(@PathVariable("brandID")String brID,Model model)
 {
     
 	model.addAttribute("brand",brandDao.getBrandByID(brID));

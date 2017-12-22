@@ -32,8 +32,8 @@ import myproject.model.User;
 		@RequestMapping("/")
 		public String home(Model model)
 		{
-			model.addAttribute("categoryList",categoryDao.getAllCategory());
-			return "index";
+			model.addAttribute("brandList",brandDao.getAllBrands());
+						return "index";
 		}
 		
 
@@ -55,7 +55,7 @@ import myproject.model.User;
 			model.addAttribute("productList",productDao.getAllProduct());
 			model.addAttribute("brandList",brandDao.getAllBrands());
 			model.addAttribute("product",new Product());
-			return "Product";
+			return "index";
 			
 		}
 		@RequestMapping("/Brand")
@@ -92,25 +92,25 @@ import myproject.model.User;
 			return "login";
 		}
 		
-		/*@RequestMapping("/Logout")
+		@RequestMapping("/Logout")
 		public String Logout(Model model)
 		{
-			//model.addAttribute("categoryList",categoryDao.getAllCategory());
-			//model.addAttribute("brandList",brandDao.getAllBrands());
-			return "Logout";
+			return "login";
 		}
-		*/
 		
-		@RequestMapping("/BrandCard/{catType}")
-		public String BrandCard(@PathVariable("catType")Integer cat,Model model1)
-		{System.out.println("is going to retrieve brands corresponding to catType");
+		
+		@RequestMapping("/BrandByID/{brandId}")
+		public String BrandCard(@PathVariable("brandId") String brandId,Model model1)
+		{
+		System.out.println("is going to retrieve brands corresponding to catType");
 		model1.addAttribute("categoryList",categoryDao.getAllCategory());
 		model1.addAttribute("brandList",brandDao.getAllBrands());
-		model1.addAttribute("brandList1",brandDao.getBrandByID(cat));
+		model1.addAttribute("brandList1",brandDao.getBrandByID(brandId));
 			//model1.addAttribute("brandList",brandDao.getAllBrands());
 
-			return "BrandCard";
+			return "redirect:/index";
 		}
+		
 		@RequestMapping("/BrandCard")
 			
 			public String BrandCardAgain(Model model1)
@@ -118,7 +118,7 @@ import myproject.model.User;
 			model1.addAttribute("brandList",brandDao.getAllBrands());
 			return "BrandCard";
 			}		
-		
+	
 		@RequestMapping("/ProductDetail/{proRn}")
 		public String ProductDetail(@PathVariable("proRn")Integer pro,Model model)
 		{
@@ -136,13 +136,13 @@ import myproject.model.User;
 			model1.addAttribute("productList1",productDao.getProductById(pro));
 			return "ProductCard";
 		}
-		@RequestMapping("/AdminCard")
+		@RequestMapping("/adminHome")
 		
 		public String AdminCard(Model model)
 		{
-			model.addAttribute("categoryList",categoryDao.getAllCategory());
+		model.addAttribute("categoryList",categoryDao.getAllCategory());
 		model.addAttribute("brandList",brandDao.getAllBrands());
-		return "AdminCard";
+		return "adminhome";
 		}		
 	}
 		

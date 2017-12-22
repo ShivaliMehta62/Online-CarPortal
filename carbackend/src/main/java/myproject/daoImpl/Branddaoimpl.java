@@ -82,6 +82,16 @@ public class BrandDaoImpl implements BrandDao {
 		return false;
 	}
 
+	public boolean deleteBrand(String brandId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Brand getBrandByID(String brID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 
