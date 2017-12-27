@@ -37,7 +37,7 @@ Password<input name="password"/>
       <div class="row mar20" >
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="inner-section">
-          
+          <form action="logg" method="post">
             
                 
                 <div class="input-group">
@@ -62,14 +62,15 @@ Password<input name="password"/>
                   <input type="submit" value="login"class="btn btn-neutral btn-round btn-lg">
                  
                 </div>
+             </form>
               </div>
+              
              <c:if test="${not empty loggedInUserName }">
 				<div class="alert alert-danger">Enter Correct Details</div>
 			</c:if>
-            </form>
+            
           </div>
         </div>
       </div>
-    </div>
 </body>
 </html>

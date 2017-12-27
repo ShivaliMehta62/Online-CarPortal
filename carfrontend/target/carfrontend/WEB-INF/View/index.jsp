@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+      <%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="en">
 <head >
@@ -22,6 +23,9 @@
 <body>
 <jsp:include page="Header.jsp"></jsp:include>
 <br>
+<sec:authorize access="hasRole('ROLE_ADMIN')" >
+<jsp:forward page="/adminHome"></jsp:forward>
+</sec:authorize>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   
   <ol class="carousel-indicators">

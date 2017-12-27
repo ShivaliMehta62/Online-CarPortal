@@ -30,7 +30,7 @@ public class CategoryController
 	
 	public String addcategory(@ModelAttribute("category")Category c)
 	{
-		if(c.getCatId()==0)
+		if(c.getCatId()==null)
 		{
 		categoryDao.addCategory(c);
 		}
@@ -42,24 +42,24 @@ public class CategoryController
 		
 	}
 	
-   @RequestMapping(value="/updateCategory/{catid}")
-   public String updatecategory(@PathVariable("catid")int catid,Model model)
+   @RequestMapping(value="/updateCategory/{catbyid}")
+   public String updatecategory(@PathVariable("catbyid")String catid,Model model)
 	{
 	   
 		model.addAttribute("category",categoryDao.getCategoryById(catid));
 		model.addAttribute("categoryList",categoryDao.getAllCategory());
 		 model.addAttribute("brandList",brandDao.getAllBrands());
-		return "redirect:/Product";
+		return "Product";
 
 		
 		}
    
-   @RequestMapping(value="/deleteCategory/{catid}")
-  	public String deletecategory(@PathVariable("catid")int catid,Model model)
+   @RequestMapping(value="/deleteCategory/{catbyid}")
+  	public String deletecategory(@PathVariable("catbyid")String catid,Model model)
   	{
 
   		model.addAttribute("category",categoryDao.getCategoryById(catid));
-  		//categoryDao.deleteCategory(catid);
+  		categoryDao.deleteCategory(catid);
    		model.addAttribute("categoryList",categoryDao.getAllCategory());
    		return "redirect:/Product";
 

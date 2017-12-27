@@ -30,17 +30,17 @@ public class BrandDaoImpl implements BrandDao {
 		
 	}
 
-	public List<Brand> getBrandByCategoryID(int catId) {
+	public List<Brand> getBrandByCategoryID(String catId) {
 		Session s1 =sessionFactory.getCurrentSession();
 		@SuppressWarnings("rawtypes")
 		Query query=s1.createQuery("from Brand where categoryID=?");
-		query.setInteger(0,catId);
+		query.setString(0,catId);
 		@SuppressWarnings("unchecked")
 		List<Brand> listCatBrand=(List<Brand>)query.getResultList();
 		return listCatBrand;
 	}
 
-	public boolean deleteBrand(int brandId) {
+	public boolean deleteBrand(String brandId) {
 		Session s1= sessionFactory.getCurrentSession();
 		Brand b =(Brand)s1.load(Brand.class, brandId);
 		s1.delete(b);
@@ -62,14 +62,7 @@ public class BrandDaoImpl implements BrandDao {
 		
 	}
 
-	
-
-	private EntityManager getHibernateTemplate() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Brand getBrandByID(int brandId) {
+	public Brand getBrandByID(String brandId) {
 		Session s=sessionFactory.getCurrentSession();
 		Query<Brand> g=s.createQuery("from Brand where brandId=?");
 		g.setParameter(0,brandId);
@@ -77,21 +70,7 @@ public class BrandDaoImpl implements BrandDao {
 		return  mq;	
 	}
 
-	public boolean deleteBrand(Brand b) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean deleteBrand(String brandId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public Brand getBrandByID(String brID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	
 
 

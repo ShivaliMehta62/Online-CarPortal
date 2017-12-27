@@ -24,12 +24,13 @@ public class CategoryDaOImpl implements CategoryDao {
 	public boolean addCategory(Category c) {
 
  		Session s=sessionFactory.getCurrentSession();
+ 		c.setCatId(c.getCatName());
  		s.persist(c);
  		return true;
 		
 	}
 
-	public boolean deleteCategory(int catid) {
+	public boolean deleteCategory(String catid) {
 		
 	Session s=sessionFactory.getCurrentSession();
 	Category c =(Category)s.load(Category.class, catid);
@@ -55,7 +56,7 @@ public class CategoryDaOImpl implements CategoryDao {
 
 	
 
-	public Category getCategoryById(int catid) {
+	public Category getCategoryById(String catid) {
 		Session s=sessionFactory.getCurrentSession();
 		Query<Category> g=s.createQuery("from Category where catId=?");
 		g.setParameter(0,catid);

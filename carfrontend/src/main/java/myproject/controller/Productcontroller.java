@@ -69,8 +69,9 @@ public class ProductController {
 	{
 		model.addAttribute("product",productDao.getProductById(prorn));
 		model.addAttribute("categoryList",categoryDao.getAllCategory());
+		model.addAttribute("brandList",brandDao.getAllBrands());
 		model.addAttribute("productList",productDao.getAllProduct());
-		return "redirect:/index";
+		return "index";
 		}
    
    @RequestMapping(value="/deleteProduct/{productId}")

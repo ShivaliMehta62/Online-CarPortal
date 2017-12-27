@@ -1,11 +1,11 @@
 <%@include file="Header.jsp"%>
 <%@ page import="java.sql.*" %>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sp" %>  
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="sh" %>  
 <html>
 <head>
     <meta charset="utf-8">
@@ -26,12 +26,25 @@
 Product ID    <sp:input path="proRn" readOnly="true" disabled="true"/>
 <sp:hidden path="proRn"/>
 </c:if>
-Product Name  <sp:input path="proNm"/>
-Product Description  <sp:input path="proType"/>
-Product Cost <sp:input path="proCost"/>
-Choose Image <sp:input type="file" path="image" />
 
+Product Name  <sp:input path="proNm"/><t><t>
+Product Description  <sp:input path="proType"/><t><t>
+Product Cost <sp:input path="proCost"/><t><t>
+Choose Image <sp:input type="file" path="image" /><t><t>
 
+<sh:select path="brnds">
+<sh:option value="select">choose car brand</sh:option>
+<c:forEach items ="${brandList}" var="c">
+<sh:option value="${c.brandName}"></sh:option>
+</c:forEach>
+</sh:select>
+
+<sh:select path="category">
+<sh:option value="select">choose car category</sh:option>
+<c:forEach items ="${categoryList}" var="b">
+<sh:option value="${b.catType}"></sh:option>
+</c:forEach>
+</sh:select> 
 
 
  <c:if test="${empty product.proNm}">
@@ -49,11 +62,13 @@ Choose Image <sp:input type="file" path="image" />
 <c:if test="${not empty productList}">
 <table width="50%" border="1">
 <tr>
-<th>ID</th><th>Product Name</th><th>Product Description</th><th>Product Cost</th><th>Category ID</th><th>Image</th><th>Action</th>
+<th>ID</th><th>Product Name</th><th>Product Description</th><th>Product Cost</th><th>Category ID</th><th>Image</th><th>BrandList</th><th>CarType</th><th>Action</th>
 </tr>
 <tr>
 <c:forEach items="${productList}" var="c">
 <tr>
+<td>${c.brandName}</td>
+<td>${c.catType}</td>
 <td>${c.proRn}</td>
 <td>${c.proNm}</td>
 <td>${c.proType}</td>

@@ -54,8 +54,9 @@ import myproject.model.User;
 		{
 			model.addAttribute("productList",productDao.getAllProduct());
 			model.addAttribute("brandList",brandDao.getAllBrands());
+			model.addAttribute("categoryList",categoryDao.getAllCategory());
 			model.addAttribute("product",new Product());
-			return "index";
+			return "Product";
 			
 		}
 		@RequestMapping("/Brand")
@@ -106,7 +107,7 @@ import myproject.model.User;
 		model1.addAttribute("categoryList",categoryDao.getAllCategory());
 		model1.addAttribute("brandList",brandDao.getAllBrands());
 		model1.addAttribute("brandList1",brandDao.getBrandByID(brandId));
-			//model1.addAttribute("brandList",brandDao.getAllBrands());
+			
 
 			return "redirect:/index";
 		}
