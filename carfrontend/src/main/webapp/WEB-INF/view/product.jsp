@@ -27,10 +27,10 @@ Product ID    <sp:input path="proRn" readOnly="true" disabled="true"/>
 <sp:hidden path="proRn"/>
 </c:if>
 
-Product Name  <sp:input path="proNm"/><t><t>
-Product Description  <sp:input path="proType"/><t><t>
-Product Cost <sp:input path="proCost"/><t><t>
-Choose Image <sp:input type="file" path="image" /><t><t>
+Product Name  <sp:input path="proNm"/><t><t><t><t>
+Product Description  <sp:input path="proType"/><t><t><t><t>
+Product Cost <sp:input path="proCost"/><t><t><t><t>
+Choose Image <sp:input type="file" path="image" /><t><t><t><t>
 
 <sh:select path="brnds">
 <sh:option value="select">choose car brand</sh:option>

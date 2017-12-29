@@ -38,7 +38,7 @@ public class CategoryController
 		{
 			categoryDao.updateCategory(c);
 		}
-		return "redirect:/Product";
+		return "redirect:/Category";
 		
 	}
 	
@@ -49,7 +49,7 @@ public class CategoryController
 		model.addAttribute("category",categoryDao.getCategoryById(catid));
 		model.addAttribute("categoryList",categoryDao.getAllCategory());
 		 model.addAttribute("brandList",brandDao.getAllBrands());
-		return "Product";
+		return "Category";
 
 		
 		}
@@ -61,7 +61,7 @@ public class CategoryController
   		model.addAttribute("category",categoryDao.getCategoryById(catid));
   		categoryDao.deleteCategory(catid);
    		model.addAttribute("categoryList",categoryDao.getAllCategory());
-   		return "redirect:/Product";
+   		return "redirect:/Category";
 
   		
   		}

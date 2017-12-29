@@ -13,8 +13,8 @@ public interface CategoryDao {
 	public boolean addCategory(Category c);
 	public boolean deleteCategory(String catid);
 	public boolean updateCategory(Category c);
-	List<Category> getAllCategory();
-	Category getCategoryById(String catid);
+	public List<Category> getAllCategory();
+	public Category getCategoryById(String catid);
 	
 	
 	

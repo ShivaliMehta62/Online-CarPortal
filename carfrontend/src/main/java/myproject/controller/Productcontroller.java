@@ -62,7 +62,7 @@ public class ProductController {
 		{
 			productDao.updateProduct(p);
 		}
-		return "redirect:/index";
+		return "redirect:/Product";
 	}	
    @RequestMapping(value="/updateProduct/{productId}")
 	public String updateproduct(@PathVariable("productId")int prorn,Model model)
@@ -71,7 +71,7 @@ public class ProductController {
 		model.addAttribute("categoryList",categoryDao.getAllCategory());
 		model.addAttribute("brandList",brandDao.getAllBrands());
 		model.addAttribute("productList",productDao.getAllProduct());
-		return "index";
+		return "Product";
 		}
    
    @RequestMapping(value="/deleteProduct/{productId}")
@@ -80,7 +80,7 @@ public class ProductController {
   		model.addAttribute("product",productDao.getProductById(prorn));
   		productDao.deleteProduct(prorn);
   		model.addAttribute("productList",productDao.getAllProduct());
-  		return "redirect:/index";
+  		return "redirect:/Product";
   		}
 
 }

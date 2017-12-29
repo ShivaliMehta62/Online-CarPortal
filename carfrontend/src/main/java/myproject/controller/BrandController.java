@@ -37,7 +37,7 @@ public class BrandController {
 		{
 			brandDao.updateBrand(b);
 		}
-		return "redirect:/Category";
+		return "redirect:/Brand";
 		
 		
 	}
@@ -47,7 +47,7 @@ public class BrandController {
 	{
 	    model.addAttribute("brand",brandDao.getBrandByID(brID));
 	   	model.addAttribute("brandList", brandDao.getAllBrands());
-		return "Category";
+		return "Brand";
 	}
 @RequestMapping(value="/deleteBrand/{BrandById}")
 
@@ -57,7 +57,7 @@ public String deleteProduct(@PathVariable("BrandById")String brID,Model model)
 	model.addAttribute("brand",brandDao.getBrandByID(brID));
 	brandDao.deleteBrand(brID);
 	model.addAttribute("brandList",brandDao.getAllBrands());
-	return "redirect:/Category";
+	return "redirect:/Brand";
 }
 	
 }

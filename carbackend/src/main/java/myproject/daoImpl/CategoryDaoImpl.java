@@ -46,7 +46,7 @@ public class CategoryDaOImpl implements CategoryDao {
 	return true;
 	}
 
-	public List<Category> getAllCategory(String catType) {
+	public List<Category> getAllCategory() {
 		 Session s=sessionFactory.getCurrentSession();
 		Query q= s.createQuery(" from Category");
 		List<Category> l= q.list();
@@ -65,11 +65,7 @@ public class CategoryDaOImpl implements CategoryDao {
 		
 	}
 
-	public List<Category> getAllCategory() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 		
 
 	
