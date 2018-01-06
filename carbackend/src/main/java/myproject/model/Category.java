@@ -21,56 +21,70 @@ import javax.persistence.OneToMany;
 	@Component
 	@Table(name="Category")
 	public class Category {
-
-	public void setCatId(String catId) {
-			this.catId = catId;
-		}
 	
-	public String getBrnds() {
-		return brnds;
-	}
-	public void setBrnds(String brnds) {
-		this.brnds = brnds;
-	}
-
 	@Id
 	private String catId;
 	private String catName;
-	private String catType;
-    private String brnds;
-	@ManyToOne
+	private String catDesc;
+   	private String brnds;
+	
+   	@ManyToOne
 	@JoinColumn(name="brnds" , insertable=false, nullable=false, updatable=false)
 	
 			private Brand brand; 
 	
 	@OneToMany(mappedBy="category" ,fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
-	private Set<Product> w=new HashSet<Product>();
-	
-	public Brand getBrand() {
-		return brand;
-	}
-	public void setBrand(Brand brand) {
-		this.brand = brand;
-	}
-	public Set<Product> getW() {
-		return w;
-	}
-	public void setW(Set<Product> w) {
-		this.w = w;
-	}
+	private Set<Product> Allproduct=new HashSet<Product>();
+
 	public String getCatId() {
 		return catId;
 	}
+
+	public void setCatId(String catId) {
+		this.catId = catId;
+	}
+
 	public String getCatName() {
 		return catName;
 	}
+
 	public void setCatName(String catName) {
 		this.catName = catName;
 	}
-	public String getCatType() {
-		return catType;
+
+	public String getCatDesc() {
+		return catDesc;
 	}
-	public void setCatType(String catType) {
-		this.catType = catType;
+
+	public void setCatDesc(String catDesc) {
+		this.catDesc = catDesc;
 	}
+
+	public String getBrnds() {
+		return brnds;
+	}
+
+	public void setBrnds(String brnds) {
+		this.brnds = brnds;
+	}
+
+	public Brand getBrand() {
+		return brand;
+	}
+
+	public void setBrand(Brand brand) {
+		this.brand = brand;
+	}
+
+	public Set<Product> getAllproduct() {
+		return Allproduct;
+	}
+
+	public void setAllproduct(Set<Product> allproduct) {
+		Allproduct = allproduct;
+	}
+
+	
+	
+	
 	}

@@ -27,19 +27,36 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#"></a></li>
                 
+                
+                  
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${pageContext.request.contextPath }/showbrandcard/${cat.brandId}">CARS<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <c:forEach items="${brandList}" var="cat">
+            <li><a href="${pageContext.request.contextPath}/showbrandcard/${cat.brandId}">${cat.brandId}</a></li>
+          </c:forEach>
+        </ul>
+      </li>
+   
+    </ul>
+                
+                
+                
+                
+                <!--  
                 <li class="dropdown">
-              <a href="${pageContext.request.contextPath }/BrandByCategoryId/${cat.brandId}" class="dropdown-toggle" data-toggle="dropdown">CARS<b class="caret"></b></a>
+              <a href="${pageContext.request.contextPath }/showbrandcard/${cat.brandId}" class="dropdown-toggle" data-toggle="dropdown">CARS<b class="caret"></b></a>
                    
               <ul class="dropdown-menu w3-hoverable">
                <c:forEach items="${brandList}" var="cat">
-                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/BrandByID/${cat.brandId}">${cat.brandId}</a></li>
-                        <ul class="dropdown-menu"></ul>
+                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/showbrandcard/${cat.brandId}">${cat.brandId}</a></li>
+ 
                         </c:forEach>
               </ul>
+              -->
         
                <!--  <ul class="dropdown-menu"></ul>
                  <c:forEach items="${categoryList}" var="c">
-                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/CategoryByID/${c.catType }">${c.catType }</a></li>
+                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/CategoryByID/${c.catDesc }">${c.catDesc }</a></li>
                           </c:forEach>
                            -->
                         
@@ -91,4 +108,11 @@
     </nav>
 
 </body>
+
+
+
+
+
+
+
 </html>

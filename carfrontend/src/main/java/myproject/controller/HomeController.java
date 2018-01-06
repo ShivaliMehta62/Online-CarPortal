@@ -19,9 +19,9 @@ import myproject.model.User;
 
 	@Controller
 	public class HomeController {
-          @Autowired
+        
+		@Autowired
           CategoryDao categoryDao;
-
           @Autowired
           ProductDao productDao;
           @Autowired
@@ -100,25 +100,18 @@ import myproject.model.User;
 		}
 		
 		
-		@RequestMapping("/BrandByID/{brandId}")
-		public String BrandCard(@PathVariable("brandId") String brandId,Model model1)
+		@RequestMapping("/showbrandcard/{brandId}")
+		public String BrandCard(@PathVariable("brandId") String brandId,Model model)
 		{
 		System.out.println("is going to retrieve brands corresponding to catType");
-		model1.addAttribute("categoryList",categoryDao.getAllCategory());
-		model1.addAttribute("brandList",brandDao.getAllBrands());
-		model1.addAttribute("brandList1",brandDao.getBrandByID(brandId));
-			
+		//model.addAttribute("categoryList",categoryDao.getAllCategory());
+		model.addAttribute("productList",productDao.getProductByBrandId(brandId));
+		
 
-			return "redirect:/index";
+			return "Productcard";
 		}
 		
-		@RequestMapping("/BrandCard")
 			
-			public String BrandCardAgain(Model model1)
-			{
-			model1.addAttribute("brandList",brandDao.getAllBrands());
-			return "BrandCard";
-			}		
 	
 		@RequestMapping("/ProductDetail/{proRn}")
 		public String ProductDetail(@PathVariable("proRn")Integer pro,Model model)

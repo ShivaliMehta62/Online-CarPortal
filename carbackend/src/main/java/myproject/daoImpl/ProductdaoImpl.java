@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import myproject.Dao.ProductDao;
+import myproject.model.Brand;
 import myproject.model.Product;
 
 
@@ -37,9 +38,9 @@ public class ProductDaoImpl implements ProductDao {
 		return true;
 	}
 
-	public boolean deleteProduct(int prorn) {
+	public boolean deleteProduct(int proRn) {
 		Session s=sessionFactory.getCurrentSession();
-		Product p =(Product)s.load(Product.class, prorn);
+		Product p =(Product)s.load(Product.class, proRn);
 		s.delete(p);
 		return true;
 	}
@@ -59,27 +60,36 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	
-	public Product getProductById(int prorn) {
+	public Product getProductById(int proRn) {
 		Session s=sessionFactory.getCurrentSession();
 		Query<Product> h=s.createQuery("from Product where proRn=?");
-		h.setParameter(0,prorn);
+		h.setParameter(0,proRn);
 		Product p=(Product)h.getSingleResult();
 		return  p;
 	}
 
-public boolean deleteProduct(Product p) {
-		// TODO Auto-generated method stub
-		return false;
+	public List<Brand> getBrandByCategoryID(String catId) {
+		Session s1 =sessionFactory.getCurrentSession();
+		@SuppressWarnings("rawtypes")
+		Query query=s1.createQuery("from Brand where categoryID=?");
+		query.setString(0,catId);
+		@SuppressWarnings("unchecked")
+		List<Brand> listCatBrand=(List<Brand>)query.getResultList();
+		return listCatBrand;
+		
 	}
 
-public List<Product> getProductByBrandId(int brandId) {
-	// TODO Auto-generated method stub
-	return null;
+    public List<Product> getProductByBrandId(String brandId) {
+    Session s1= sessionFactory.getCurrentSession();
+    Query query = s1. createQuery("from Product where brandId=? ");
+    query.setString(0,brandId);
+    List<Product> listprod = query.getResultList();
+    return listprod;
 }
-
+}
 	
 
-}
+
 
 	
 	

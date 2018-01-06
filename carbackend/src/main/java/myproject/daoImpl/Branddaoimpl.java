@@ -63,6 +63,7 @@ public class BrandDaoImpl implements BrandDao {
 	}
 
 	public Brand getBrandByID(String brandId) {
+		
 		Session s=sessionFactory.getCurrentSession();
 		Query<Brand> g=s.createQuery("from Brand where brandId=?");
 		g.setParameter(0,brandId);
@@ -71,7 +72,16 @@ public class BrandDaoImpl implements BrandDao {
 	}
 
 	
-	
+	public Brand showbrandcard(String brandId)
+	{
+		 Session s=sessionFactory.getCurrentSession();
+		 Query<Brand> g=s.createQuery("from Brand where brandId=?");
+		g.setParameter(0,brandId);
+		Brand mq1=(Brand)g.getSingleResult();
+		return  mq1;	
+		
+		
+	}
 
 
 

@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +29,7 @@ public class Product {
 
 	//private static final String DegenarationType = null;
 	@Id
-	//@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int proRn;
 	public void setProRn(int proRn) {
 		this.proRn = proRn;
@@ -37,104 +39,94 @@ public class Product {
 	private String proNm;
 	private String proCost;
 	private String proType;
-	private String brandid;
-	private String brands;
-	
-	
-	 
-	
-	
+	private String categoryId; // this is for category
+	private String brandId; //<!-- this is for brand-->
+	private int quantity;
 	@ManyToOne
-	@JoinColumn(name="brandid", insertable=false, nullable=false, updatable=false)
+	@JoinColumn(name="categoryId", insertable=false, nullable=false, updatable=false)
 	private Category category;
 	
 	@ManyToOne
-	@JoinColumn(name="brands" , insertable=false, nullable=false, updatable=false)
-	private Brand brnds;
-	        
-	    
-	@OneToMany(mappedBy="brand" ,fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
-	private Set<Category> p=new HashSet<Category>();
-	    	
-	    	
-	@OneToMany(mappedBy="category" ,fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
-	    	private Set<Product> w=new HashSet<Product>();
-	    	
-	    	
- 	
-	
-	
-	public String getBrands() {
-				return brands;
-			}
-			public void setBrands(String brands) {
-				this.brands = brands;
-			}
-			
-			public Set<Category> getP() {
-				return p;
-			}
-			public void setP(Set<Category> p) {
-				this.p = p;
-			}
-			public Set<Product> getW() {
-				return w;
-			}
-			public void setW(Set<Product> w) {
-				this.w = w;
-			}
-	public Category getCategory() {
-		return category;
-	}
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-	public String getBrandid() {
-		return brandid;
-	}
-	public void setBrandid(String brandid) {
-		this.brandid = brandid;
-	}
-	
-	
-	public Brand getBrnds() {
-		return brnds;
-	}
-	public void setBrnds(Brand brnds) {
-		this.brnds = brnds;
-	}
-	public String getProCost() {
-		return proCost;
-	}
-	public void setProCost(String proCost) {
-		this.proCost = proCost;
-	}
-	public String getProType() {
-		return proType;
-	}
-	public void setProType(String proType) {
-		this.proType = proType;
-	}
-	public MultipartFile getImage() {
-		return image;
-	}
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
-	
+	@JoinColumn(name="brandId" , insertable=false, nullable=false, updatable=false)
+	private Brand brand;
+	        	    	
 	@Transient
 	MultipartFile image;
-	
-	public int getProRn() {
-		return proRn;
-	}
 	public String getProNm() {
 		return proNm;
 	}
+
 	public void setProNm(String proNm) {
 		this.proNm = proNm;
 	}
-	
+
+	public String getProCost() {
+		return proCost;
+	}
+
+	public void setProCost(String proCost) {
+		this.proCost = proCost;
+	}
+
+	public String getProType() {
+		return proType;
+	}
+
+	public void setProType(String proType) {
+		this.proType = proType;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getBrandId() {
+		return brandId;
+	}
+
+	public void setBrandId(String brandId) {
+		this.brandId = brandId;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public Brand getBrand() {
+		return brand;
+	}
+
+	public void setBrand(Brand brand) {
+		this.brand = brand;
+	}
+
+	public MultipartFile getImage() {
+		return image;
+	}
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+
+	public int getProRn() {
+		return proRn;
+	}
 	
 	
 	

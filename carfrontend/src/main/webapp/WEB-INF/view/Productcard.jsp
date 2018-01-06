@@ -157,7 +157,7 @@ progress::-moz-progress-bar {
                     <div class="card w3-animate-opacity" >
                     	<a href="${pageContext.request.contextPath }/ProductDetail/${c.proRn}" class="hidden-sm">	
                     	
-                    		 <img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/images/${c.productID}.jpg">
+                    		 <img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg">
                     				<div class="card-block">
                         				<h5 class="text-bold w3-animate-opacity">${c.proNm}</h5>
                 					</div>

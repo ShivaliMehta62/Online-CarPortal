@@ -21,8 +21,10 @@ public class BrandController {
 	
 	@Autowired
 	BrandDao brandDao;
+	
 	@Autowired
 	CategoryDao categoryDao;
+	
 	@RequestMapping(value="/Brandadd",method=RequestMethod.POST)
 	
 	public String addBrand(@ModelAttribute("brand")Brand b)
@@ -59,5 +61,16 @@ public String deleteProduct(@PathVariable("BrandById")String brID,Model model)
 	model.addAttribute("brandList",brandDao.getAllBrands());
 	return "redirect:/Brand";
 }
+
+//@RequestMapping(value="/showbrandcard/{ProductByBrandId}")
+
+ //public String showbrandcard(@PathVariable("ProductByBrandId")String brandId, Model model)
+ //{
 	
+	//model.addAttribute("brand", brandDao.getBrandByID(brandId));
+	//model.addAttribute("brandList",brandDao.getAllBrands());
+	//return "BrandCard";
+
+ //}
+
 }
