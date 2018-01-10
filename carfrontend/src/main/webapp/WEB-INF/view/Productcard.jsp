@@ -129,20 +129,12 @@ progress {
   /* Progress bar value for IE10+ */
   color: red;
 }
-progress::-webkit-progress-bar {
-  background-color: transparent;
-}
-progress::-webkit-progress-value {
-  background-color: red;
-}
-progress::-moz-progress-bar {
-  background-color: red;
-}
+
     </style>
 <title>Insert title here</title>
 </head>
 <body>
-<progress value="0" id="progressBar"></progress>
+<!--  <progress value="0" id="progressBar"></progress>-->
 <%@include file="/WEB-INF/View/Header.jsp"%>
 
 </head>
@@ -157,17 +149,45 @@ progress::-moz-progress-bar {
                     <div class="card w3-animate-opacity" >
                     	<a href="${pageContext.request.contextPath }/ProductDetail/${c.proRn}" class="hidden-sm">	
                     	
-                    		 <img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg">
-                    				<div class="card-block">
-                        				<h5 class="text-bold w3-animate-opacity">${c.proNm}</h5>
+                    		 <img class="card-img-top w3-animate-opacity" style="align-items:center;width:500px;height:400px;" src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg">
+                    				<div class="ratings">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+                    				<div class="row">
+                    				<div class="col-md-6 col-sm-6">
+                    		        <t><h4 class="text-bold w3-animate-opacity">${c.brandId}</h4></t>
+                    				    </div>
+                    				    <div class="col-md-4 col-sm-4">
+                    				    <t><h5 class="text-bold w3-animate-opacity">${c.categoryId}</h5></t>                     				
+                    				  </div>
+                    				  <div class="col-md-4 col-sm-4">
+                    				   <t> <h6 class="text-bold w3-animate-opacity">${c.quantity}</h6></t>
+                    				   </div>
+                    				  <!--   <div class="col-md-4 col-sm-4">
+                    				    <t><h6 class="text-bold w3-animate-opacity">${c.proNm}</h6></t>
+                    				    </div>-->
+                    				    <div class="col-md-4 col-sm-4">
+                    				    <t><h6 class="text-bold w3-animate-opacity">${c.proType}</h6></t>
+                    				    </div>
+                    				    <div class="col-md-6 col-sm-6">
+                    				    <t><h6 class="text-bold w3-animate-opacity">${c.proCost}</h6></t>
+                    				    </div>
+                    				    <div class="col-md-6 col-sm-6">
+      					               <t><button class="btn btn-success right" > BUY ITEM</button></t>
+      				                   </div>
                 					</div>
                 		</a>
-                            </div>
-
+      			       </div>
                      </div>
            </c:forEach>
        </div>
-</div>
+      
+        </div>
+
 </body>
 <script>
 $(document).ready(function(){
