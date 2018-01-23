@@ -1,5 +1,7 @@
 package myproject.Controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,12 +20,13 @@ public class UserController {
 	
 	@RequestMapping(value="/save",method=RequestMethod.POST)
 	
-	public String addUser(@ModelAttribute("user")User c)
+	public String addUser(@ModelAttribute("user")User c,Principal p)
 	{
-		
+		User user=new User();
+		user.setUserID(user.getUserID());
 	userDao.save(c);
 		
-	return 	"Register";
+	return 	"Cart";
 	}
 	
 /*	 @RequestMapping(value="/updateUser/{userid}")

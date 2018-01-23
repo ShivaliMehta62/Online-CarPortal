@@ -27,6 +27,16 @@ public class ProductController {
 
 	@Autowired
 	ProductDao productDao;
+	@RequestMapping(value="/updateProduct/{productId}")
+	public String updateproduct(@PathVariable("productId")int prorn,Model model)
+	{
+		model.addAttribute("product",productDao.getProductById(prorn));
+		model.addAttribute("categoryList",categoryDao.getAllCategory());
+		model.addAttribute("brandList",brandDao.getAllBrands());
+		model.addAttribute("productList",productDao.getAllProduct());
+		return "Product";
+		}
+
 	@Autowired
 	BrandDao brandDao;
 	@Autowired
@@ -64,16 +74,6 @@ public class ProductController {
 		}
 		return "redirect:/Product";
 	}	
-   @RequestMapping(value="/updateProduct/{productId}")
-	public String updateproduct(@PathVariable("productId")int prorn,Model model)
-	{
-		model.addAttribute("product",productDao.getProductById(prorn));
-		model.addAttribute("categoryList",categoryDao.getAllCategory());
-		model.addAttribute("brandList",brandDao.getAllBrands());
-		model.addAttribute("productList",productDao.getAllProduct());
-		return "Product";
-		}
-   
    @RequestMapping(value="/deleteProduct/{productId}")
   	public String deleteproduct(@PathVariable("productId")int prorn,Model model)
   	{

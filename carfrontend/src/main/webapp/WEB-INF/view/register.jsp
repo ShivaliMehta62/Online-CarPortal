@@ -57,7 +57,9 @@
       	 <sp:input path="ship.zipcode" id="location6" type="text" placeholder="Pin Code" required="required" class="input pass"/>
       	 <br>
       	 <br>
-      	  <input type="checkbox" id="name" onclick="copyValue(this)"  > Same Address?Just Click Me    
+      	 <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)"> 
+      	 <em>Same Address?Just Click Me</em> 
+      	     
       	<br>
       	<br>
       	<br>
@@ -94,26 +96,24 @@
    </div>
    </div>
    <script>
-$(function(){
-    $('#name').change(function(){
-    var newVal=$("#location1").val();
-    var newVall=$("#location2").val();
-    var newValll=$("#location3").val();
-    var newVallll=$("#location4").val();
-    var newValllll=$("#location5").val();
-    var newVallllll=$("#location6").val();
-       if (this.checked) {
-        $("#location7").val(newVal);
-        $("#location8").val(newVall);
-        $("#location9").val(newValll);
-        $("#location10").val(newVallll);
-        $("#location11").val(newValllll);
-        $("#location12").val(newVallllll);
-       
-       
-       }
-    });
-});
-</script>
+   
+   function FillBilling(f) {
+	   if(f.billingtoo.checked == true) {
+	     f.ship.streetName.value = f.bill.streetName.value;
+	     f.ship.apartNo.value = f.bill.apartNo.value;
+	     f.ship.state.value = f.bill.state.value;
+	     f.ship.apartNo.value = f.bill.apartNo.value;
+	     f.ship.country.value = f.bill.country.value;
+	     f.ship.zipcode.value = f.bill.zipcode.value;
+	   }
+	 }
+   
+   </script>
+  
+
+
+
+
+
    </body>
 </html>

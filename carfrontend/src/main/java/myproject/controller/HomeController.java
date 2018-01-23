@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import myproject.Dao.BrandDao;
+//import myproject.Dao.CartDao1;
 import myproject.Dao.CategoryDao;
 import myproject.Dao.ProductDao;
 import myproject.Dao.UserDao;
@@ -28,6 +29,10 @@ import myproject.model.User;
           BrandDao brandDao;
           @Autowired
           UserDao userDao;
+          
+         
+          
+          
           
 		@RequestMapping("/")
 		public String home(Model model)
@@ -75,7 +80,6 @@ import myproject.model.User;
 			Shipping ship = new Shipping();
 			Billing bill = new Billing();
 			User user=new User();
-			
 			user.setShip(ship);
 			user.setBill(bill);
 			
@@ -111,25 +115,34 @@ import myproject.model.User;
 			return "Productcard";
 		}
 		
-			
-	
-		@RequestMapping("/ProductDetail/{proRn}")
+		
+		/*@RequestMapping("/add/{id}")
+		public String Cart(@PathVariable("id") Model model,int id)
+		{
+			model.addAttribute("productList",productDao.getAllProduct());
+			model.addAttribute("cartList",cartDao1.getCartByID(id));
+			return "Cart";
+		}
+		*/
+		@RequestMapping("/productDetail/{proRn}")
 		public String ProductDetail(@PathVariable("proRn")Integer pro,Model model)
 		{
 			model.addAttribute("brand",brandDao.getAllBrands());
 			model.addAttribute("categoryList",categoryDao.getAllCategory());
-			model.addAttribute("productList1",productDao.getProductById(pro));
+			model.addAttribute("productList",productDao.getProductById(pro));
 			model.addAttribute("pro",productDao.getAllProduct());
-			return "ProductDetail";
+			return "ProductDetails";
 		}
-		@RequestMapping("/ProductCard/{proRn}")
-		public String product(@PathVariable("proRn")Integer pro,Model model1)
-		{
-			model1.addAttribute("brandList",brandDao.getAllBrands());
-			model1.addAttribute("productList",productDao.getAllProduct());
-			model1.addAttribute("productList1",productDao.getProductById(pro));
-			return "ProductCard";
-		}
+	
+		//@RequestMapping("/ProductCard/{proRn}")
+		//public String product(@PathVariable("proRn")Integer pro,Model model1)
+		//{
+			//model1.addAttribute("brandList",brandDao.getAllBrands());
+			//model1.addAttribute("productList",productDao.getAllProduct());
+			//model1.addAttribute("productList1",productDao.getProductById(pro));
+			//return "ProductCard";
+		//}
+		
 		@RequestMapping("/adminHome")
 		
 		public String AdminCard(Model model)

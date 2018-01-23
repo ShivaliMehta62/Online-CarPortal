@@ -86,6 +86,30 @@ public class ProductDaoImpl implements ProductDao {
     List<Product> listprod = query.getResultList();
     return listprod;
 }
+    
+    //public Product ProductDetail1(int proRn)
+    //{
+    	//Session s1=sessionFactory.getCurrentSession();
+    	//Query<Product> h=s1.createQuery("from Product where proRn=?");
+    	//h.setParameter(0,proRn);
+		//Product p=(Product)h.getSingleResult();
+		//return p;
+    
+    
+    public Brand showbrandcard1(int proRn)
+	{
+		 Session s=sessionFactory.getCurrentSession();
+		 Query<Brand> g=s.createQuery("from Product where brandId=?");
+		g.setParameter(0,proRn);
+		Brand mq1=(Brand)g.getSingleResult();
+		return  mq1;	
+			
+	}
+
+	
+    
+    
+    
 }
 	
 

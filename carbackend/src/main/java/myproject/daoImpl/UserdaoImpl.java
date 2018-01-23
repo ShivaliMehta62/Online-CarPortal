@@ -1,6 +1,8 @@
 package myproject.DaoImpl;
 
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
@@ -21,7 +23,7 @@ import myproject.model.User;
 
 public class UserDaoImpl implements UserDao {
 
-	public User userById(int id) {
+	/*public User userById(int id) {
 		try {
 			return (User) sessionFactory.getCurrentSession().get(User.class, id);
 		} catch (HibernateException e) {
@@ -31,10 +33,12 @@ public class UserDaoImpl implements UserDao {
 			
 		}
 	}
+	*/
 	public User usersById(int id) {
 		try {
 			@SuppressWarnings("rawtypes")
 			Query query = sessionFactory.getCurrentSession().createQuery("FROM User where userID=" + id);
+			
 			return (User) query.uniqueResult();
 		} catch (HibernateException e) {
 			
@@ -94,20 +98,25 @@ public class UserDaoImpl implements UserDao {
 			
 		}
 	}
-	public boolean update(User u) {
+	
+	/*public boolean update(User u) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	*/
 	@Autowired
 	SessionFactory sessionFactory;
 	User user = new User();
+	
 	@Autowired
 	UserDao userDao;
-		public boolean addUser(User u) {
-		/*	Session s1=sessionFactory.getCurrentSession();
-			s1.persist(u);
-			return true;*/
-			return false;
+	
+	public boolean addUser(User u) {
+			Session s1=sessionFactory.getCurrentSession();
+			u.setUserID(u.getUserName());
+	 		s1.persist(u);
+			return true;
+		
 		}
 		public boolean save(User u) {
 			Session session=sessionFactory.getCurrentSession();
@@ -131,14 +140,16 @@ public class UserDaoImpl implements UserDao {
 			query.executeUpdate();  
 			return true;
 		}
+		
 		public boolean updateUser(User u) {
 		Session s1 =sessionFactory.getCurrentSession();
-		String hql = "update User set userName ='"+u.getUserName()+"',userPass='"+u.getUserPass()+"'+userEmail='"+u.getUserEmail()+"' where userID='"+u.getUserID();
+		String hql = "update User set userName ='"+u.getUserName()+"',userPass='"+u.getClass()+"'+userEmail='"+u.getUserEmail()+"' where userID='"+u.getUserID();
 		Query<User> q = s1.createQuery(hql);
 		int a=q.executeUpdate();
 		System.out.println("Deleted: " +a+ " user(s)");
 			return true;
 		}
+		
 		public List<User> getAllUser() {
 			
 			Session s=sessionFactory.getCurrentSession();
@@ -146,13 +157,19 @@ public class UserDaoImpl implements UserDao {
 			List<User> list=query.getResultList(); 
 			return list;
 		}
+		*/
+		
 		public User getUserByID(Integer userID) {
+			
 			Session s1 =sessionFactory.getCurrentSession();
 			Query<User> q = s1.createQuery("from User where userID="+userID);
-		User	user = (User)q.getSingleResult();
-		return user;
-		}*/
+		  User user = (User)q.getSingleResult();
+		  return user;
+		}
 
+
+
+		
 	}
 	
 	

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -177,7 +177,10 @@ progress {
                     				    <t><h6 class="text-bold w3-animate-opacity">${c.proCost}</h6></t>
                     				    </div>
                     				    <div class="col-md-6 col-sm-6">
-      					               <t><button class="btn btn-success right" > BUY ITEM</button></t>
+      					               <t><button class="btn btn-success right"  > BUY ITEM</button></t>
+      				                   </div>
+      				                   <div class="col-md-6 col-sm-6">
+      					               <t><a href ="${pageContext.request.contextPath}/productDetail/${c.proRn}">More.... </a></t>
       				                   </div>
                 					</div>
                 		</a>

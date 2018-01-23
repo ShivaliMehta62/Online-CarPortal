@@ -2,12 +2,17 @@ package myproject.model;
 
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
@@ -23,6 +28,11 @@ public class UserOrder  implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
+	
+	/*@OneToOne
+	@JoinColumn(name="cart")
+	private Cart cart;
+	*/
 	@OneToOne
 	@JoinColumn(name = "userId")
 	private User user;
@@ -34,7 +44,7 @@ public class UserOrder  implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "shippingAddressId")
 	private Shipping ship;
-
+	
 	private String orderStatus;
 
 	public int getId() {
@@ -45,12 +55,19 @@ public class UserOrder  implements Serializable {
 		this.id = id;
 	}
 
-	
-
 	public User getUser() {
-		return user;
+	return user;
 	}
 
+	/*public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+
+*/
 	public void setUser(User user) {
 		this.user = user;
 	}

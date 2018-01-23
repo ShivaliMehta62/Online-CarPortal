@@ -42,6 +42,7 @@ public class Product {
 	private String categoryId; // this is for category
 	private String brandId; //<!-- this is for brand-->
 	private int quantity;
+	
 	@ManyToOne
 	@JoinColumn(name="categoryId", insertable=false, nullable=false, updatable=false)
 	private Category category;

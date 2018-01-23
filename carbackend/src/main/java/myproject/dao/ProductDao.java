@@ -11,6 +11,7 @@ public interface ProductDao {
 	boolean addProduct(Product p);
 	boolean deleteProduct(int proRn);
 	boolean updateProduct(Product p);
+	public Brand showbrandcard1(int proRn);
 	List<Product> getAllProduct();
 	Product getProductById(int proRn);
 	List<Product> getProductByBrandId(String brandId);

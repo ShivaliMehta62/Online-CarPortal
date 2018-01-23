@@ -8,14 +8,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     http://www.springframework.org/schema/security/spring-security.xsd">
  <http auto-config="true">
   <intercept-url pattern="/Cart/**" access="hasRole('ROLE_USER')" /> 
-  <intercept-url pattern="/myCart/**" access="hasRole('ROLE_USER')" /> 
- 
- 	<intercept-url pattern="/" access="permitAll" />
-		<intercept-url pattern="/index" access="permitAll" />
-	 
-
- 
-  <intercept-url pattern="/admin*" access="hasRole('ROLE_ADMIN')" /> 
+  	 <intercept-url pattern="/admin*" access="hasRole('ROLE_ADMIN')" /> 
   <form-login login-page="/login" username-parameter="name" password-parameter="password" login-processing-url="/logg" authentication-failure-url="/login" /> 
   <logout logout-url="/Logout" delete-cookies="true" logout-success-url="/login?Logout" /> 
   <csrf disabled="true" /> 

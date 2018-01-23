@@ -4,12 +4,7 @@ package myproject.Dao;
 
 import java.io.IOException;
 import java.util.List;
-
 import myproject.model.Cart;
-
-
-
-
 
 public interface CartDao {
 
