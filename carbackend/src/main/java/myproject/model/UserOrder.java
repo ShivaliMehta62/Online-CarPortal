@@ -25,14 +25,14 @@ public class UserOrder  implements Serializable {
 	//private static final long serialVersionUID = -6817737978600394223L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	
+	private String userorderId;
 
 	
-	/*@OneToOne
+	@OneToOne
 	@JoinColumn(name="cart")
 	private Cart cart;
-	*/
+	
 	@OneToOne
 	@JoinColumn(name = "userId")
 	private User user;
@@ -47,19 +47,21 @@ public class UserOrder  implements Serializable {
 	
 	private String orderStatus;
 
-	public int getId() {
-		return id;
+
+
+	public String getUserorderId() {
+		return userorderId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setUserorderId(String userorderId) {
+		this.userorderId = userorderId;
 	}
 
 	public User getUser() {
 	return user;
 	}
 
-	/*public Cart getCart() {
+	public Cart getCart() {
 		return cart;
 	}
 
@@ -67,7 +69,7 @@ public class UserOrder  implements Serializable {
 		this.cart = cart;
 	}
 
-*/
+
 	public void setUser(User user) {
 		this.user = user;
 	}

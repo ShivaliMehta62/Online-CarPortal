@@ -2,14 +2,13 @@ package myproject.model;
 
 
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -19,21 +18,76 @@ import org.springframework.stereotype.Component;
 
 public class Billing {
 	@Id
-	
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
 	private int billingAddressId;
-	private String streetName;
-	private String apartNo;
-	private String city;
-	private String state;
-	private String country;
-	private long zipcode;
-	
+	private String bstreetName;
+	private String bapartNo;
+	private String bcity;
+	private String bstate;
+	private String bcountry;
+	private long bzipcode;
 	
 	@OneToOne
-	@JoinColumn
-	 private User user;
+	private User user;
+
+	
+
+	public int getBillingAddressId() {
+		return billingAddressId;
+	}
+
+	public void setBillingAddressId(int billingAddressId) {
+		this.billingAddressId = billingAddressId;
+	}
+
+	public String getBstreetName() {
+		return bstreetName;
+	}
+
+	public void setBstreetName(String bstreetName) {
+		this.bstreetName = bstreetName;
+	}
+
+	public String getBapartNo() {
+		return bapartNo;
+	}
+
+	public void setBapartNo(String bapartNo) {
+		this.bapartNo = bapartNo;
+	}
+
+	public String getBcity() {
+		return bcity;
+	}
+
+	public void setBcity(String bcity) {
+		this.bcity = bcity;
+	}
+
+	public String getBstate() {
+		return bstate;
+	}
+
+	public void setBstate(String bstate) {
+		this.bstate = bstate;
+	}
+
+	public String getBcountry() {
+		return bcountry;
+	}
+
+	public void setBcountry(String bcountry) {
+		this.bcountry = bcountry;
+	}
+
+	public long getBzipcode() {
+		return bzipcode;
+	}
+
+	public void setBzipcode(long bzipcode) {
+		this.bzipcode = bzipcode;
+	}
+
 	public User getUser() {
 		return user;
 	}
@@ -41,50 +95,8 @@ public class Billing {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	public int getBillingAddressId() {
-		return billingAddressId;
-	}
 	
-	public void setBillingAddressId(int billingAddressId) {
-		this.billingAddressId = billingAddressId;
-	}
-	public String getStreetName() {
-		return streetName;
-	}
-	public void setStreetName(String streetName) {
-		this.streetName = streetName;
-	}
-	public String getApartNo() {
-		return apartNo;
-	}
-	public void setApartNo(String apartNo) {
-		this.apartNo = apartNo;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getState() {
-		return state;
-	}
-	public void setState(String state) {
-		this.state = state;
-	}
-	public String getCountry() {
-		return country;
-	}
-	public void setCountry(String country) {
-		this.country = country;
-	}
-	public long getZipcode() {
-		return zipcode;
-	}
-	public void setZipcode(long zipcode) {
-		this.zipcode = zipcode;
-	}
+
 	
 
 	

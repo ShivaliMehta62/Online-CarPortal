@@ -32,7 +32,7 @@
 			<div class="container-fliud">
 							<img src="${pageContext.request.contextPath }/resources/image/${productList.proRn}.jpg" style="width:500px;height:500px"/>
 					<div class="details col-md-6">
-						<h3 class="product-title">${productList.proNm}</h3>
+						<h3 class="product-title">${productList.categoryId}</h3>
 						<div class="rating">
 							<div class="stars">
 								<span class="fa fa-star checked"></span>
@@ -49,14 +49,10 @@
 						<h4 class="price">Our price: <span>&#8377; ${productList.proCost }</span></h4>
 						<p class="vote"><strong>96%</strong> of buyers enjoyed this product! <strong>(90 votes)</strong></p>
 						
-						<h5 class="colors">colors:
-							<span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-							<span class="color green"></span>
-							<span class="color blue"></span>
-						</h5>
+						
 						<div class="action">
 							<a class="add-to-cart btn btn-default" href="${pageContext.request.contextPath}/Cart/addToCart/${productList.proRn}">add to cart</a>
-							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+							
 						</div>
 					</div>
 				</div>
@@ -64,5 +60,6 @@
 			</div>
 			
 		</div>
+		
   </body>
 </html>

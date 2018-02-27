@@ -20,16 +20,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">CAR RENTALS</a>
+            <a class="navbar-brand" href="#" text-align="center">CAR RENTALS</a>
         </div>
         
-        <div class="collapse navbar-collapse" id="myNavbar">
+         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#"></a></li>
+               <!--  <li class="active"><a href="#"></a></li> -->
                 
-                
-                  
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${pageContext.request.contextPath }/showbrandcard/${cat.brandId}">CARS<span class="caret"></span></a>
+              
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${pageContext.request.contextPath }/showbrandcard/${cat.brandId}">Brands<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <c:forEach items="${brandList}" var="cat">
             <li><a href="${pageContext.request.contextPath}/showbrandcard/${cat.brandId}">${cat.brandId}</a></li>

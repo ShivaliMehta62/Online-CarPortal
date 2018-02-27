@@ -27,8 +27,7 @@
 		<div class="alert alert-success">${success}</div>
 	</c:if>
 	<c:if test="${empty cartList }">
-		<div class="alert alert-warning">You have not selected any car.
-			into cart.</div>
+		<div class="alert alert-warning">You have not selected any car yet</div>
 	</c:if>
 	<c:if test="${not empty error }">
 		<div class="alert alert-danger">${error }</div>
@@ -39,16 +38,19 @@
 				
 				<th>Car Name</th>
 				<th>Price</th>
-				<th>Car Description</th>
+				<th>Car quantity</th>
+				<th>Car description</th>
 				<th width="135">Actions</th>
 			</tr>
 		
-			<c:forEach items="${cartList}" var="cart">
-				<tr>
-				<td>${cart.productName}</td>
-					<td>&#8377 ${cart.price}</td>
-					<td>${cart.quantity }</td>
-					<td><a href="<c:url value='/myCart/deleteItem/${cart.cartID}'/>"> <span class="glyphicon glyphicon-trash"></span></a></td>
+<c:forEach items="${cartList}" var="cart">
+<tr>
+<td>${cart.productName}</td>
+<td>${cart.price}</td>
+<td>${cart.quantity}</td>
+<td>${cart.description}</td>
+					
+					<td><a href="<c:url value='/Cart/delete/${cart.productName}'/>"> <span class="glyphicon glyphicon-trash"></span></a></td>
 				</tr>
 			</c:forEach>
 			
@@ -61,7 +63,7 @@
 			
 			 <a href="<c:url value="/order"/>" class="btn btn-primary">Checkout</a>
 		</div>
-		<a href="<c:url value="/myCart/clearCart" />"
+		<a href="<c:url value="/Cart/clearCart" />"
 			class="btn btn-danger">Clear Cart</a>
 			<div style="text-align:center">
 		<a href="<c:url value="/" />"
@@ -72,5 +74,6 @@
 			
 		
 		</div>
+		
 </body>
 </html>

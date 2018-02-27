@@ -1,10 +1,9 @@
 package myproject.DaoImpl;
 
+
 import myproject.Dao.UserOrderDao;
 import myproject.model.User;
 import myproject.model.UserOrder;
-
-import org.hibernate.HibernateException;
 import java.util.List;
 import org.hibernate.query.Query;
 import org.hibernate.Session;
@@ -28,35 +27,43 @@ public class UserOrderDaoImpl implements UserOrderDao{
 		
 			Session session = sessionFactory.getCurrentSession();
 			User user= userOrder.getUser();
-			userOrder.setBill(user.getBill());
-			userOrder.setShip(user.getShip());
+			userOrder.setUserorderId(user.getUserID());
+			userOrder.setBill(user.getBilling());
+			userOrder.setShip(user.getShipping());
 			userOrder.setOrderStatus("Placed");
 			session.saveOrUpdate(userOrder);
 			session.saveOrUpdate(user);
-			session.saveOrUpdate(user.getBill());
-			session.saveOrUpdate(user.getShip());
-
+			session.saveOrUpdate(user.getBilling());
+			session.saveOrUpdate(user.getShipping());
 			return true;
 		
 	}
 
 	public List<UserOrder> getAllOrders() {
-		                                            //HQL
-			return sessionFactory.getCurrentSession().createQuery("FROM UserOrder").list();
-
-		
+		                        
+			Session s=sessionFactory.getCurrentSession();
+			Query q= s.createQuery(" from UserOrder");
+				List<UserOrder> l= q.list();
+				return l;
+				
 	}
 
-	public UserOrder getUserOrderById(int id) {
+	public UserOrder getUserOrderById(String userorderId) {
 		
-				return sessionFactory.getCurrentSession().get(UserOrder.class, id);
+				
+					
+				Session s=sessionFactory.getCurrentSession();
+				Query<UserOrder> g=s.createQuery("from UserOrder where userorderId=?");
+				g.setParameter(0,userorderId);
+				UserOrder mq=(UserOrder)g.getSingleResult();
+				return  mq;
 	}
 
 	
-	public int changeOrderStatus(int id, String status) {
+	public int changeOrderStatus(String userorderId, String status) {
 		
 			Query query = sessionFactory.getCurrentSession()
-					.createQuery("UPDATE UserOrder SET orderStatus = '" + status + "' where id = " + id);
+					.createQuery("UPDATE UserOrder SET orderStatus = '" + status + "' where userorderId = " + userorderId);
 			return query.executeUpdate();
 		
 }

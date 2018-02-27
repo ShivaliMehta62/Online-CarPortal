@@ -1,0 +1,7 @@
+myproject\Controller\BrandController.class
+myproject\Controller\CartController.class
+myproject\Controller\UserController.class
+myproject\Controller\HomeController.class
+myproject\Controller\CheckoutController.class
+myproject\Controller\ProductController.class
+myproject\Controller\CategoryController.class

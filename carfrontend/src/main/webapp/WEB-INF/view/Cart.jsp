@@ -61,7 +61,7 @@
 		<div class="pull-right">
 		
 			
-			 <a href="<c:url value="/Logout"/>" class="btn btn-primary">Checkout</a>
+			 <a href="<c:url value="/order"/>" class="btn btn-primary">Checkout</a>
 		</div>
 		<a href="<c:url value="/Cart/clearCart" />"
 			class="btn btn-danger">Clear Cart</a>

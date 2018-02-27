@@ -20,20 +20,10 @@ import myproject.model.User;
 
 @Repository("userDao")
 @Transactional
-
 public class UserDaoImpl implements UserDao {
 
-	/*public User userById(int id) {
-		try {
-			return (User) sessionFactory.getCurrentSession().get(User.class, id);
-		} catch (HibernateException e) {
-			
-			e.printStackTrace();
-			throw e;
-			
-		}
-	}
-	*/
+	
+
 	public User usersById(int id) {
 		try {
 			@SuppressWarnings("rawtypes")
@@ -54,6 +44,7 @@ public class UserDaoImpl implements UserDao {
 		try {
 			@SuppressWarnings("rawtypes")
 			Query query = sessionFactory.getCurrentSession().createQuery("from User where userName= '" + username + "'");
+			System.out.println("dao method is invoked");
 			User user = (User) query.uniqueResult();
 
 			return user;
@@ -111,21 +102,15 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	UserDao userDao;
 	
-	public boolean addUser(User u) {
-			Session s1=sessionFactory.getCurrentSession();
-			u.setUserID(u.getUserName());
-	 		s1.persist(u);
-			return true;
-		
-		}
 		public boolean save(User u) {
 			Session session=sessionFactory.getCurrentSession();
-			u.getBill().setUser(u);
-			u.getShip().setUser(u);
+			u.setUserID(u.getUserName());
+			u.getBilling().setUser(u);
+			u.getShipping().setUser(u);
 			u.setActive(true);
 			session.persist(u); 
-			session.persist(u.getBill());
-			session.persist(u.getShip());
+			session.persist(u.getBilling());
+			session.persist(u.getShipping());
 			
 			Authorities auth = new Authorities();
 			auth.setAuthority("ROLE_USER");
@@ -159,19 +144,26 @@ public class UserDaoImpl implements UserDao {
 		}
 		*/
 		
-		public User getUserByID(Integer userID) {
+		public User getUserByID(String loggedInUsername) {
 			
 			Session s1 =sessionFactory.getCurrentSession();
-			Query<User> q = s1.createQuery("from User where userID="+userID);
-		  User user = (User)q.getSingleResult();
+			Query<User> q = s1.createQuery("from User where userID=?");
+			q.setParameter(0,loggedInUsername);
+			 User user = (User)q.getResultList().get(0);
+		  System.out.println("hghgh"+user.getUserEmail());
 		  return user;
 		}
 
 
 
+		public User getUserById(String loggedInUsername) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+
+
+
+
 		
 	}
-	
-	
-	
-

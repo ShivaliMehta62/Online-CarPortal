@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
@@ -19,7 +20,7 @@ public class User implements Serializable{
 
 	@Id
 	private String userID;
-	@Column(unique=true)
+	@Column(unique=true,nullable=false)
 	private String userName;
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -28,15 +29,24 @@ public class User implements Serializable{
 	private String userEmail;
 	private String userPassword;
 	private boolean Active;
+	
 		
 	@OneToOne(mappedBy="user" ,fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private Cart cart;
 
-	@OneToOne(mappedBy="user" ,fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	private Shipping ship;
 	
-	@OneToOne(mappedBy="user" ,fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	private Billing bill;
+	@OneToOne
+	@JoinColumn(name="billingId")
+	 private Billing billing;
+	
+	
+	@OneToOne
+	@JoinColumn(name="shippingId")
+	 private Shipping shipping;
+	
+	
+	
+	
 	public String getUserID() {
 		return userID;
 	}
@@ -85,21 +95,23 @@ public class User implements Serializable{
 		this.cart = cart;
 	}
 
-	public Shipping getShip() {
-		return ship;
+	public Billing getBilling() {
+		return billing;
 	}
 
-	public void setShip(Shipping ship) {
-		this.ship = ship;
+	public void setBilling(Billing billing) {
+		this.billing = billing;
 	}
 
-	public Billing getBill() {
-		return bill;
+	public Shipping getShipping() {
+		return shipping;
 	}
 
-	public void setBill(Billing bill) {
-		this.bill = bill;
+	public void setShipping(Shipping shipping) {
+		this.shipping = shipping;
 	}
+
+	
 	
 	
 	

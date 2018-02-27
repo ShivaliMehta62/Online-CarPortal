@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,164 +13,89 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <style>
-    html {
-    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+   img{max-width:100%;}
+	*{transition: all .5s ease;-moz-transition: all .5s ease;-webkit-transition: all .5s ease}
+.my-list {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f5efef;
+    float: left;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: 2px 3px 0px #e4d8d8;
+    position:relative;
+    overflow:hidden;
+}
+.my-list h3{
+    text-align: left;
     font-size: 14px;
-}
-h5 {
-    font-size: 1.28571429em;
-    font-weight: 700;
-    line-height: 1.2857em;
-    margin: 0;
-}
-.card {
-    font-size: 1em;
-    overflow: hidden;
-    padding: 0;
-    border: none;
-    border-radius: .28571429rem;
-    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-}
-.card-block {
-    font-size: 1em;
-    position: relative;
-    margin: 0;
-    padding: 1em;
-    border: none;
-    border-top: 1px solid rgba(34, 36, 38, .1);
-    box-shadow: none;
-}
-.card-img-top {
-    display: block;
+    font-weight: 500;
+    line-height: 21px;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid #ccc4c4;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    }
+	.my-list span{float:left;font-weight: bold;}
+	.my-list span:last-child{float:right;}
+	.my-list .offer{
     width: 100%;
-    height: auto;
-}
-.card-title {
-    font-size: 1.28571429em;
-    font-weight: 700;
-    line-height: 1.2857em;
-}
-.card-text {
-    clear: both;
-    margin-top: .5em;
-    color: rgba(0, 0, 0, .68);
-}
-.card-footer {
-    font-size: 1em;
-    position: static;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    padding: .75em 1em;
-    color: rgba(0, 0, 0, .4);
-    border-top: 1px solid rgba(0, 0, 0, .05) !important;
-    background: #fff;
-}
-.card-inverse .btn {
-    border: 1px solid rgba(0, 0, 0, .05);
-}
-.profile {
+    float: left;
+    margin: 5px 0;
+    border-top: 1px solid #ccc4c4;
+    margin-top: 5px;
+    padding-top: 5px;
+    color: #afadad;
+    }
+	.detail {
     position: absolute;
-    top: -12px;
-    display: inline-block;
-    overflow: hidden;
-    box-sizing: border-box;
-    width: 25px;
-    height: 25px;
-    margin: 0;
-    border: 1px solid #fff;
-    border-radius: 50%;
+    top: -107%;
+    left: 0;
+    text-align: center;
+    background: #fff;height: 100%;width:100%;
+	
 }
-.profile-avatar {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
-.profile-inline {
-    position: relative;
-    top: 0;
-    display: inline-block;
-}
-.profile-inline ~ .card-title {
-    display: inline-block;
-    margin-left: 4px;
-    vertical-align: top;
-}
-.text-bold {
-    font-weight: 700;
-}
-.meta {
-    font-size: 1em;
-    color: rgba(0, 0, 0, .4);
-}
-.meta a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, .4);
-}
-.meta a:hover {
-    color: rgba(0, 0, 0, .87);
-}
-progress {
-  /* Positioning */
-  position:fixed;
-  left: 0;
-  top: 50px;
-  /* Dimensions */
-  width: 100%;
-  height: 5px;
-  /* Reset the appearance */
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  /* Get rid of the default border in Firefox/Opera. */
-  border: none;
-  /* Progress bar container for Firefox/IE10+ */
-  background-color: transparent;
-  /* Progress bar value for IE10+ */
-  color: red;
-}
-progress::-webkit-progress-bar {
-  background-color: transparent;
-}
-progress::-webkit-progress-value {
-  background-color: red;
-}
-progress::-moz-progress-bar {
-  background-color: red;
-}
+	
+.my-list:hover .detail{top:0;}
     </style>
 <title>Insert title here</title>
 </head>
 <body>
-<progress value="0" id="progressBar"></progress>
+<!--  <progress value="0" id="progressBar"></progress>-->
 <%@include file="/WEB-INF/View/Header.jsp"%>
 
 </head>
 <body>
-<div class="container">
-       
-       <div class="row" style="margin:50px;">
-            
-           <c:forEach items="${productList}" var="c">
-           
-       			     <div class=" col-md-3" style="margin:20px;">
-                    <div class="card w3-animate-opacity" >
-                    	<a href="${pageContext.request.contextPath }/ProductDetail/${c.proRn}" class="hidden-sm">	
-                    	
-                    		 <img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/images/${c.productID}.jpg">
-                    				<div class="card-block">
-                        				<h5 class="text-bold w3-animate-opacity">${c.proNm}</h5>
-                					</div>
-                		</a>
-                            </div>
 
-                     </div>
-           </c:forEach>
-       </div>
-</div>
+            
+     <c:forEach items="${productList}" var="c">
+           <a href="${pageContext.request.contextPath }/ProductDetail/${c.proRn}" class="hidden-sm"></a>	
+       		        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+		              <div class="my-list">
+			<img src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg" alt="" />
+			<h3>${c.categoryId}</h3>
+			<span>Rs${c.proCost}</span>
+			<span class="pull-right">${c.brandId}</span>
+			<div class="offer">${c.proType}</div>
+			<div class="detail">
+			<p>Rent Now!!</p>
+			<img src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg" alt="" />
+			 <!--   <a href="${pageContext.request.contextPath}/productDetail/${c.proRn}" class="btn btn-info">Rent Now</a>-->
+			   <a href="${pageContext.request.contextPath}/productDetail/${c.proRn}" class="btn btn-info">Details</a>
+			</div>
+		  </div>
+		</div>
+	
+  </c:forEach>
+     
+      
+        
+
+
+
 </body>
-<script>
+<!--  <script>
 $(document).ready(function(){
     
     var getMax = function(){
@@ -274,6 +200,6 @@ $(document).ready(function(){
   });
   
 });
-
 </script>
+-->
 </html>

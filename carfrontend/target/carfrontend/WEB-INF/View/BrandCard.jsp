@@ -152,16 +152,16 @@ progress::-moz-progress-bar {
        
        <div class="row" style="margin:50px;">
             
-           <c:forEach items="${brandList}" var="c">
+           <c:forEach items="${ProductList}" var="c">
            
-       			     <div class=" col-md-3" style="margin:20px;">
-                    		<div class="card w3-animate-opacity" >
-                    			<a href="${pageContext.request.contextPath }/BrandByID/${c.brandId}" value="${c.catId}" style="display:block;"><img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/images/${c.brandID}.jpg"></a>
-                    				<div class="card-block">
-                        				<h5 class="text-bold w3-animate-opacity">${c.brandName}</h5>
-                					</div>
-                            </div>
-                     </div>
+     <div class=" col-md-3" style="margin:20px;">
+       <div class="card w3-animate-opacity" >
+        <a href="${pageContext.request.contextPath }/showbrandcard/${c.brandId}" value="${c.categoryId}" style="display:block;"><img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg"></a>
+          <div class="card-block">
+            <h5 class="text-bold w3-animate-opacity">${c.brandId}</h5>
+            	</div>
+                  </div>
+              </div>
            </c:forEach>
        </div>
 </div>

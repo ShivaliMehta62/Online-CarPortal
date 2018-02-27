@@ -4,6 +4,8 @@ package myproject.Dao;
 
 import java.io.IOException;
 import java.util.List;
+
+import myproject.model.Billing;
 import myproject.model.Cart;
 
 public interface CartDao {
@@ -15,6 +17,8 @@ public interface CartDao {
 	public boolean delete(int id);
 
 	public boolean update(Cart cart);
+	
+	public Billing showdetails(Billing bill);
 
 	public int getQuantity(String username, String productname);
 
@@ -29,6 +33,8 @@ public interface CartDao {
 	public int clearCart(String username);
 
 	public Cart validate(int cartId) throws IOException;
+
+	
 	
 }
 

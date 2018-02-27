@@ -67,6 +67,7 @@ public class CartController {
 		session.setAttribute("numberProducts", cartDao.getNumberOfProducts(loggedInUsername));
 		session.setAttribute("cartList", cartDao.getCartList(loggedInUsername));
 		session.setAttribute("totalAmount", cartDao.getTotalAmount(loggedInUsername));
+		session.setAttribute("loggedInUsername",loggedInUsername);
 		/*model.addAttribute("categoryList",categoryDao.getAllCategory());
 		model.addAttribute("brandList", brandDao.getAllBrands());
 		model.addAttribute("productList",productDao.getAllProduct());
@@ -238,5 +239,8 @@ public class CartController {
 			return "redirect:/Cart/all";
 		}
 	}
+	
+	
+	
 }
 

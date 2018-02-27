@@ -57,7 +57,7 @@ Brand Desciption  <sp:input path="brandType"/>
 <td>${c.brandType}</td>
 
 
-<td><a href="<c:url value='updateBrand/${c.brandId}'/>">Edit/<a href="<c:url value='deleteBrand/${c.brandId}'/>">Delete</a></a>
+<td><a href="<c:url value='updateBrand/${c.brandId}'/>">Edit<a href="<c:url value='deleteBrand/${c.brandId}'/>">Delete</a></a>
 </tr>
 
 </c:forEach>

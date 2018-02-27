@@ -38,49 +38,46 @@
         <br>
         <br>
         <br>
-        <h2>Pickup Address</h2>
-        <sp:input path="ship.streetName"  id="location1" type="text" placeholder="Street" required="required"  class="input pass"/>
+         <h2>DropDown Address</h2>
+        <sp:input path="shipping.streetName"  id="orangeForm-location" type="text" placeholder="Street" required="required"  class="input pass"/>
         <br>
         <br>
-        <sp:input path="ship.apartNo" id="location2" type="text" placeholder="Aprt no." required="required" class="input pass"/>
+        <sp:input path="shipping.apartNo" id="orangeForm-location1" type="text" placeholder="Aprt no." required="required" class="input pass"/>
         <br>
         <br>
-        <sp:input path="ship.city" id="location3" type="text" placeholder="City" required="required" class="input pass"/>
+        <sp:input path="shipping.city" id="orangeForm-location2" type="text" placeholder="City" required="required" class="input pass"/>
         <br>
         <br>
-      	 
-      	 <sp:input path="ship.state" id="location4" type="text" placeholder="State" required="required" class="input pass" /><br>
+         	 <sp:input path="shipping.state" id="orangeForm-location3" type="text" placeholder="State" required="required" class="input pass" /><br>
       	 <br>
-      	 <sp:input path="ship.country" id="location5" type="text" placeholder="Country" required="required" class="input pass"/>
-      	 <br>
-      	 <br>
-      	 <sp:input path="ship.zipcode" id="location6" type="text" placeholder="Pin Code" required="required" class="input pass"/>
+      	 <sp:input path="shipping.country" id="orangeForm-location4" type="text" placeholder="Country" required="required" class="input pass"/>
       	 <br>
       	 <br>
-      	 <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)"> 
-      	 <em>Same Address?Just Click Me</em> 
-      	     
+      	 <sp:input path="shipping.zipcode" id="orangeForm-location5" type="text" placeholder="Pin Code" required="required" class="input pass"/>
+      	 <br>
+      	 <br>
+      	 <input type="checkbox" id="name" onclick="copyValue(this)"  > Same Address?Just Click Me
+      	     	     
       	<br>
       	<br>
       	<br>
-      	<h2>Drop-down Address</h2>
-       <sp:input path="bill.streetName"  id="location7" type="text" placeholder="Street" required="required"  class="input pass"/>
+      	<h2>Pick up Address</h2>
+       <sp:input path="billing.bstreetName"  id="orangeForm-location6" type="text" placeholder="Street" required="required"  class="input pass"/>
         <br>
         <br>
-        <sp:input path="bill.apartNo" id="location8" type="text" placeholder="Aprt no." required="required" class="input pass"/>
+        <sp:input path="billing.bapartNo" id="orangeForm-location7" type="text" placeholder="Aprt no." required="required" class="input pass"/>
         <br>
         <br>
-        <sp:input path="bill.city" id="location9" type="text" placeholder="City" required="required" class="input pass"/>
+        <sp:input path="billing.bcity" id="orangeForm-location8" type="text" placeholder="City" required="required" class="input pass"/>
       	<br>
       	<br>
-      	 <sp:input path="bill.state" id="location10" type="text" placeholder="State" required="required" class="input pass"/>
+      	 <sp:input path="billing.bstate" id="orangeForm-location9" type="text" placeholder="State" required="required" class="input pass"/>
       	 <br>
       	 <br>
-      	 <sp:input path="bill.country" id="location11" type="text" placeholder="Country" required="required" class="input pass"/>
+      	 <sp:input path="billing.bcountry" id="orangeForm-location10" type="text" placeholder="Country" required="required" class="input pass"/>
       	 <br>
       	 <br>
-      	 <sp:input path="bill.zipcode" id="location12" type="text" placeholder="Pin Code" required="required" class="input pass"/>
-       
+      	 <sp:input path="billing.bzipcode" id="orangeForm-location11" type="text" placeholder="Pin Code" required="required" class="input pass"/>
        <br>
        <br>
        <br>
@@ -95,25 +92,30 @@
     </div>
    </div>
    </div>
-   <script>
    
-   function FillBilling(f) {
-	   if(f.billingtoo.checked == true) {
-	     f.ship.streetName.value = f.bill.streetName.value;
-	     f.ship.apartNo.value = f.bill.apartNo.value;
-	     f.ship.state.value = f.bill.state.value;
-	     f.ship.apartNo.value = f.bill.apartNo.value;
-	     f.ship.country.value = f.bill.country.value;
-	     f.ship.zipcode.value = f.bill.zipcode.value;
-	   }
-	 }
-   
-   </script>
+  <script>
+ 
   
-
-
-
-
-
+  $(function(){
+	    $('#name').change(function(){
+	    var newVal=$("#orangeForm-location").val();
+	    var newVall=$("#orangeForm-location1").val();
+	    var newValll=$("#orangeForm-location2").val();
+	    var newVallll=$("#orangeForm-location3").val();
+	    var newValllll=$("#orangeForm-location4").val();
+	    var newVallllll=$("#orangeForm-location5").val();
+	    
+	    if (this.checked) {
+	        $("#orangeForm-location6").val(newVal);
+	        $("#orangeForm-location7").val(newVall);
+	        $("#orangeForm-location8").val(newValll);
+	        $("#orangeForm-location9").val(newVallll);
+	        $("#orangeForm-location10").val(newValllll);
+	        $("#orangeForm-location11").val(newVallllll);
+	        
+	    }
+	    });
+	});
+ </script>
    </body>
 </html>

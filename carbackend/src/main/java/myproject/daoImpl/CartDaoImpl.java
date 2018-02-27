@@ -13,6 +13,8 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import myproject.Dao.CartDao;
+import myproject.model.Billing;
+import myproject.model.Brand;
 import myproject.model.Cart;
 import myproject.model.Category;
 import myproject.model.Product;
@@ -142,6 +144,18 @@ public class CartDaoImpl implements CartDao{
 		return cart;
 	}
 
+	public Billing showdetails(Billing bill)
+	{
+		
+		 Session s=sessionFactory.getCurrentSession();
+		 Query<Billing> g=s.createQuery("from Billing where bill=?");
+		g.setParameter(0,bill);
+		Billing bl=(Billing)g.getSingleResult();
+		return  bl;	
+		
+		
+		
+	}
 	
 }
 

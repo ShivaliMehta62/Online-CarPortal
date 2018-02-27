@@ -23,8 +23,10 @@ public class UserController {
 	public String addUser(@ModelAttribute("user")User c,Principal p)
 	{
 		User user=new User();
-		user.setUserID(user.getUserID());
-	userDao.save(c);
+		//user.setUserID(user.getUserID());
+		//user.setBilling(user.getBilling());
+		//user.setShipping(user.getShipping());
+	    userDao.save(c);
 		
 	return 	"Cart";
 	}

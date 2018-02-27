@@ -8,7 +8,7 @@ public interface UserOrderDao {
 
 	public boolean addCustomerOrder(UserOrder userOrder);
 	public List<UserOrder> getAllOrders();
-	public UserOrder getUserOrderById(int id);
-	public int changeOrderStatus(int id, String status);
+	public UserOrder getUserOrderById(String userorderId);
+	public int changeOrderStatus(String userorderId, String status);
 
 }

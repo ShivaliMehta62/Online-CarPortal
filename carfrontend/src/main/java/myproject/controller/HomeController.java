@@ -51,8 +51,22 @@ import myproject.model.User;
 			return "Category";
 			
 		}
+		 
+		@RequestMapping("/Invoice")
+		public String invoice(Model model)
+		{
+			//model.addAttribute("User");
+			return "Invoice";
+		}
 		
 		
+		
+		@RequestMapping("/Billing")
+		public String billing(Model model)
+		{
+			//model.addAttribute("User");
+			return "Billing";
+		}
 		
 		@RequestMapping("/Product")
 		public String product(Model model)
@@ -80,12 +94,11 @@ import myproject.model.User;
 			Shipping ship = new Shipping();
 			Billing bill = new Billing();
 			User user=new User();
-			user.setShip(ship);
-			user.setBill(bill);
-			
+			user.setShipping(ship);
+			user.setBilling(bill);
 			model.addAttribute("categoryList",categoryDao.getAllCategory());
 			model.addAttribute("brandList",brandDao.getAllBrands());	 
-			model.addAttribute("user",new User());
+			model.addAttribute("user",user);
 			return "Register";
 			
 		}

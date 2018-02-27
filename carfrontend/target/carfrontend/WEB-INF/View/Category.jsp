@@ -25,16 +25,16 @@
 ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <sh:hidden path="catId"/>
 </c:if>
- </div>
+ 
     <div class="form-group">
-      <sh:label  path="catName">Car Name:</sh:label>\
-      <sh:input class="form-control"  path="catName" placeholder="Enter your name" />
+      <sh:label  path="catName">Car Name:</sh:label>
+      <sh:input class="form-control"  path="catName" placeholder="Enter Car name" />
     </div>
       <div class="form-group">
-      <sh:label  path="catType">Car category</sh:label>
-      <sh:input class="form-control"  path="catType" placeholder="Enter car type" />
+      <sh:label  path="catDesc">Car category</sh:label>
+      <sh:input class="form-control"  path="catDesc" placeholder="Enter car description" />
     </div>
-		
+<div>		
 <sh:select path="brnds">
 <sh:option value="select">----SELECT---</sh:option>
 <c:forEach items ="${brandList}" var="c">
@@ -42,10 +42,22 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <sh:option value="${c.brandName}"></sh:option>
 
 </c:forEach>
-</sh:select> 
+</sh:select>
+</div> 
+<br>
+<br>
+<br>
+<br>
+
+<td>
  <sh:button type="submit" class="btn btn-default">Submit</sh:button>
-  </sh:form>
+</td>
+</sh:form>
 </div>
+<br>
+
+<br>
+<br>
 
 <div class="container">
    
@@ -53,22 +65,19 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <table border=1 class="table table-striped" >
 <thead>
       <tr>
-      <th>Car Name</th>
-  		<th>Car Description</th>
+      <th>Car Name</th><th>Car Description</th><th>Action</th>
   		
-  	
-      <th>edit</th>
-      <th>delete</th>
+  			
+      
       </tr>
 </thead>
 <tbody>
 <c:forEach items="${categoryList}" var="cat">
 <tr>
 <td>${cat.catName}</td>
-<td>${cat.catType }</td>
-<td>${cat.brnds}</td>
-<td><a href="<c:url value='updateCategory/${cat.catId}'/>">Edit</a></td>
-<td><a href="<c:url value='deleteCategory/${cat.catId}'/>">Delete</a></td>
+<td>${cat.catDesc }</td>
+<!--  <td>${cat.brnds}</td>-->
+<td><a href="<c:url value='updateCategory/${cat.catId}'/>">Edit/<a href="<c:url value='deleteCategory/${cat.catId}'/>">Delete</a></td>
 </tr>
 </c:forEach>
 

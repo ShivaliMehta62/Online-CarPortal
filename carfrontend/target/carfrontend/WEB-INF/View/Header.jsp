@@ -20,26 +20,42 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">CAR RENTALS</a>
+            <a class="navbar-brand" href="#" text-align="center">CAR RENTALS</a>
         </div>
         
-        <div class="collapse navbar-collapse" id="myNavbar">
+         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#"></a></li>
+               <!--  <li class="active"><a href="#"></a></li> -->
                 
+              
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${pageContext.request.contextPath }/showbrandcard/${cat.brandId}">Brands<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <c:forEach items="${brandList}" var="cat">
+            <li><a href="${pageContext.request.contextPath}/showbrandcard/${cat.brandId}">${cat.brandId}</a></li>
+          </c:forEach>
+        </ul>
+      </li>
+   
+    </ul>
+                
+                
+                
+                
+                <!--  
                 <li class="dropdown">
-              <a href="${pageContext.request.contextPath }/BrandByCategoryId/${cat.brandId}" class="dropdown-toggle" data-toggle="dropdown">CARS<b class="caret"></b></a>
+              <a href="${pageContext.request.contextPath }/showbrandcard/${cat.brandId}" class="dropdown-toggle" data-toggle="dropdown">CARS<b class="caret"></b></a>
                    
               <ul class="dropdown-menu w3-hoverable">
                <c:forEach items="${brandList}" var="cat">
-                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/BrandByID/${cat.brandId}">${cat.brandId}</a></li>
-                        <ul class="dropdown-menu"></ul>
+                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/showbrandcard/${cat.brandId}">${cat.brandId}</a></li>
+ 
                         </c:forEach>
               </ul>
+              -->
         
                <!--  <ul class="dropdown-menu"></ul>
                  <c:forEach items="${categoryList}" var="c">
-                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/CategoryByID/${c.catType }">${c.catType }</a></li>
+                    <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/CategoryByID/${c.catDesc }">${c.catDesc }</a></li>
                           </c:forEach>
                            -->
                         
@@ -75,7 +91,7 @@
 		<li><a href="adminHome">Admin</a></li>   
 		</sec:authorize>    
         <sec:authorize access="hasRole('ROLE_USER')" >
-                    <li class="nav-item"> <a href="${pageContext.request.contextPath}/all"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge badge-pill badge-primary">${numberProducts}</span></a></li>
+                    <li class="nav-item"> <a href="${pageContext.request.contextPath}/Cart/all"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge badge-pill badge-primary">${numberProducts}</span></a></li>
                 </sec:authorize>
                 
                  <sec:authorize access="isAuthenticated()" >
@@ -91,4 +107,11 @@
     </nav>
 
 </body>
+
+
+
+
+
+
+
 </html>

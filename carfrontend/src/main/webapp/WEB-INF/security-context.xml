@@ -17,7 +17,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  <authentication-manager> <authentication-provider> <user-service> <user 
 		name="admin" password="pass" authorities="ROLE_ADMIN" /> </user-service> 
 		</authentication-provider> </authentication-manager> 
-
   --> 
  <authentication-manager>
  <authentication-provider>
