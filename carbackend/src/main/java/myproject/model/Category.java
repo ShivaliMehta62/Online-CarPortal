@@ -1,6 +1,7 @@
 	package myproject.model;
 
-	import java.util.HashSet;
+	import java.io.Serializable;
+import java.util.HashSet;
 	import java.util.Set;
 
 	import javax.persistence.CascadeType;
@@ -20,7 +21,7 @@ import javax.persistence.OneToMany;
 	@Entity
 	@Component
 	@Table(name="Category")
-	public class Category {
+	public class Category implements Serializable {
 	
 	@Id
 	private String catId;

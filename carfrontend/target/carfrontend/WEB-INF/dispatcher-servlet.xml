@@ -29,7 +29,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 </webflow:flow-registry>	
 
 <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
-<property name="flowRegistry" ref="flowRegistry"></property>
+<property name="flowRegistry" ref="flowRegistry" ></property>
+<property name="order" value="-1" />
 </bean>
 
 <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">

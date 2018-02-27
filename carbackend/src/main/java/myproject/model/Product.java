@@ -1,5 +1,6 @@
 package myproject.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,7 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 @Table(name="Product")
 
-public class Product {
+public class Product implements Serializable{
 
 	//private static final String DegenarationType = null;
 	@Id

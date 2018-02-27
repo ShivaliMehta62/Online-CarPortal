@@ -14,7 +14,7 @@
 
 	<action-state id="addCartToOrder">
 
-		<evaluate expression="userDao.getUserById(requestParameters.userId)"
+		<evaluate expression="userDao.userByuserName(requestParameters.userId)"
 
 			result="order.user" />
 
@@ -36,16 +36,16 @@
 	<view-state id="collectShippingDetail" view="Shippingdetails.jsp"
 		model="order">
 	
-	<transition on="shippingDetailCollected" to="orderConfirmation" />
+	<transition on="shippingDetailCollected" to="orderconfirmation" />
 
-		<transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
+	 	<transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
 
 	</view-state>
 
 
-	<view-state id="orderConfirmation">
+	<view-state id="orderconfirmation" view="orderconfirmation.jsp" model="order" >
 
-		<transition on="orderConfirmed" to="processOrder" />
+		<transition on="orderconfirmed" to="processOrder" />
 
 		<transition on="backToCollectShippingDetail" to="collectShippingDetail" />
 

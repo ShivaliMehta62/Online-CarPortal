@@ -1,5 +1,6 @@
 package myproject.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -17,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 @Table(name="Brand")
-public class Brand {
+public class Brand implements Serializable {
     
 	@Id
 	private String brandId;

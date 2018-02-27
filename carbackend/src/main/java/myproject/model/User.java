@@ -30,7 +30,10 @@ public class User implements Serializable{
 	private String userPassword;
 	private boolean Active;
 	
+	
 		
+	
+
 	@OneToOne(mappedBy="user" ,fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private Cart cart;
 

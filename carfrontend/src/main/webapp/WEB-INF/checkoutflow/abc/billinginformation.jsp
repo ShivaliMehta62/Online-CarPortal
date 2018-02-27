@@ -1,12 +1,12 @@
 <%@include file="/WEB-INF/View/Header.jsp"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@page isELIgnored="false" %>
 <div class="space"></div>
 <div class="container">
 	<h2 class="heading-one">Billing Details</h2>
 
-	<form:form modelAttribute="userOrder">
+	<form:form modelAttribute="order">
 
 		<h3>Personal Info</h3>
 

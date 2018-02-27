@@ -1,7 +1,7 @@
 <%@include file="/WEB-INF/View/Header.jsp"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@page isELIgnored="false" %>
 <div class="space"></div>
 <div class="container">
 	<h2 class="heading-one">Billing Details</h2>
@@ -12,12 +12,12 @@
 
 		<div class="form-group">
 			<label for="name">Name</label>
-			<form:input path="user.username" id="username" class="form-control" />
+			<form:input path="user.userName" id="username" class="form-control" />
 		</div>
 
 		<div class="form-group">
 			<label for="email">Email</label>
-			<form:input path="user.email" id="email" class="form-control" />
+			<form:input path="user.userEmail" id="email" class="form-control" />
 		</div>
 
 		
@@ -25,8 +25,8 @@
 		<h3>Billing Address</h3>
 
 		<div class="form-group">
-			<label for="billingstreetname">Street Name</label>
-			<form:input path="user.billing.bstreetname"
+			<label for="billingstreetName">Street Name</label>
+			<form:input path="user.billing.bstreetName"
 				id="bStreetname" class="form-control" />
 		</div>
 

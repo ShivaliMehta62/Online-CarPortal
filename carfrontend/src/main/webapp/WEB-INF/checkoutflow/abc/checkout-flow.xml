@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <flow xmlns="http://www.springframework.org/schema/webflow"
-
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
- 
 	http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
 
 
-	<var name="userOrder" class="myproject.model.UserOrder" />
+	<var name="order" class="myproject.model.UserOrder" />
 
 
 	<action-state id="addCartToOrder">
 
-		<evaluate expression="userDao.getUserById(requestParameters.userId)"
+		<evaluate expression="userDao.userByuserName(requestParameters.userId)"
 
-			result="userOrder.user" />
+			result="order.user" />
 
 		<transition to="invalidCartWarning" on-exception="java.lang.Exception" />
 
@@ -26,7 +23,7 @@
 
 
 	<view-state id="collectCustomerInfo" view="billinginformation.jsp"
-		model="userOrder">
+		model="order">
 
 		<transition on="customerInfoCollected" to= "collectShippingDetail" />
 
@@ -34,18 +31,18 @@
 
 
 	<view-state id="collectShippingDetail" view="Shippingdetails.jsp"
-		model="userOrder">
+		model="order">
 	
-	<transition on="shippingDetailCollected" to="orderConfirmation" />
+	<transition on="shippingDetailCollected" to="orderconfirmation" />
 
-		<transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
+	 	<transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
 
 	</view-state>
 
 
-	<view-state id="orderConfirmation">
+	<view-state id="orderconfirmation" view="orderconfirmation.jsp" model="order" >
 
-		<transition on="orderConfirmed" to="processOrder" />
+		<transition on="orderconfirmed" to="processOrder" />
 
 		<transition on="backToCollectShippingDetail" to="collectShippingDetail" />
 

@@ -3,6 +3,8 @@ package myproject.model;
 
 
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 @Table(name="Shipping")
-public class Shipping {
+public class Shipping implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

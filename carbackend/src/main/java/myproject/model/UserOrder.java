@@ -57,10 +57,7 @@ public class UserOrder  implements Serializable {
 		this.userorderId = userorderId;
 	}
 
-	public User getUser() {
-	return user;
-	}
-
+	
 	public Cart getCart() {
 		return cart;
 	}
@@ -69,6 +66,14 @@ public class UserOrder  implements Serializable {
 		this.cart = cart;
 	}
 
+
+	
+
+	
+
+	public User getUser() {
+		return user;
+	}
 
 	public void setUser(User user) {
 		this.user = user;
