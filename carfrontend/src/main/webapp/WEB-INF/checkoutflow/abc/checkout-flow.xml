@@ -10,64 +10,38 @@
 
 
 	<action-state id="addCartToOrder">
-
-		<evaluate expression="userDao.userByuserName(requestParameters.userId)"
-
+<evaluate expression="userDao.userByuserName(requestParameters.userId)"
 			result="order.user" />
-
 		<transition to="invalidCartWarning" on-exception="java.lang.Exception" />
-
 		<transition to="collectCustomerInfo" />
-
 	</action-state>
 
 
 	<view-state id="collectCustomerInfo" view="billinginformation.jsp"
 		model="order">
-
 		<transition on="customerInfoCollected" to= "collectShippingDetail" />
-
 	</view-state>
-
-
-	<view-state id="collectShippingDetail" view="Shippingdetails.jsp"
-		model="order">
-	
+	<view-state id="collectShippingDetail" view="Shippingdetails.jsp" model="order">
 	<transition on="shippingDetailCollected" to="orderconfirmation" />
-
 	 	<transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
-
 	</view-state>
 
 
 	<view-state id="orderconfirmation" view="orderconfirmation.jsp" model="order" >
-
 		<transition on="orderconfirmed" to="processOrder" />
-
 		<transition on="backToCollectShippingDetail" to="collectShippingDetail" />
-
 	</view-state>
 
 
 	<action-state id="processOrder">
-
-		<evaluate expression="userOrderDao.addCustomerOrder(order)" />
-	
-	<evaluate expression="cartDao.clearCart(order.user.getUserId())">
-
+		<evaluate expression="userOrderDao.addUserOrder(order)" />
+	<evaluate expression="cartDao.clearCart(order.user.getUserID())">
 			<attribute name="name" value="last"></attribute>
-
 		</evaluate>
-
 		<transition on="last.success" to="thankCustomer" />
-
 	</action-state>
-
-
-	<view-state id="thankCustomer" model="order">
-
+	<view-state id="thankCustomer" view="thankyouCustomer.jsp" model="order">
 		<transition to="endState" />
-
 	</view-state>
 
 
@@ -75,19 +49,15 @@
 
 	
 <view-state id="invalidCartWarning">
-
 		<transition to="endState" />
-
 	</view-state>
 
 
-	<end-state id="cancelCheckout" view="checkOutCancelled.jsp" />
+	<end-state id="cancelCheckout" view="checkoutcancelled.jsp" />
 
 
 	<global-transitions>
-
 		<transition on="cancel" to="cancelCheckout" />
-
 	</global-transitions>
 
 </flow>

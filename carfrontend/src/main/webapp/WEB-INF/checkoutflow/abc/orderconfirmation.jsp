@@ -1,4 +1,4 @@
-<%@include file="/WEB-INF/View/Header.jsp"%>
+<%@include file="header1.jsp"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -19,9 +19,9 @@
 			<hr>
 			<div class="row">
 				<div class="col-xs-8 col-sm-8 col-md-8">
-					<b>Name: </b>${loggedInName }
+					<b>Name: </b>${user.userName }
 					<br>
-					<b>Email: </b> ${order.user.email }
+					<b>Email: </b> ${user.Email }
 					<br>
 					
 				</div>
@@ -65,7 +65,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="cartItem" items="${order.user.cartItems}">
+						<c:forEach var="cartItem" items="${user.productName}">
 							<tr>
 								<td class="col-md-9"><em>${cartItem.productName}</em></td>
 								<td class="col-md-1" style="text-align: center">${cartItem.quantity}</td>
