@@ -6,7 +6,7 @@ import myproject.model.UserOrder;
 
 public interface UserOrderDao {
 
-	public boolean addCustomerOrder(UserOrder userOrder);
+	public boolean addUserOrder(UserOrder userOrder);
 	public List<UserOrder> getAllOrders();
 	public UserOrder getUserOrderById(String userorderId);
 	public int changeOrderStatus(String userorderId, String status);

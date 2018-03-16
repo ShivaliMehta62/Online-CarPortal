@@ -58,7 +58,7 @@ public class UserDaoImpl implements UserDao {
 	
 	
 	
-	public boolean getStatus(int id) {
+	public int getStatus(int id) {
 		User users = usersById(id);
 		return users.isActive();
 		}
@@ -69,9 +69,9 @@ public class UserDaoImpl implements UserDao {
 	public int changeStatus(int id) {
 		try {
 			User users = usersById(id);
-			boolean isEnable = users.isActive();
+			int isEnable = users.isActive();
 
-			if (isEnable) {
+			if (isEnable==1) {
 				@SuppressWarnings("rawtypes")
 				Query query = sessionFactory.getCurrentSession()
 						.createQuery("UPDATE User SET enabled = " + false + " WHERE userID = " + id);
@@ -103,15 +103,15 @@ public class UserDaoImpl implements UserDao {
 	UserDao userDao;
 	
 		public boolean save(User u) {
+			
 			Session session=sessionFactory.getCurrentSession();
 			u.setUserID(u.getUserName());
 			u.getBilling().setUser(u);
 			u.getShipping().setUser(u);
-			u.setActive(true);
+			u.setActive(1);
 			session.persist(u); 
 			session.persist(u.getBilling());
 			session.persist(u.getShipping());
-			
 			Authorities auth = new Authorities();
 			auth.setAuthority("ROLE_USER");
 			auth.setUsername(u.getUserName());

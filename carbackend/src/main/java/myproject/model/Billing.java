@@ -5,11 +5,13 @@ package myproject.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
@@ -19,20 +21,20 @@ import org.springframework.stereotype.Component;
 @Table(name="Billing")
 
 public class Billing implements Serializable {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="abc")
+	@SequenceGenerator(name="abc",sequenceName="user_sequence")
 	private int billingAddressId;
 	private String bstreetName;
-	private String bapartNo;
-	private String bcity;
-	private String bstate;
-	private String bcountry;
-	private long bzipcode;
+	 private String bapartNo;
+	 private String bcity;
+	 private String bstate;
+	 private String bcountry;
+	 private long bzipcode;
 	
 	@OneToOne
 	private User user;
-
-	
 
 	public int getBillingAddressId() {
 		return billingAddressId;

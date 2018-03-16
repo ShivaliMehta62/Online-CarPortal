@@ -2,9 +2,12 @@ package myproject.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -15,10 +18,12 @@ import org.springframework.stereotype.Component;
 public class Authorities implements Serializable {
 
 	@Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="abc")
+	@SequenceGenerator(name="abc",sequenceName="user_sequence")
     private int authoritiesId;
+	
+	@Column(name="auth_username")
     private String username;
-   
     private String authority;
     
 	public int getAuthoritiesId() {

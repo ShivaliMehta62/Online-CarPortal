@@ -1,5 +1,6 @@
+<%@include file="header1.jsp"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@include file="/WEB-INF/View/Header.jsp"%>
+
 
 <div class="container">
 	<section>
@@ -7,7 +8,7 @@
 			<div class="container">
 				<h1 class="alert alert-danger">Checkout cancelled</h1>
 
-				<p>Your checkout process is cancelled. You may continue
+				<p>Your process has been cancelled. You may continue
 					renting.</p>
 			</div>
 		</div>

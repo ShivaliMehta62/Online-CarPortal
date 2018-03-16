@@ -5,11 +5,13 @@ package myproject.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
@@ -19,8 +21,8 @@ import org.springframework.stereotype.Component;
 public class Shipping implements Serializable{
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="efg")
+	@SequenceGenerator(name="efg",sequenceName="shipping_sequence")
 	private int ShippingAddressId;
 	public int getShippingAddressId() {
 		return ShippingAddressId;
@@ -28,6 +30,7 @@ public class Shipping implements Serializable{
 	public void setShippingAddressId(int shippingAddressId) {
 		ShippingAddressId = shippingAddressId;
 	}
+	
 	private String streetName;
 	private String apartNo;
 	private String city;

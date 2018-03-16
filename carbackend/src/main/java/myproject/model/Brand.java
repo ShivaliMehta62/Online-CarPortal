@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 //import javax.persistence.GeneratedValue;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Component;
 public class Brand implements Serializable {
     
 	@Id
+	
 	private String brandId;
 	private String brandType;
 	private String brandName;

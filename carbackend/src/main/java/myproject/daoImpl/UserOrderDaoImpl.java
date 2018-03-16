@@ -36,6 +36,7 @@ public class UserOrderDaoImpl implements UserOrderDao{
 			session.saveOrUpdate(user.getBilling());
 			session.saveOrUpdate(user.getShipping());
 			return true;
+			
 		
 	}
 
@@ -68,10 +69,7 @@ public class UserOrderDaoImpl implements UserOrderDao{
 		
 }
 
-	public boolean addCustomerOrder(UserOrder userOrder) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 }
 
 

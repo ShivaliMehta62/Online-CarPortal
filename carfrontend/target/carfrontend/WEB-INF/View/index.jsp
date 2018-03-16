@@ -13,9 +13,12 @@
   <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
+      width: 175%;
+     max-height: 200%;
   }
+  body
+  {
+  background-color: #a8eff4; }
   </style>
 </head>
 <body>

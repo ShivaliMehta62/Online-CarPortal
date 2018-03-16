@@ -1,23 +1,25 @@
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\Dao\UserOrderDao.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\model\Product.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\Dao\CartDao.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\Dao\CategoryDao.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\DaoImpl\CategoryDaOImpl.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\model\Cart.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\model\User.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\model\Brand.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\DaoImpl\UserOrderDaoImpl.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\model\Billing.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\model\Category.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\Dao\UserDao.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\HC\HibernateConfiguration.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\model\UserOrder.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\model\Shipping.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\DaoImpl\CartDaoImpl.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\DaoImpl\ProductDaoImpl.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\model\Authorities.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\DaoImpl\UserDaoImpl.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\DaoImpl\BrandDaoImpl.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\Dao\BrandDao.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\Dao\ProductDao.java
-C:\Users\shivali\Desktop\New folder\carbackend\src\main\java\myproject\carbackend\App.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\DaoImpl\CategoryDaOImpl.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\User.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\Dao\ProductDao.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\HC\EmailConfig.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\Dao\CartDao.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\Brand.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\Dao\UserOrderDao.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\EmailService.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\HC\HibernateConfiguration.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\Category.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\carbackend\App.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\Shipping.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\Billing.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\Authorities.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\DaoImpl\CartDaoImpl.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\Dao\UserDao.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\DaoImpl\UserDaoImpl.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\Cart.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\DaoImpl\UserOrderDaoImpl.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\DaoImpl\ProductDaoImpl.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\Product.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\DaoImpl\BrandDaoImpl.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\model\UserOrder.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\Dao\BrandDao.java
+C:\Users\shivali\eclipse-workspace\CarBackend\src\main\java\myproject\Dao\CategoryDao.java

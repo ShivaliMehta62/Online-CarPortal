@@ -1,8 +1,9 @@
-<%@include file="header1.jsp"%>
+
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<jsp:useBean id="now" class="java.util.Date" />
+<%@page isELIgnored="false" %>
+ <%-- <jsp:useBean id="date" class="java.util.Date" />--%>
 
 <div class="space"></div>
 <div class="container">
@@ -28,7 +29,7 @@
 				<div class="col-xs-4 col-sm-4 col-md-4 ">
 					<p>
 						<b>Shipping Date:</b>
-						<fmt:formatDate type="date" value="${now}" />
+						<%--  <fmt:formatDate pattern="yyyy-MM-dd" value="${date}"/>--%>
 					</p>
 				</div>
 			</div>
@@ -93,9 +94,9 @@
 			<button class="btn btn-outline-warning"
 				name="_eventId_backToCollectShippingDetail">Back</button>
 			<input type="submit" value="Submit Order"
-				class="btn btn-outline-primary" name="_eventId_orderConfirmed" />
+				class="btn btn-outline-primary" name="_eventId_orderconfirmed" />
 			<button class="btn btn-default" name="_eventId_cancel">Cancel</button>
 		</div>
 	</form:form>
 </div>
-
+<%@include file="header1.jsp"%>

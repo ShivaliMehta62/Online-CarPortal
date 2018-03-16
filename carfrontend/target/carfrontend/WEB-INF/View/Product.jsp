@@ -13,6 +13,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
+    body {
+    background-color: #C0C0C0;
+}
    </style>
 </head>
 <body>
@@ -24,17 +27,32 @@
 Product ID    <sp:input path="proRn" readOnly="true" disabled="true"/>
 <sp:hidden path="proRn"/>
 </c:if>
+<div class="form-group">
+      <sh:label  path="proNm">Product Name:</sh:label>
+      <sh:input class="form-control"  path="proNm" placeholder="Enter product name" />
+    </div>
+ 
+ <br>
+ <br>
+<div class="form-group">
+      <sh:label  path="proType">Product Description :</sh:label>
+      <sh:input class="form-control"  path="proType" placeholder="Enter product description" />
+    </div>
 
- <t>Product Name  <sp:input path="proNm"/><t>
- <br>
- <br>
-<t>Product Description  <sp:input path="proType"/><t>
 <br>
 <br>
-<t>Product Cost <sp:input path="proCost"/><t><t><t><t>
+<div class="form-group">
+      <sh:label  path="proCost">Product Cost:</sh:label>
+      <sh:input class="form-control"  path="proCost" placeholder="Enter product cost "/>
+    </div>
+
 <br>
 <br>
-<t>Quantity<sp:input path="quantity"/><t>
+<div class="form-group">
+      <sh:label  path="quantity">Quantity:</sh:label>
+      <sh:input class="form-control"  path="quantity" placeholder="Enter product cost" />
+    </div>
+
 <br>
 <br>
 Choose Image <sp:input type="file" path="image" /><t><t><t><t>

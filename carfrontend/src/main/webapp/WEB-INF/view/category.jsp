@@ -14,6 +14,9 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style type="text/css">
+  body {
+    background-color: #C0C0C0;
+}
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css">
    </style>
 <title>Category</title>
@@ -34,7 +37,10 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
       <sh:label  path="catDesc">Car category</sh:label>
       <sh:input class="form-control"  path="catDesc" placeholder="Enter car description" />
     </div>
-<div>		
+<div>	
+ <sh:label  path="brnds">Car Brands:</sh:label>	
+ </br>
+
 <sh:select path="brnds">
 <sh:option value="select">----SELECT---</sh:option>
 <c:forEach items ="${brandList}" var="c">
@@ -62,7 +68,7 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <div class="container">
    
   <c:if test="${not empty categoryList}">
-<table border=1 class="table table-striped" >
+<table border=2 class="table table-striped" color="white-blue" >
 <thead>
       <tr>
       <th>Car Name</th><th>Car Description</th><th>Action</th>
@@ -77,7 +83,7 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <td>${cat.catName}</td>
 <td>${cat.catDesc }</td>
 <!--  <td>${cat.brnds}</td>-->
-<td><a href="<c:url value='updateCategory/${cat.catId}'/>">Edit/<a href="<c:url value='deleteCategory/${cat.catId}'/>">Delete</a></td>
+<td><a href="<c:url value='updateCategory/${cat.catId}'/>"><b>Edit/</b><a href="<c:url value='deleteCategory/${cat.catId}'/>"><b>Delete</b></a></td>
 </tr>
 </c:forEach>
 

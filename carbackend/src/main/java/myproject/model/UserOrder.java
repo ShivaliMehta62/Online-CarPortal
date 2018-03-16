@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class UserOrder  implements Serializable {
 	//private static final long serialVersionUID = -6817737978600394223L;
 
 	@Id
-	
+
 	private String userorderId;
 
 	
@@ -45,6 +46,7 @@ public class UserOrder  implements Serializable {
 	@JoinColumn(name = "shippingAddressId")
 	private Shipping ship;
 	
+	@Column(name="userorder_id")
 	private String orderStatus;
 
 

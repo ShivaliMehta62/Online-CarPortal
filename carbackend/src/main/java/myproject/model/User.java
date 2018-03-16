@@ -9,26 +9,36 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
+@Table(name="C_User")
 public class User implements Serializable{
 	
 	 private static final long  serialVersionUID=1L;
 
 	@Id
+	@Column(name="user_ID")
 	private String userID;
-	@Column(unique=true,nullable=false)
+	
+	@Column(unique=true,nullable=false,name="user_name")
 	private String userName;
+	
+	@Column(name="user_useremail")
+	private String userEmail;
+	
+	@Column(name="user_userpassword")
+	private String userPassword;
+	
+	private int Active;
+	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 	
-	private String userEmail;
-	private String userPassword;
-	private boolean Active;
 	
 	
 		
@@ -82,11 +92,11 @@ public class User implements Serializable{
 		this.userPassword = userPassword;
 	}
 
-	public boolean isActive() {
+	public int isActive() {
 		return Active;
 	}
 
-	public void setActive(boolean active) {
+	public void setActive(int active) {
 		Active = active;
 	}
 

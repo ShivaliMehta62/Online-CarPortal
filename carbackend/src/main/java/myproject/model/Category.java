@@ -5,7 +5,7 @@ import java.util.HashSet;
 	import java.util.Set;
 
 	import javax.persistence.CascadeType;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 //import javax.persistence.GeneratedValue;
@@ -24,10 +24,11 @@ import javax.persistence.OneToMany;
 	public class Category implements Serializable {
 	
 	@Id
+	
 	private String catId;
 	private String catName;
-	private String catDesc;
-   	private String brnds;
+	 private String catDesc;
+		private String brnds;
 	
    	@ManyToOne
 	@JoinColumn(name="brnds" , insertable=false, nullable=false, updatable=false)

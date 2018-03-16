@@ -19,8 +19,9 @@ public interface UserDao {
 	//public User userById(int id);
 	public User usersById(int id);
 	public User userByuserName(String username);
-	public boolean getStatus(int id);
+	public int getStatus(int id);
 	public int changeStatus(int id);
+	
 	//public User UserbyBillingId(int billingId);
 	//public User UserbyShippingId(int shippingId);
 	//public boolean update(User u);

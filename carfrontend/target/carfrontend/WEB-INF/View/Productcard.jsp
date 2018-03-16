@@ -18,7 +18,7 @@
 .my-list {
     width: 100%;
     padding: 10px;
-    border: 1px solid #f5efef;
+    border: 1px solid #8dcee8;
     float: left;
     margin: 15px 0;
     border-radius: 5px;
@@ -26,6 +26,7 @@
     position:relative;
     overflow:hidden;
 }
+
 .my-list h3{
     text-align: left;
     font-size: 14px;
@@ -56,7 +57,10 @@
     background: #fff;height: 100%;width:100%;
 	
 }
-	
+	body  {
+    background-image: url(resources/carrental/bg1.jpg);
+   
+}
 .my-list:hover .detail{top:0;}
     </style>
 <title>Insert title here</title>

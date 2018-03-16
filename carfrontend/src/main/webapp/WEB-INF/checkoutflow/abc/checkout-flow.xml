@@ -34,7 +34,7 @@
 
 
 	<action-state id="processOrder">
-		<evaluate expression="userOrderDao.addUserOrder(order)" />
+		<evaluate expression="userOrderDao.addUserOrder(userOrder)" />
 	<evaluate expression="cartDao.clearCart(order.user.getUserID())">
 			<attribute name="name" value="last"></attribute>
 		</evaluate>

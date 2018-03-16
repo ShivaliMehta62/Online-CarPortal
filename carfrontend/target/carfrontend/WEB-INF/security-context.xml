@@ -20,8 +20,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   --> 
  <authentication-manager>
  <authentication-provider>
-  <jdbc-user-service data-source-ref="dataSource" users-by-username-query="select username,userpassword,active from user where username=?" 
-  authorities-by-username-query="select username,authority from AUTHORITY  where username =?" /> 
+  <jdbc-user-service data-source-ref="dataSource" users-by-username-query="select user_name,user_userpassword,active from C_User where  user_name=?" 
+  authorities-by-username-query="select auth_username,authority from AUTHORITY  where auth_username =?" /> 
   </authentication-provider>
   </authentication-manager>
   </beans:bean>

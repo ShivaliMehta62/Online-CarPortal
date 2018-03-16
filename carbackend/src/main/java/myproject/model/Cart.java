@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 import org.springframework.stereotype.Component;
@@ -28,21 +30,19 @@ public class Cart implements Serializable{
 	
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="abc")
+	@SequenceGenerator(name="abc",sequenceName="user_sequence") 
 	private int id;
 	
 	@NotFound(action=NotFoundAction.IGNORE)
+	 
 	private String username;
-
-	@Column(name = "product_name")
 	private String productName;
 	private int quantity;
 	private String price;
 	private String status;
 	private String description;
 	private String  userid;
-	
-	@Column(name = "date_added")
 	private Date dateAdded;
 	
 	

@@ -9,10 +9,15 @@
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>Bootstrap Navbar and Slider Overlay Text - Bootsnipp.com</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     <style type="text/css">
-
+body {
+    background-color: #C0C0C0;
+}
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css">
    </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -26,8 +31,15 @@
 Brand ID    <sp:input path="brandId" readOnly="true" disabled="true"/>
 <sp:hidden path="brandId"/>
 </c:if>
-Brand Name  <sp:input path="brandName"/>
-Brand Desciption  <sp:input path="brandType"/>
+ <div class="form-group">
+      <sh:label  path="brandName"><b>Brand Name:</b></sh:label>
+      <sh:input class="form-control"  path="brandName" placeholder="Enter brand name" />
+    </div>
+     <div class="form-group">
+      <sh:label  path="brandType"><b>Brand Desription:</b></sh:label>
+      <sh:input class="form-control"  path="brandType" placeholder="Enter brand Type" />
+    </div>
+
 
 
 

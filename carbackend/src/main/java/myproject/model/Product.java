@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -30,13 +31,14 @@ public class Product implements Serializable{
 
 	//private static final String DegenarationType = null;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="abc")
+	@SequenceGenerator(name="abc",sequenceName="user_sequence")
 	private int proRn;
 	public void setProRn(int proRn) {
 		this.proRn = proRn;
 	}
 
-	@Column(name="Product_name")
+	
 	private String proNm;
 	private String proCost;
 	private String proType;
