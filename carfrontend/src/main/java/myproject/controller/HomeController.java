@@ -84,7 +84,7 @@ import myproject.model.User;
 			model.addAttribute("brandList",brandDao.getAllBrands());
 			//model.addAttribute("categoryList",categoryDao.getAllCategory());
 			model.addAttribute("brand",new Brand());
-			return"Brand";
+			return "Brand";
 			
 		}
 		

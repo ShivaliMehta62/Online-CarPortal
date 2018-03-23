@@ -16,7 +16,13 @@
 
    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<style>
 
+body
+  {
+  background-image: url("resources/carrental/bg4.jpg");
+  }
+</style>
   
    <!--   <title>eCommerce Product Detail</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -29,8 +35,8 @@
 	<div class="container">
 		<div class="card">
 		
-			<div class="container-fliud">
-							<img src="${pageContext.request.contextPath }/resources/image/${productList.proRn}.jpg" style="width:500px;height:500px"/>
+			<div class="container-fliud" style="margin-top:90px;'">
+							<img src="${pageContext.request.contextPath }/resources/carrental/${productList.proRn}.jpg" style="width:500px;height:500px"/>
 					<div class="details col-md-6">
 						<h3 class="product-title">${productList.categoryId}</h3>
 						<div class="rating">
@@ -51,7 +57,7 @@
 						
 						
 						<div class="action">
-							<a class="add-to-cart btn btn-default" href="${pageContext.request.contextPath}/Cart/addToCart/${productList.proRn}">add to cart</a>
+							<a class="add-to-cart btn btn-default" href="${pageContext.request.contextPath}/Cart/addToCart/${productList.proRn}">up for renting</a>
 							
 						</div>
 					</div>

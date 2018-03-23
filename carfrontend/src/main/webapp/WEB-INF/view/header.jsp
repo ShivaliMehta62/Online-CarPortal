@@ -8,39 +8,59 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>uponrent</title>
+<title>Car Rental Zoo</title>
 
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#" text-align="center">CAR RENTALS</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">CarZoo</a>
         </div>
-        
-         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-               <!--  <li class="active"><a href="#"></a></li> -->
-                
-              
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${pageContext.request.contextPath }/showbrandcard/${cat.brandId}">Brands<span class="caret"></span></a>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#contact">Contact</a></li>
+             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${pageContext.request.contextPath }/showbrandcard/${cat.brandId}">Brands<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <c:forEach items="${brandList}" var="cat">
             <li><a href="${pageContext.request.contextPath}/showbrandcard/${cat.brandId}">${cat.brandId}</a></li>
           </c:forEach>
         </ul>
       </li>
-   
-    </ul>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <sec:authorize access="isAuthenticated()">
+    <li class="nav-item" style="color:powderblue"> <br>Welcome <i>${pageContext.request.userPrincipal.name}</i></li>
+       </sec:authorize>
+        <sec:authorize access="hasRole('ROLE_ADMIN')" >
+		<li><a href="adminHome">Admin</a></li>   
+		</sec:authorize>    
+        <sec:authorize access="hasRole('ROLE_USER')" >
+                    <li class="nav-item"> <a href="${pageContext.request.contextPath}/Cart/all"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge badge-pill badge-primary">${numberProducts}</span></a></li>
+                </sec:authorize>
                 
-                
-                
-                
+                 <sec:authorize access="isAuthenticated()" >
+                    <li class="nav-item"> <a href="${pageContext.request.contextPath}/Logout">Logout</a></li>
+                </sec:authorize>
+               
+                <sec:authorize access="isAnonymous()">
+                         <li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li> 
+                   		<li><a href="${pageContext.request.contextPath}/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+         </sec:authorize>   
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    
+    
+
                 <!--  
                 <li class="dropdown">
               <a href="${pageContext.request.contextPath }/showbrandcard/${cat.brandId}" class="dropdown-toggle" data-toggle="dropdown">CARS<b class="caret"></b></a>
@@ -63,11 +83,7 @@
                     <li><a class ="dropdown-toggle" data-toggle="dropdown" href=" ${pageContext.request.contextPath}/BrandByID/${cat.brandId}">${cat.brandId}</a></li>
                         <ul class="dropdown-menu"></ul>
                         </c:forEach> -->
-                </li>
-                 </ul>
-        </div>
-    </div>
-    
+
                 
                      
                <!--      <sec:authorize access="hasRole('ROLE_ADMIN')" >
@@ -83,34 +99,16 @@
                    </sec:authorize>-->
                    
 <!--                 <li><a href="AdminCard">Admin</a></li> -->
-            <ul class="nav navbar-nav navbar-right">
-                   <sec:authorize access="isAuthenticated()">
-    <li class="nav-item" style="color:powderblue"> <br>Welcome <i>${pageContext.request.userPrincipal.name}</i></li>
-       </sec:authorize>
-        <sec:authorize access="hasRole('ROLE_ADMIN')" >
-		<li><a href="adminHome">Admin</a></li>   
-		</sec:authorize>    
-        <sec:authorize access="hasRole('ROLE_USER')" >
-                    <li class="nav-item"> <a href="${pageContext.request.contextPath}/Cart/all"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge badge-pill badge-primary">${numberProducts}</span></a></li>
-                </sec:authorize>
-                
-                 <sec:authorize access="isAuthenticated()" >
-                    <li class="nav-item"> <a href="${pageContext.request.contextPath}/Logout">Logout</a></li>
-                </sec:authorize>
-               
-                <sec:authorize access="isAnonymous()">
-                         <li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li> 
-                   		<li><a href="${pageContext.request.contextPath}/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-         </sec:authorize>   
-        </ul>
-    
-    </nav>
+        
 
 </body>
 
 
 
-
+<script type="text/javascript">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</script>
 
 
 

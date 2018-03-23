@@ -1,7 +1,11 @@
 package myproject.model;
 
+import java.awt.Dimension;
+
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -17,7 +21,7 @@ public class EmailService {
 	private JavaMailSender mailSender;
 
 	// email name which is not similar to the username
-	private static String from = "Car Rental Zoo";
+	private static String from = "Car_Rental_Zoo";
 
 	/**
 	 * approvedUserMessage method will be called using emailService that can be
@@ -60,5 +64,40 @@ public class EmailService {
 			e.printStackTrace();
 		}
 	}
+     public void approvedOrder(User user,Shipping ship,Product pro)
+     {
+    	 MimeMessage mimeMessage = mailSender.createMimeMessage();
+    	 MimeMessageHelper helper = null;
+    	try {
+    	 helper = new MimeMessageHelper(mimeMessage, false, "utf-8");
+    	 StringBuilder htmlMsg = new StringBuilder();
+    	 htmlMsg.append("<h2>Dear"+ user.getUserName() + "</h2>");
+    	 htmlMsg.append("<p>We thought you'd like to know that we have completed your renting process. If you want to rent more or have any queries regarding the same, please visit us at <b>CarRentalZoo.com</b><br><br> </p>");
+    	 htmlMsg.append("<p>Have a safe driving ,<br></p>");
+    	 htmlMsg.append("<p>Team CarZoo</p>");
+    	 JSeparator separator = new JSeparator(SwingConstants.HORIZONTAL);
+    	 separator.setPreferredSize(new Dimension(200,3));
+    	// htmlMsg.append("<h2>DropDown Address</h2>");
+    	 //htmlMsg.append(ship.getApartNo() );
+    	 //htmlMsg.append( ship.getStreetName() );
+    	 //htmlMsg.append( ship.getCity() );
+    	 //htmlMsg.append( ship.getState());
+    	 //htmlMsg.append( ship.getCountry() );
+    	 //htmlMsg.append( ship.getZipcode());
+    	 
+    	
+    				mimeMessage.setContent(htmlMsg.toString(), "text/html");
+    				// set the subject and recipient of the email
+    				System.out.println(user.getUserEmail());
+    				helper.setTo(user.getUserEmail());
+    				helper.setSubject("Your Car is ready for renting!!");
+    				helper.setFrom(from);
 
+    				// send the message
+    				mailSender.send(mimeMessage);
+    	} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+    	 
+     }   
 }

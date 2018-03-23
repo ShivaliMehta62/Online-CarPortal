@@ -1,4 +1,4 @@
-<%@include file="header1.jsp"%>
+
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page isELIgnored="false" %>
@@ -70,3 +70,4 @@
 	</form:form>
 
 </div>
+<%@include file="header1.jsp"%>

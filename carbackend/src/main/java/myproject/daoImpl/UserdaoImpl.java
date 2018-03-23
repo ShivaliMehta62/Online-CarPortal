@@ -44,7 +44,7 @@ public class UserDaoImpl implements UserDao {
 		try {
 			@SuppressWarnings("rawtypes")
 			Query query = sessionFactory.getCurrentSession().createQuery("from User where userName= '" + username + "'");
-			System.out.println("dao method is invoked");
+			System.out.println("user dao method is invoked");
 			User user = (User) query.uniqueResult();
 
 			return user;

@@ -1,4 +1,4 @@
-<%@include file="header1.jsp"%>
+
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 
@@ -14,5 +14,5 @@
 		</div>
 	</section>
 </div>
-
+<%@include file="header1.jsp"%>
 

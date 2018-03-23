@@ -22,7 +22,7 @@
 <title>Category</title>
 </head>
 <body>
-<div class="container">
+<div class="container" style="margin-top:90px;">
 <sh:form action="${pageContext.request.contextPath}/addCategory" method="POST" modelAttribute="category">
 <c:if test="${not empty category.catName}">
 ID<sh:input path="catId" readOnly="true" disabled="true"/>
@@ -83,7 +83,7 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <td>${cat.catName}</td>
 <td>${cat.catDesc }</td>
 <!--  <td>${cat.brnds}</td>-->
-<td><a href="<c:url value='updateCategory/${cat.catId}'/>"><b>Edit/</b><a href="<c:url value='deleteCategory/${cat.catId}'/>"><b>Delete</b></a></td>
+<td><a href="<c:url value='updateCategory/${cat.catId}'/>"><b>Edit/</b></a><a href="<c:url value='deleteCategory/${cat.catId}'/>"><b>Delete</b></a></td>
 </tr>
 </c:forEach>
 
@@ -94,7 +94,7 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
   
 </div>
  
-
+<%@include file="Footer.jsp" %>
 
 </body>
 </html>

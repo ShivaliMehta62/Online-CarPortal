@@ -58,7 +58,7 @@
 	
 }
 	body  {
-    background-image: url(resources/carrental/bg1.jpg);
+    background-image: url("resources/carrental/bg4.jpg");
    
 }
 .my-list:hover .detail{top:0;}
@@ -76,15 +76,15 @@
      <c:forEach items="${productList}" var="c">
            <a href="${pageContext.request.contextPath }/ProductDetail/${c.proRn}" class="hidden-sm"></a>	
        		        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-		              <div class="my-list">
-			<img src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg" alt="" />
+		              <div class="my-list" style="margin-top:90px;">
+			<img src="${pageContext.request.contextPath }/resources/carrental/${c.proRn}.jpg" alt="" />
 			<h3>${c.categoryId}</h3>
 			<span>Rs${c.proCost}</span>
 			<span class="pull-right">${c.brandId}</span>
 			<div class="offer">${c.proType}</div>
 			<div class="detail">
 			<p>Rent Now!!</p>
-			<img src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg" alt="" />
+			<img src="${pageContext.request.contextPath }/resources/carrental/${c.proRn}.jpg" alt="" />
 			 <!--   <a href="${pageContext.request.contextPath}/productDetail/${c.proRn}" class="btn btn-info">Rent Now</a>-->
 			   <a href="${pageContext.request.contextPath}/productDetail/${c.proRn}" class="btn btn-info">Details</a>
 			</div>
@@ -94,11 +94,12 @@
   </c:forEach>
      
       
-        
+    
 
 
 
 </body>
+
 <!--  <script>
 $(document).ready(function(){
     

@@ -90,14 +90,14 @@ public class CartDaoImpl implements CartDao{
 	public Cart getCartByUsername(String username, String productname) {
 		//c.setUserid(c.getUsername());
 					Query query = sessionFactory.getCurrentSession().createQuery("from Cart WHERE username='" + username
-					+ "' and product_name='" + productname + "' and status = 'NEW'");
+					+ "' and productName='" + productname + "' and status = 'NEW'");
 						return (Cart) query.uniqueResult();
 		
 	}
 
 	public int getQuantity(String username, String productname) {
 					Query query = sessionFactory.getCurrentSession().createQuery("SELECT quantity from Cart WHERE username='"
-					+ username + "' and product_name='" + productname + "' and status = 'NEW'");
+					+ username + "' and productName='" + productname + "' and status = 'NEW'");
 						return  (Integer) query.uniqueResult();
 		
 		

@@ -146,17 +146,18 @@ progress::-moz-progress-bar {
 </head>
 <body>
 <progress value="0" id="progressBar"></progress>
-<%@include file="/WEB-INF/View/Header.jsp"%>
+<%@include file="Header.jsp"%>
 
-<div class="container">
+<div class="container" style="padding-top:94px;">
        
        <div class="row" style="margin:50px;">
             
            <c:forEach items="${ProductList}" var="c">
            
      <div class=" col-md-3" style="margin:20px;">
-       <div class="card w3-animate-opacity" >
-        <a href="${pageContext.request.contextPath }/showbrandcard/${c.brandId}" value="${c.categoryId}" style="display:block;"><img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/images/${c.proRn}.jpg"></a>
+       <div class="card w3-animate-opacity"  >
+        <a href="${pageContext.request.contextPath }/showbrandcard/${c.brandId}" value="${c.categoryId}" style="display:block;">
+        <img class="card-img-top w3-animate-opacity" style="align-items:center;300px;height:200px;" src="${pageContext.request.contextPath }/resources/carrental/${c.proRn}.jpg"></a>
           <div class="card-block">
             <h5 class="text-bold w3-animate-opacity">${c.brandId}</h5>
             	</div>

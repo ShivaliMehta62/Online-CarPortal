@@ -1,14 +1,37 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>carzoo</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<style>
+body {
+    background-image: url("resources/carrental/bg1.jpg");
+   
+      /* Full height */
+    height: 100%; 
 
-<div class="space"></div>
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+</style>
+</head>
+<body>
 <div class="container">
-	<h2 class="heading-one">Shipping Details</h2>
+  <div class="jumbotron">
+    
 
 	<form:form modelAttribute="order">
 
-		<h3>Shipping Address</h3>
+		<h3>DropDown Address</h3>
 
 		<div class="form-group">
 			<label for="shippingStreet">Street Name</label>
@@ -58,4 +81,6 @@
 	</form:form>
 
 </div>
-<%@include file="header1.jsp"%>
+</div>
+</body>
+</html>

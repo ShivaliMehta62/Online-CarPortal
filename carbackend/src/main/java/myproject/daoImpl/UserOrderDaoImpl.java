@@ -2,6 +2,9 @@ package myproject.DaoImpl;
 
 
 import myproject.Dao.UserOrderDao;
+import myproject.model.EmailService;
+import myproject.model.Product;
+import myproject.model.Shipping;
 import myproject.model.User;
 import myproject.model.UserOrder;
 import java.util.List;
@@ -22,11 +25,16 @@ public class UserOrderDaoImpl implements UserOrderDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	@Autowired
+	private EmailService emailService;
 	
 	public boolean addUserOrder(UserOrder userOrder) {
 		
 			Session session = sessionFactory.getCurrentSession();
 			User user= userOrder.getUser();
+			Shipping ship=new Shipping();
+			Product pro=new Product();
+			emailService.approvedOrder(user,ship,pro);
 			userOrder.setUserorderId(user.getUserID());
 			userOrder.setBill(user.getBilling());
 			userOrder.setShip(user.getShipping());
@@ -35,6 +43,7 @@ public class UserOrderDaoImpl implements UserOrderDao{
 			session.saveOrUpdate(user);
 			session.saveOrUpdate(user.getBilling());
 			session.saveOrUpdate(user.getShipping());
+			
 			return true;
 			
 		
@@ -49,7 +58,7 @@ public class UserOrderDaoImpl implements UserOrderDao{
 				
 	}
 
-	public UserOrder getUserOrderById(String userorderId) {
+	public UserOrder getUserOrderById(int userorderId) {
 		
 				
 					
@@ -61,13 +70,20 @@ public class UserOrderDaoImpl implements UserOrderDao{
 	}
 
 	
-	public int changeOrderStatus(String userorderId, String status) {
+	public int changeOrderStatus(int userorderId, String status) {
 		
 			Query query = sessionFactory.getCurrentSession()
 					.createQuery("UPDATE UserOrder SET orderStatus = '" + status + "' where userorderId = " + userorderId);
 			return query.executeUpdate();
+			
 		
 }
+
+	public int changeOrderStatus(String userorderId, String status) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 	
 }

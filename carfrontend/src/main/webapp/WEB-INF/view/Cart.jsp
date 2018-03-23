@@ -13,7 +13,18 @@
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">
+body{
+ background-image: url("resources/carrental/bg4.jpg");
+   /* Full height */
+    height: 400%; 
 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}</style>
 </head>
 <body>
 <br>
@@ -39,7 +50,7 @@
 				<th>Car Name</th>
 				<th>Price</th>
 				<th>Car quantity</th>
-				<th>Car description</th>
+				
 				<th width="135">Actions</th>
 			</tr>
 		
@@ -48,7 +59,7 @@
 <td>${cart.productName}</td>
 <td>${cart.price}</td>
 <td>${cart.quantity}</td>
-<td>${cart.description}</td>
+
 					
 					<td><a href="<c:url value='/Cart/delete/${cart.productName}'/>"> <span class="glyphicon glyphicon-trash"></span></a></td>
 				</tr>
@@ -75,5 +86,7 @@
 		
 		</div>
 		
+		&nbsp;
+		<%@include file="Footer.jsp" %>
 </body>
 </html>

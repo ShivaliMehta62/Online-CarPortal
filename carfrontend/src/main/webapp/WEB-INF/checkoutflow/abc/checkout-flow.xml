@@ -28,13 +28,13 @@
 
 
 	<view-state id="orderconfirmation" view="orderconfirmation.jsp" model="order" >
-		<transition on="orderconfirmed" to="processOrder" />
+		<transition on="orderconfirmed" to="order" />
 		<transition on="backToCollectShippingDetail" to="collectShippingDetail" />
 	</view-state>
 
 
-	<action-state id="processOrder">
-		<evaluate expression="userOrderDao.addUserOrder(userOrder)" />
+	<action-state id="order">
+		<evaluate expression="userOrderDao.addUserOrder(order)" />
 	<evaluate expression="cartDao.clearCart(order.user.getUserID())">
 			<attribute name="name" value="last"></attribute>
 		</evaluate>

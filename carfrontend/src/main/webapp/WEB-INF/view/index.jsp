@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>welcome</title>
+  <title>Car Rental Zoo</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,21 +13,24 @@
   <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 175%;
-     max-height: 200%;
+      width: 100%;
+     max-height: 100%;
   }
   body
   {
-  background-color: #a8eff4; }
+  background-image: url("resources/carrental/bg4.jpg");
+  }
   </style>
 </head>
 <body>
 <jsp:include page="Header.jsp"></jsp:include>
 <br>
+<br>
+<br>
 <sec:authorize access="hasRole('ROLE_ADMIN')" >
 <jsp:forward page="/adminHome"></jsp:forward>
 </sec:authorize>
-<div class="container">
+<div class="">
 
   <div id="myCarousel" class="carousel slide">
     <!-- Indicators -->

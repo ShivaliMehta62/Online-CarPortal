@@ -32,11 +32,13 @@ public class UserController {
 		//user.setShipping(user.getShipping());
 	   if(userDao.save(c))
 	   {
-		emailService.approvedUserMessage(c);   
+		emailService.approvedUserMessage(c);
+		///emailService.approvedOrder(c, null, null);
 	   }
 		
 	return 	"Cart";
 	}
+	
 	
 /*	 @RequestMapping(value="/updateUser/{userid}")
 	   public String updateuser(@PathVariable("userid")String userid,Model model)

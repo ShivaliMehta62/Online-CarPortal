@@ -14,13 +14,33 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-</head>
-<body>
+<style>
+body {
+     background-image: url("resources/carrental/bg4.jpg");
+   
+      /* Full height */
+    height: 400%; 
 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    }
+</style>
+</head>
+
+<body>
+<div style="margin-top:90px;"/>
 <ul>
- <li><a href="Brand"><span class="glyphicon glyphicon-log-in"></span> Brand</a></li>
- <li><a href="Category"><span class="glyphicon glyphicon-log-in"></span>Category</a></li>
- <li><a href="Product"><span class="glyphicon glyphicon-log-in"></span> Product</a></li>
+ <li><a href="Brand" ><span class="glyphicon glyphicon-log-in"></span><strong><h4> Brand</h4></strong></a></li>
+ <br>
+  <li><a href="Category"><span class="glyphicon glyphicon-log-in"></span><strong><h4>Category</h4></strong></a></li>
+  <br>
+ <li><a href="Product"><span class="glyphicon glyphicon-log-in"></span><strong><h4>Product</h4></strong></a></li>
 </ul>
+
+ 
 </body>
+ <%@include file="Footer.jsp" %>
 </html>

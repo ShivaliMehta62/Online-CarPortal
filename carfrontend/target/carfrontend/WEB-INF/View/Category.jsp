@@ -83,7 +83,7 @@ ID<sh:input path="catId" readOnly="true" disabled="true"/>
 <td>${cat.catName}</td>
 <td>${cat.catDesc }</td>
 <!--  <td>${cat.brnds}</td>-->
-<td><a href="<c:url value='updateCategory/${cat.catId}'/>"><b>Edit/</b><a href="<c:url value='deleteCategory/${cat.catId}'/>"><b>Delete</b></a></td>
+<td><a href="<c:url value='updateCategory/${cat.catId}'/>"><b>Edit/</b></a><a href="<c:url value='deleteCategory/${cat.catId}'/>"><b>Delete</b></a></td>
 </tr>
 </c:forEach>
 

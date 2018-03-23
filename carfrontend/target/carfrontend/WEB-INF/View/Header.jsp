@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>uponrent</title>
+<title>Car Rental Zoo</title>
 
 </head>
 <body>

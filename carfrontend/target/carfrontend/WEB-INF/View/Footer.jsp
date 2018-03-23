@@ -8,27 +8,28 @@
 
                 <!--Grid column-->
                 <div class="col-12 col-md-5 text-left mb-4 mb-md-0">
-                    <h6 class="mb-0 white-text text-center text-md-left"><strong>GET IN TOUCH!</strong></h6>
+                    <h6 class="mb-0 white-text text-center text-md-left"></h6>
                 </div>
-                <!--Grid column-->
+                <%-- <jsp:include page="icons.jsp" ></jsp:include>--%>
+                 <!--Grid column-->
 
                 <!--Grid column-->
                 <div class="col-12 col-md-7 text-center text-md-right">
-                    <!--Facebook-->
+                   <!--Facebook-->
                     <a class="icons-sm fb-ic ml-0"><i class="fa fa-facebook white-text mr-lg-4"> </i></a>
-                    <!--Twitter-->
+                   <!--Twitter-->
                     <a class="icons-sm tw-ic"><i class="fa fa-twitter white-text mr-lg-4"> </i></a>
                     <!--Google +-->
                     <a class="icons-sm gplus-ic"><i class="fa fa-google-plus white-text mr-lg-4"> </i></a>
-                    <!--Linkedin-->
+                   <!-- Linkedin-->
                     <a class="icons-sm li-ic"><i class="fa fa-linkedin white-text mr-lg-4"> </i></a>
-                    <!--Instagram-->
+                   <!--   Instagram-->
                     <a class="icons-sm ins-ic"><i class="fa fa-instagram white-text mr-lg-4"> </i></a>
                 </div>
-                <!--Grid column-->
-
+               <!--Grid column-->
+-->
             </div>
-            <!--Grid row-->
+            
         </div>
     </div>
 

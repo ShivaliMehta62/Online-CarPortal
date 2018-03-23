@@ -1,4 +1,4 @@
-<%@include file="header1.jsp"%>
+
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -20,16 +20,16 @@
 			<hr>
 			<div class="row">
 				<div class="col-xs-8 col-sm-8 col-md-8">
-					<b>Name: </b>${user.userName }
+					<b>Name: </b>${order.user.userName }
 					<br>
-					<b>Email: </b> ${user.Email }
+					<b>Email: </b>${order.user.userEmail }
 					<br>
 					
 				</div>
 				<div class="col-xs-4 col-sm-4 col-md-4 ">
 					<p>
 						<b>Shipping Date:</b>
-						<%--  <fmt:formatDate pattern="yyyy-MM-dd" value="${date}"/>--%>
+						  <fmt:formatDate pattern="yyyy-MM-dd" value="${date}"/>
 					</p>
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-6">
 					<address>
-						<strong>Billing Address</strong><br>
+						<strong>PickUp Address</strong><br>
 						${order.user.billing.bapartNo}, ${order.user.billing.bstreetName} <br>						
 						${order.user.billing.bcity},
 						${order.user.billing.bstate} <br>
@@ -47,7 +47,7 @@
 				</div>
 				<div class="col-xs-6 col-sm-6">
 					<address>
-						<strong>Shipping Address</strong><br>
+						<strong>DropDown Address</strong><br>
 						${order.user.shipping.apartNo}, ${order.user.shipping.streetName} <br>						
 						${order.user.shipping.city},
 						${order.user.shipping.state} <br>
@@ -61,16 +61,16 @@
 					<thead>
 						<tr>
 							<th>Product</th>
-							<th class="text-center">Quantity</th>
+							<th class="text-center">Quantity</th><br>
 							<th class="text-center">Price/Unit</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="cartItem" items="${user.productName}">
+						<c:forEach var="order" items="${user.productName}">
 							<tr>
-								<td class="col-md-9"><em>${cartItem.productName}</em></td>
-								<td class="col-md-1" style="text-align: center">${cartItem.quantity}</td>
-								<td class="col-md-1" style="text-align: center">${cartItem.price}</td>
+								<td class="col-md-9"><em>${order.productName}</em></td>
+								<td class="col-md-1" style="text-align: center">${order.quantity}</td>
+								<td class="col-md-1" style="text-align: center">${order.price}</td>
 							</tr>
 						</c:forEach>
 
@@ -99,3 +99,4 @@
 		</div>
 	</form:form>
 </div>
+<%@include file="header1.jsp"%>

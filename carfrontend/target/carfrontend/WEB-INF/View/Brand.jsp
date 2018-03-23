@@ -4,6 +4,7 @@
 <%@ page isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sp" %>  
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="sh" %> 
 <html>
 <head>
     <meta charset="utf-8">
@@ -69,7 +70,7 @@ Brand ID    <sp:input path="brandId" readOnly="true" disabled="true"/>
 <td>${c.brandType}</td>
 
 
-<td><a href="<c:url value='updateBrand/${c.brandId}'/>">Edit<a href="<c:url value='deleteBrand/${c.brandId}'/>">Delete</a></a>
+<td><a href="<c:url value='updateBrand/${c.brandId}'/>"><b>Edit/</b></a><a href="<c:url value='deleteBrand/${c.brandId}'/>"><b>Delete</b></a>
 </tr>
 
 </c:forEach>
